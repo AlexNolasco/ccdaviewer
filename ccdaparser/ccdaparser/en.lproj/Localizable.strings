@@ -1,0 +1,173 @@
+/*
+  Localizable.strings
+  ccdaparser
+
+  Created by alexander nolasco on 4/24/16.
+  Copyright © 2016 coladapp.com. All rights reserved.
+*/
+"2.16.840.1.113883.5.83.A" = "Abnormal";
+"2.16.840.1.113883.5.83.AA" = "Abnormal alert";
+"2.16.840.1.113883.5.83.HX" = "Above high threshold";
+"2.16.840.1.113883.5.83.LX" = "Below low threshold";
+"2.16.840.1.113883.5.83.B" = "Better";
+"2.16.840.1.113883.5.83.Carrier" = "Carrier";
+"2.16.840.1.113883.5.83.D" = "Decreased";
+"2.16.840.1.113883.5.83._GeneticObservationInterpretation" = "Generic observation interpretation";
+"2.16.840.1.113883.5.83.H" = "High";
+"2.16.840.1.113883.5.83.HH" = "High alert";
+"2.16.840.1.113883.5.83.>" = "High off scale";
+"2.16.840.1.113883.5.83.U" = "Increased";
+"2.16.840.1.113883.5.83.Ind" = "Indeterminate";
+"2.16.840.1.113883.5.83.I" = "Intermediate";
+"2.16.840.1.113883.5.83.L" = "Low";
+"2.16.840.1.113883.5.83.LL" = "Low alert";
+"2.16.840.1.113883.5.83.<" = "Low off scale";
+"2.16.840.1.113883.5.83.MS" = "Moderately susceptible";
+"2.16.840.1.113883.5.83.NEG" = "Negative";
+"2.16.840.1.113883.5.83.N" = "Normal";
+"2.16.840.1.113883.5.83._ObservationInterpretationChange" = "Observation interpretation change";
+"2.16.840.1.113883.5.83.ObservationInterpretationDetection" = "Observation interpretation detection";
+"2.16.840.1.113883.5.83._ObservationInterpretationExceptions" = "Observation interpretation exceptions";
+"2.16.840.1.113883.5.83._ObservationInterpretationNormality" = "Observation interpretation normality";
+"2.16.840.1.113883.5.83._ObservationInterpretationSusceptibility" = "Observation interpretation susceptibility";
+"2.16.840.1.113883.5.83.EX" = "Outside threshold";
+"2.16.840.1.113883.5.83.POS" = "Positive";
+"2.16.840.1.113883.5.83.R" = "Resistent";
+"2.16.840.1.113883.5.83.S" = "Susceptible";
+"2.16.840.1.113883.5.83.VS" = "Very susceptible";
+"2.16.840.1.113883.5.83.W" = "Worse";
+"2.16.840.1.113883.5.83.SYN-S" = "Synergy - susceptible";
+"2.16.840.1.113883.5.83.DET" = "Detected";
+"2.16.840.1.113883.5.83.EXP" = "Expected";
+"2.16.840.1.113883.5.83.UNE" = "Unexpected";
+"2.16.840.1.113883.5.83.NR" = "Non-reactive";
+"2.16.840.1.113883.5.83.RR" = "Reactive";
+"2.16.840.1.113883.5.83.WR" = "Weakly reactive";
+
+"parser." = "No name";
+"parser.2.16.840.1.113883.10.20.22.2.22.1" = "Encounters";
+"parser.2.16.840.1.113883.10.20.22.2.7.1" = "Procedures";
+"parser.2.16.840.1.113883.10.20.22.2.5.1" = "Problems";
+"parser.2.16.840.1.113883.10.20.22.2.45" = "Patient Instructions";
+"parser.2.16.840.1.113883.10.20.22.2.10" = "Plan of Care";
+"parser.2.16.840.1.113883.10.20.22.2.3.1" = "Results";
+"parser.2.16.840.1.113883.10.20.22.2.1.1" = "Medications";
+"parser.2.16.840.1.113883.10.20.22.2.4.1" = "Vital Signs";
+"parser.2.16.840.1.113883.10.20.22.2.17" = "Social History";
+"parser.2.16.840.1.113883.10.20.22.2.6.1" = "Allergies";
+"parser.2.16.840.1.113883.10.20.22.2.13" = "Chief Complain";
+"parser.patientRole" = "Patient Role";
+
+"HL7MaritalStatusCode.0" = "Unknown";
+"HL7MaritalStatusCode.1" = "Anulled";
+"HL7MaritalStatusCode.2" = "Divorced";
+"HL7MaritalStatusCode.3" = "Interlocutory";
+"HL7MaritalStatusCode.4" = "Legally separated";
+"HL7MaritalStatusCode.5" = "Married";
+"HL7MaritalStatusCode.6" = "Polygamous";
+"HL7MaritalStatusCode.7" = "Never married";
+"HL7MaritalStatusCode.8" = "Domestic partner";
+"HL7MaritalStatusCode.9" = "Widowed";
+
+"HL7AdministrativeGenderCode.0" = "Unknown";
+"HL7AdministrativeGenderCode.1" = "Undifferentiated";
+"HL7AdministrativeGenderCode.2" = "Female";
+"HL7AdministrativeGenderCode.3" = "Male";
+
+"HL7UseAddress.0" = "Unknown";
+"HL7UseAddress.1" = "Physical";
+"HL7UseAddress.2" = "Home";
+"HL7UseAddress.3" = "Primary home";
+"HL7UseAddress.4" = "Primary vacation home";
+"HL7UseAddress.5" = "Work place";
+"HL7UseAddress.6" = "Direct";
+"HL7UseAddress.7" = "Public";
+"HL7UseAddress.8" = "Bad address";
+"HL7UseAddress.9" = "Birthplace";
+"HL7UseAddress.10" = "Temporary";
+"HL7UseAddress.11" = "Postal";
+"HL7UseAddress.12" = "Alphabetic";
+"HL7UseAddress.13" = "Syllabic";
+"HL7UseAddress.14" = "Ideographic";
+
+"HL7UseName.0" = "Unknown";
+"HL7UseName.1" = "License";
+"HL7UseName.2" = "Indigenous";
+"HL7UseName.3" = "Legal name";
+"HL7UseName.4" = "Pseudonym";
+"HL7UseName.5" = "Artist name";
+"HL7UseName.6" = "Religious name";
+"HL7UseName.7" = "Search name";
+"HL7UseName.8" = "Phonetic search";
+"HL7UseName.9" = "Soundex search";
+"HL7UseName.10" = "Alphabetic";
+"HL7UseName.11" = "Syllabic";
+"HL7UseName.12" = "Ideographic";
+
+"HL7UseTelecom.0" = "Unknown";
+"HL7UseTelecom.1" = "Home";
+"HL7UseTelecom.2" = "Primary home";
+"HL7UseTelecom.3" = "Primary vacation home";
+"HL7UseTelecom.4" = "Work place";
+"HL7UseTelecom.5" = "Direct";
+"HL7UseTelecom.6" = "Public";
+"HL7UseTelecom.7" = "Bad/wrong number";
+"HL7UseTelecom.8" = "Temporary";
+"HL7UseTelecom.9" = "Answering machine";
+"HL7UseTelecom.10" = "Emergency contact";
+"HL7UseTelecom.11" = "Mobile";
+"HL7UseTelecom.12" = "Pager";
+
+"HL7StatusCodeCode.0" = "Unknown";
+"HL7StatusCodeCode.1" = "Active";
+"HL7StatusCodeCode.2" = "Resolved";
+"HL7StatusCodeCode.3" = "Completed";
+
+"HL7MoodCode.0" = "Unknown";
+"HL7MoodCode.1" = "Already happened";
+"HL7MoodCode.2" = "Intended to happen in the future";
+"HL7MoodCode.3" = "Request order";
+"HL7MoodCode.4" = "Planned for a specific time/place";
+"HL7MoodCode.5" = "Request to book appointment";
+"HL7MoodCode.6" = "Being processed";
+"HL7MoodCode.7" = "Promised";
+"HL7MoodCode.8" = "Definition/Observation";
+"HL7MoodCode.9" = "Goal/Objective";
+"HL7MoodCode.10" = "Pre-Condition/Criteria";
+
+"HL7ProblemSeverityCode.0" = "Unknown";
+"HL7ProblemSeverityCode.1" = "Mild";
+"HL7ProblemSeverityCode.2" = "Mild to moderate";
+"HL7ProblemSeverityCode.3" = "Moderate";
+"HL7ProblemSeverityCode.4" = "Moderate to severe";
+"HL7ProblemSeverityCode.5" = "Severe";
+"HL7ProblemSeverityCode.6" = "Fatal";
+
+
+"error.FileNotFound" = "File was not found";
+"error.NoData" = "No data found";
+
+"%d days ago" = "%d days ago";
+"%d hours ago" = "%d hours ago";
+"%d minutes ago" = "%d minutes ago";
+"%d months ago" = "%d months ago";
+"%d seconds ago" = "%d seconds ago";
+"%d weeks ago" = "%d weeks ago";
+"%d years ago" = "%d years ago";
+"A minute ago" = "A minute ago";
+"An hour ago" = "An hour ago";
+"Just now" = "Just now";
+"Last month" = "Last month";
+"Last week" = "Last week";
+"Last year" = "Last year";
+"Yesterday" = "Yesterday";
+"1 year ago" = "1 year ago";
+"1 month ago" = "1 month ago";
+"1 week ago" = "1 week ago";
+"1 day ago" = "1 day ago";
+"This morning" = "This morning";
+"This afternoon" = "This afternoon";
+"Today" = "Today";
+"This week" = "This week";
+"This month" = "This month";
+"This year" = "This year";
