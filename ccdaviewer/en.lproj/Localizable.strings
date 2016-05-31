@@ -1,0 +1,39 @@
+/* 
+  Localizable.strings
+  ccdaviewer
+
+  Created by alexander nolasco on 5/8/16.
+  Copyright © 2016 coladapp.com. All rights reserved.
+*/
+"Common.Edit" = "Edit";
+"Common.Arrange" = "Arrange";
+"Common.Save" = "Save";
+"Common.Info" = "Information";
+"Common.OK" = "OK";
+"Common.Error" = "An error has occurred";
+"Common.UnknownName" = "Unknown";
+"Patient.NoInformation" = "No additional information";
+"Sections.Title" = "Sections";
+"Settings.Title" = "Settings";
+"Patients.Title" = "Patients";
+"NetworkSettings.Saved" = "Network settings have been saved\nChanges will take effect next time the patient list is refreshed";
+"NetworkSettings.About" = "CCDAViewer is a native iOS application for viewing CCDA summaries.  It was built as part of the HL7 tool challenge  to encourage the development of HL7 tools.";
+
+"SummaryPatientInfo.MarriageStatus" = "Marriage status: %@";
+"SummaryAllergy.NoAllergies" = "Patient has no allergies";
+"SummaryAllergy.NoKnownAllergies" = "Patient has no known allergies";
+"SummaryAllergy.NoAdditionalInformation" = "Allergy information ";
+"SummaryAllergy.PatientHasAllergies" = "Patient has %ld allergie(s)";
+"SummaryAllergy.ReactionAndOther" = "%@. +%ld other reaction(s)";
+
+"SummaryAllergy.NoKnownMedicationAllergies" = "Patient is not allergic to medications";
+"SummaryPatient.Legend" = "%@, %@ years old %@";
+"SummaryPatient.LegendEmpty" = "No additional information";
+"SummaryMedication.DoseInformationNotAvailable" = "No dose information";
+"SummaryMedication.Active" = "Active";
+"SummaryMedication.Inactive" = "Inactive";
+
+"SectionsActionSheet.Cancel" = "Cancel";
+
+"Loading.Patients" = "Loading patient list..";
+"Loading.Ccda" = "Loading patient data..";

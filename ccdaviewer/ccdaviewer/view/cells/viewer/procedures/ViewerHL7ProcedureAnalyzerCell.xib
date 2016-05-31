@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1808" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="91" id="nCJ-zt-UMK" customClass="ViewerHL7ProcedureAnalyzerCellTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nCJ-zt-UMK" id="J45-8q-KeD">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drawing blood, Venipuncture svc to obtain blood speci" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ea-c6-1k7">
+                        <rect key="frame" x="8" y="8" width="304" height="46"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2/2/2000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPB-O4-DIx">
+                        <rect key="frame" x="8" y="61" width="304" height="14"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                        <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="CPB-O4-DIx" firstAttribute="top" secondItem="9ea-c6-1k7" secondAttribute="bottom" constant="7" id="0Fb-A2-7NF"/>
+                    <constraint firstItem="9ea-c6-1k7" firstAttribute="trailing" secondItem="J45-8q-KeD" secondAttribute="trailingMargin" id="4fd-i6-Y0K"/>
+                    <constraint firstItem="CPB-O4-DIx" firstAttribute="leading" secondItem="J45-8q-KeD" secondAttribute="leadingMargin" id="Odt-0t-fEC"/>
+                    <constraint firstItem="CPB-O4-DIx" firstAttribute="trailing" secondItem="J45-8q-KeD" secondAttribute="trailingMargin" id="SE0-WC-04j"/>
+                    <constraint firstItem="9ea-c6-1k7" firstAttribute="top" secondItem="J45-8q-KeD" secondAttribute="topMargin" id="aXT-3k-9WJ"/>
+                    <constraint firstItem="9ea-c6-1k7" firstAttribute="leading" secondItem="J45-8q-KeD" secondAttribute="leadingMargin" id="qaz-rS-mwQ"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="9ea-c6-1k7" secondAttribute="bottom" constant="28" id="t3Q-Yw-1s6"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dateLabel" destination="CPB-O4-DIx" id="NAa-0j-vVo"/>
+                <outlet property="procedureNameLabel" destination="9ea-c6-1k7" id="FF5-hk-6kv"/>
+            </connections>
+            <point key="canvasLocation" x="479" y="303.5"/>
+        </tableViewCell>
+    </objects>
+</document>

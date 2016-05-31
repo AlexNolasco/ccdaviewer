@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1808" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="YQn-tL-Qf9" customClass="SectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YQn-tL-Qf9" id="ki7-iC-SIM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mli-t0-MTP">
+                        <rect key="frame" x="263" y="6" width="51" height="31"/>
+                        <connections>
+                            <action selector="switchChanged:" destination="YQn-tL-Qf9" eventType="valueChanged" id="zQN-Fr-GIw"/>
+                        </connections>
+                    </switch>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum is simply " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9a-Wa-WoU">
+                        <rect key="frame" x="8" y="13" width="174" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="leadingMargin" secondItem="w9a-Wa-WoU" secondAttribute="leading" id="8UP-1f-IY0"/>
+                    <constraint firstItem="mli-t0-MTP" firstAttribute="leading" secondItem="w9a-Wa-WoU" secondAttribute="trailing" constant="81" id="8py-1w-jDj"/>
+                    <constraint firstItem="w9a-Wa-WoU" firstAttribute="centerY" secondItem="mli-t0-MTP" secondAttribute="centerY" id="Jz5-sc-Lue"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="mli-t0-MTP" secondAttribute="trailing" id="se9-hN-QTr"/>
+                    <constraint firstItem="w9a-Wa-WoU" firstAttribute="centerY" secondItem="ki7-iC-SIM" secondAttribute="centerY" id="zxM-by-NGw"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="enableSwitch" destination="mli-t0-MTP" id="gCZ-Nh-gp6"/>
+                <outlet property="nameLabel" destination="w9a-Wa-WoU" id="eOM-Js-b1q"/>
+            </connections>
+            <point key="canvasLocation" x="641" y="339"/>
+        </tableViewCell>
+    </objects>
+</document>
