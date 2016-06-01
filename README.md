@@ -10,4 +10,5 @@ The parser extracts what it considers to be “necessary” from
 specific sections and maps the information to simpler
 objects for the viewer to display.
 
-![alt text](https://github.com/alexandern/ccdaviewer/screenshots/image1.png "Screenshot")
+![alt text](https://github.com/alexandern/ccdaviewer/blob/master/screenshots/screen1.png "Screenshot")
+            
