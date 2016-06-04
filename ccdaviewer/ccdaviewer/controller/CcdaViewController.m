@@ -140,7 +140,11 @@
                                                  inView:self
                                                 handler:^(NSUInteger section) {
                                                     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:section];
-                                                    [[self tableView] scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+                                                    
+                                                    id<HL7SummaryProtocol> summary = [self getSummaryForSection:section];
+                                                    if ([[summary allEntries] count]>0) {
+                                                        [[self tableView] scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+                                                    }
                                                 }];
 }
 
