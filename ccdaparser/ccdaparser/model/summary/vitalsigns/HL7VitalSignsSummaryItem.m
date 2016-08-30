@@ -62,18 +62,20 @@
     if (![[self unit] length]) {
         return [self unit];
     }
-    if ([[self unit] isEqualToString:@"[lb_av]"]) {
+    if ([[self unit] isEqualToString:@"[lb_av]"] || [[self unit] isEqualToString:@"lbs"]) {
         return @"pounds";
     } else if ([[self unit] isEqualToString:@"[oz_av]"]) {
         return @"ounces";
     } else if ([[self unit] isEqualToString:@"g"]) {
         return @"grams";
+    } else if ([[self unit] isEqualToString:@"[in_us]"] || [[self unit] isEqualToString:@"in"]) {
+        return @"inches";
     } else {
         return [self unit];
     }
 }
 
-#pragma mark -
+#pragma mark NSCopying
 - (id)copyWithZone:(nullable NSZone *)zone
 {
     HL7VitalSignsSummaryItem *clone = [[HL7VitalSignsSummaryItem allocWithZone:zone] init];
@@ -84,7 +86,7 @@
     return clone;
 }
 
-#pragma mark -
+#pragma mark NSCoding
 - (id)initWithCoder:(NSCoder *)decoder
 {
     if (self = [super init]) {

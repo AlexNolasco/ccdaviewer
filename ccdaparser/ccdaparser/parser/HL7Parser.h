@@ -23,13 +23,12 @@
 
 
 #import <Foundation/Foundation.h>
+#import "HL7SectionInfo.h"
+#import "HL7SummaryInfo.h"
 @class HL7CCDSummary;
-@class HL7SectionInfo;
 
 @interface HL7Parser : NSObject
-
 - (HL7CCDSummary *_Nonnull)parseXMLNSData:(NSData *_Nonnull)data templates:(NSSet<NSString *> *_Nullable)templateIds withEncoding:(NSString *_Nonnull)encoding error:(NSError *_Nonnull *_Nonnull)error;
-- (NSArray<HL7SectionInfo *> *_Nonnull)getSections;
-/** templateId => summary class name*/
-- (NSDictionary<NSString *, NSString *> *_Nonnull)getSummaries;
+- (NSArraySectionInfo *_Nonnull)sections;
+- (NSDictionaryTemplateIdToSummaryClassName *_Nonnull)summaries; // templateId => summary class name
 @end

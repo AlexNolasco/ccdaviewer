@@ -70,7 +70,7 @@ static NSString *ccdaSectionNibCellName = @"SectionCell";
 - (HL7SectionInfoMutableArray *)ccdaSections
 {
     if (_ccdaSections == nil) {
-        _ccdaSections = [[HL7SectionInfoMutableArray alloc] initWithArray:[[SectionStorage sharedIntance] getAll]];
+        _ccdaSections = [[HL7SectionInfoMutableArray alloc] initWithArray:[[SectionStorage sharedIntance] sections]];
     }
     return _ccdaSections;
 }
@@ -107,10 +107,9 @@ static NSString *ccdaSectionNibCellName = @"SectionCell";
     SectionViewCell *sectionCell;
     switch (indexPath.section) {
         case 0:
-
             sectionCell = [tableView dequeueReusableCellWithIdentifier:ccdaSectionNibCellName];
-            [sectionCell setTag:indexPath.row];
-            [sectionCell setDelegate:self];
+            sectionCell.tag = indexPath.row;
+            sectionCell.delegate = self;
             return sectionCell;
         default:
             return nil;
@@ -121,8 +120,8 @@ static NSString *ccdaSectionNibCellName = @"SectionCell";
 {
     if (indexPath.section == 0) {
         HL7SectionInfo *sectionInfo = [[self ccdaSections] objectAtIndex:indexPath.row];
-        [[cell nameLabel] setText:[sectionInfo name]];
-        [cell setEnabled:[sectionInfo enabled]];
+        cell.nameLabel.text = sectionInfo.name;
+        cell.enabled = sectionInfo.enabled;
     }
 }
 
@@ -169,7 +168,7 @@ static NSString *ccdaSectionNibCellName = @"SectionCell";
 - (void)didToggleSectionViewCell:(BOOL)newValue tag:(NSInteger)tag
 {
     HL7SectionInfo *sectionInfo = [[self ccdaSections] objectAtIndex:tag];
-    [sectionInfo setEnabled:newValue];
+    sectionInfo.enabled = newValue;
     [[SectionStorage sharedIntance] save:[self ccdaSections]];
 }
 @end

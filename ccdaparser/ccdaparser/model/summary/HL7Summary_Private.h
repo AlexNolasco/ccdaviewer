@@ -26,6 +26,7 @@
 @class HL7TemplateElement;
 
 @interface HL7Summary ()
-@property (nullable, nonatomic, strong) NSString *sectionTitle;
+@property (nullable, nonatomic, copy) NSString *title;
+@property (nullable, nonatomic, copy) NSString *templateId;
 - (instancetype _Nonnull)initWithElement:(HL7TemplateElement *_Nullable)element;
 @end

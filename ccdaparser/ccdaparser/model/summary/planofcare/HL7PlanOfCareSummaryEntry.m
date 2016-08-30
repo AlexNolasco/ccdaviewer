@@ -29,7 +29,7 @@
 - (id)copyWithZone:(nullable NSZone *)zone
 {
     HL7PlanOfCareSummaryEntry *clone = [super copyWithZone:zone];
-    [clone setDate:[[self date] copy]];
+    [clone setDate:[self date]];
     [clone setMoodCode:[self moodCode]];
     return clone;
 }

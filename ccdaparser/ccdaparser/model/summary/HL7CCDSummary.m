@@ -25,6 +25,7 @@
 #import "HL7CCDSummary.h"
 #import "HL7CCDSummary_Private.h"
 #import "HL7PatientSummary.h"
+#import "HL7ClinicalDocumentSummary.h"
 
 @implementation HL7CCDSummary
 
@@ -36,8 +37,7 @@
     return _mutableSummaries;
 }
 
-
-- (NSDictionary<NSString *, id<HL7SummaryProtocol>> *)summaries
+- (NSDictionaryTemplateIdToSummary *)summaries
 {
     return [[self mutableSummaries] copy];
 }
@@ -62,23 +62,32 @@
     return result;
 }
 
-#pragma mark -
+- (HL7ClinicalDocumentSummary *)document
+{
+    if (_document == nil) {
+        _document = [HL7ClinicalDocumentSummary new];
+    }
+    return _document;
+}
+
+#pragma mark NSCopying
 - (id)copyWithZone:(nullable NSZone *)zone
 {
     HL7CCDSummary *clone = [[self class] allocWithZone:zone];
 
     [clone setMutableSummaries:[[NSMutableDictionary alloc] initWithDictionary:[self summaries] copyItems:YES]];
     [clone setPatient:[[self patient] copy]];
+    [clone setDocument:[[self document] copy]];
     return clone;
 }
 
-#pragma mark -
+#pragma mark NSCoding
 - (id)initWithCoder:(NSCoder *)decoder
 {
     if ((self = [super init])) {
-
         [self setMutableSummaries:[decoder decodeObjectForKey:@"summaries"]];
         [self setPatient:[decoder decodeObjectForKey:@"patient"]];
+        [self setDocument:[decoder decodeObjectForKey:@"document"]];
     }
     return self;
 }
@@ -87,5 +96,6 @@
 {
     [encoder encodeObject:[self mutableSummaries] forKey:@"summaries"];
     [encoder encodeObject:[self patient] forKey:@"patient"];
+    [encoder encodeObject:[self document] forKey:@"document"];
 }
 @end

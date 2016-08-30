@@ -27,4 +27,6 @@
 @interface HL7GuardianSummary : NSObject <NSCopying, NSCoding>
 - (NSString *_Nullable)fullName;
 - (NSString *_Nullable)phoneNumber;
+- (NSString *_Nullable)relationship;
+- (NSArray<NSString*>* _Nonnull)phoneNumbers;
 @end

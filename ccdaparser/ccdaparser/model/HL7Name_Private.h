@@ -26,10 +26,10 @@
 #import "HL7Enums.h"
 
 @interface HL7Name ()
-@property (nullable, nonatomic, strong) NSString *title;
-@property (nullable, nonatomic, strong) NSString *suffix;
-@property (nullable, nonatomic, strong) NSString *prefix;
-@property (nullable, nonatomic, strong) NSString *name;
-@property (nullable, nonatomic, strong) NSString *use;
+@property (nullable, nonatomic, copy) NSString *title;
+@property (nullable, nonatomic, copy) NSString *suffix;
+@property (nullable, nonatomic, copy) NSString *prefix;
+@property (nullable, nonatomic, copy) NSString *name;
+@property (nullable, nonatomic, copy) NSString *use;
 - (nonnull instancetype)initWithFirstName:(nullable NSString *)firstName lastName:(nullable NSString *)lastName;
 @end

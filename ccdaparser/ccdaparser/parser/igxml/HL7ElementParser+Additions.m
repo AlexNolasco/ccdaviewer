@@ -81,7 +81,7 @@
 
 + (nonnull HL7Code *)codeFromReader:(nonnull IGXMLReader *)reader withElementName:(nonnull NSString *)name withBlock:(void (^_Nullable)(IGXMLReader *_Nonnull))blk
 {
-    __block HL7Code *result = [[HL7Code alloc] init];
+    __block HL7Code *result = [HL7Code new];
 
     [HL7ElementParser iterate:reader
         untilEndOfElementName:name
@@ -94,6 +94,19 @@
                            [result setOriginalTextElement:[self originalTextFromReader:reader]];
                        } else if (blk != nil && ([node type] == IGXMLReaderNodeTypeElement || [node type] == IGXMLReaderNodeTypeText)) {
                            blk(reader);
+                       }
+                   }];
+    return result;
+}
+
++ (nonnull HL7CodeSystem *)codeSystemFromReader:(nonnull IGXMLReader *)reader withElementName:(nonnull NSString *)name
+{
+    __block HL7CodeSystem *result = [HL7CodeSystem new];
+    [HL7ElementParser iterate:reader
+        untilEndOfElementName:name
+                   usingBlock:^(IGXMLReader *node, BOOL *stop) {
+                       if ([node isStartOfElementWithName:name] && [reader hasAttributes]) {
+                           [self fillCodeElement:result withReader:reader];
                        }
                    }];
     return result;
@@ -132,6 +145,11 @@
 + (nonnull HL7Code *)methodCodeFromReader:(nonnull IGXMLReader *)reader
 {
     return [self codeFromReader:reader withElementName:HL7ElementMethodCode];
+}
+
++ (nonnull HL7Code *)confidentialityCodeFromReader:(nonnull IGXMLReader *)reader
+{
+    return [self codeFromReader:reader withElementName:HL7ElementClinicalDocumentConfidentialityCode];
 }
 
 + (nonnull HL7DoseQuantity *)doseFromCodeReader:(nonnull IGXMLReader *)reader

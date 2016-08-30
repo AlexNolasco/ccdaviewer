@@ -73,7 +73,7 @@
 
     // assert
     XCTAssertNotNil(summary);
-    XCTAssertTrue([[summary sectionTitle] isEqualToString:@"Instructions"]);
+    XCTAssertTrue([[summary title] isEqualToString:@"Instructions"]);
     XCTAssertEqual([[summary allEntries] count], 2);
     entry = [summary allEntries][0];
     XCTAssertTrue([[entry narrative] isEqualToString:@"diet and exercise counseling provided during visit"]);

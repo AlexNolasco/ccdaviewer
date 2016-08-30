@@ -67,7 +67,6 @@
 
 - (BOOL)parse:(ParserContext *)context error:(NSError *__autoreleasing *)error
 {
-
     HL7PatientRole *patientRole = [[[context hl7ccd] clinicalDocument] patientRole];
     ParserPlan *parserPlan = [self createParsePlan:context HL7Element:patientRole error:error];
 

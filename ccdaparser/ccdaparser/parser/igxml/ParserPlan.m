@@ -91,10 +91,8 @@
 
         if (element != nil) {
             [array addObject:@[ blk, element ]];
-            //[_plans setObject:@[blk, element] forKey:name];
         } else {
             [array addObject:@[ blk, [NSNull null] ]];
-            //[_plans setObject:@[blk, [NSNull null]] forKey:name];
         }
     }
 }

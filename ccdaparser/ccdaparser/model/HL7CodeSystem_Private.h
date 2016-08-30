@@ -25,10 +25,10 @@
 #import "HL7CodeSystem.h"
 
 @interface HL7CodeSystem ()
-@property (nullable, nonatomic, strong) NSString *code;
-@property (nullable, nonatomic, strong) NSString *codeSystem;
-@property (nullable, nonatomic, strong) NSString *codeSystemName;
-@property (nullable, nonatomic, strong) NSString *displayName;
+@property (nullable, nonatomic, copy) NSString *code;
+@property (nullable, nonatomic, copy) NSString *codeSystem;
+@property (nullable, nonatomic, copy) NSString *codeSystemName;
+@property (nullable, nonatomic, copy) NSString *displayName;
 - (instancetype _Nonnull)initWithCodeSystem:(HL7CodeSystem *_Nullable)code;
 
 @end

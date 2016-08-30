@@ -26,7 +26,7 @@
 @class HL7Section;
 
 @interface HL7Entry : HL7Element
-@property (nullable, nonatomic, strong) NSString *typeCode;
+@property (nullable, nonatomic, copy) NSString *typeCode;
 @property (nullable, nonatomic, weak) HL7Section *parentSection;
 - (instancetype _Nonnull)initWithTypeCode:(NSString *_Nullable)typeCode;
 @end

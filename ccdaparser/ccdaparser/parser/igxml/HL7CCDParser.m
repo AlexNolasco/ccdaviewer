@@ -46,10 +46,10 @@
     return _sectionMapper;
 }
 
-- (void)didFinishParsing:(NSError **)error
+- (void)didFinishParsingWithError:(NSError **)error
 {
-    if ([[self delegate] respondsToSelector:@selector(didFinishParsing:)]) {
-        [[self delegate] didFinishParsing:error];
+    if ([[self delegate] respondsToSelector:@selector(didFinishParsingWithError:)]) {
+        [[self delegate] didFinishParsingWithError:error];
     }
 }
 
@@ -69,15 +69,14 @@
     [documentParser parse:context error:&elementParserError];
     if (error && elementParserError != nil) {
         *error = elementParserError;
-        [self didFinishParsing:error];
+        [self didFinishParsingWithError:error];
         return NO;
     }
 
     if ([[reader errors] count] > 0 && error) {
-
         *error = [NSError errorWithDomain:@"com.coladapp.hl7parser" code:HL7CCDParserErrorParserFailed userInfo:@{ NSLocalizedDescriptionKey : LOCALIZED_STRING(@"error.parsing"), @"errors" : [reader errors] }];
     }
-    [self didFinishParsing:error];
+    [self didFinishParsingWithError:error];
     return YES;
 }
 

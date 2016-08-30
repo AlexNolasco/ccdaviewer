@@ -63,7 +63,7 @@
     HL7SectionMapper *mapper = [[HL7SectionMapper alloc] init];
 
     // execute
-    NSMutableDictionary *parsers = [mapper mappers];
+    NSMutableDictionary *parsers = [mapper parsers];
 
     // assert
     XCTAssertNotNil(parsers);

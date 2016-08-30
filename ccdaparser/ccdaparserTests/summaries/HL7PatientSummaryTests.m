@@ -61,7 +61,7 @@
     NSLog(@"parsing %@", templateId);
 }
 
-- (void)didFinishParsing:(NSError **)error
+- (void)didFinishParsingWithError:(NSError **)error
 {
     NSLog(@"finished");
 }
@@ -115,12 +115,13 @@
     // assert
     XCTAssertNotNil(summary);
     XCTAssertFalse([summary isEmpty]);
-    XCTAssertNotNil([summary name]);
-    XCTAssertNotNil([summary names]);
-    XCTAssertEqual([[summary names] count], 1);
-    XCTAssertTrue([[[summary name] first] isEqualToString:@"Eve"]);
-    XCTAssertTrue([[[summary name] last] isEqualToString:@"Betterhalf"]);
-    XCTAssertTrue([[[summary name] use] isEqualToString:@"L"]);
+    XCTAssertNotNil(summary.name);
+    XCTAssertNotNil(summary.names);
+    XCTAssertEqual([summary.names count], 1);
+    XCTAssertTrue([summary.name.first isEqualToString:@"Eve"]);
+    XCTAssertTrue([summary.name.first isEqualToString:@"Eve"]);
+    XCTAssertTrue([summary.name.last isEqualToString:@"Betterhalf"]);
+    XCTAssertTrue([summary.name.use isEqualToString:@"L"]);
     XCTAssertNil([[[[[summary names] objectAtIndex:0] given] objectAtIndex:0] qualifier]);
     XCTAssertTrue([[[[[[summary names] objectAtIndex:0] family] objectAtIndex:0] qualifier] isEqualToString:@"SP"]);
     XCTAssertEqual([[summary telecoms] count], 1);
@@ -134,9 +135,12 @@
     XCTAssertEqual([[guardian telecoms] count], 1);
     XCTAssertTrue([[[guardian code] code] isEqualToString:@"POWATT"]);
     XCTAssertTrue([[[[[[summary guardians] objectAtIndex:0] telecoms] objectAtIndex:0] value] isEqualToString:@"tel:+1(555)555-2008"]);
-    XCTAssertEqual([summary maritalStatusCode], HL7MaritalStatusCodeMarried);
-    XCTAssertTrue([[summary ethnicGroup] isEqualToString:@"Not Hispanic or Latino"]);
-    XCTAssertTrue([[summary phoneNumber] isEqualToString:@"+1(555)555-2003"]);
+    XCTAssertEqual(summary.maritalStatusCode, HL7MaritalStatusCodeMarried);
+    XCTAssertTrue([summary.ethnicGroup isEqualToString:@"Not Hispanic or Latino"]);
+    XCTAssertTrue([summary.phoneNumber isEqualToString:@"+1(555)555-2003"]);
+    XCTAssertTrue([summary.race isEqualToString:@"White"]);
+    XCTAssertTrue([summary.religiousAffiliation isEqualToString:@"Christian (non-Catholic, non-specific)"]);
+    XCTAssertTrue([summary.preferredLanguage isEqualToString:@"Spanish"]);
     XCTAssertNil([summary emailAddress]);
 }
 @end

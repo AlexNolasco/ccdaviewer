@@ -52,24 +52,19 @@
     return _templateId;
 }
 
-//- (NSString *) narrative
-//{
-//    return [[self codeSummary] displayName];
-//}
-
-#pragma mark -
+#pragma mark NSCopying
 - (id)copyWithZone:(nullable NSZone *)zone
 {
     HL7SocialHistorySummaryEntry *clone = [[HL7SocialHistorySummaryEntry allocWithZone:zone] init];
     [clone setDateRange:[[self dateRange] copy]];
     [clone setCodeSummary:[[self codeSummary] copy]];
-    [clone setQuantityNarrative:[[self quantityNarrative] copy]];
+    [clone setQuantityNarrative:[self quantityNarrative]];
     [clone setDataType:[self dataType]];
     [clone setTemplateId:[self templateId]];
     return clone;
 }
 
-#pragma mark -
+#pragma mark NSCoding
 - (id)initWithCoder:(NSCoder *)decoder
 {
     if (self = [super initWithCoder:decoder]) {

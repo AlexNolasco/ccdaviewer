@@ -26,10 +26,7 @@
 @class HL7CodeSummary;
 @class HL7ChiefComplainSection;
 
-
 @interface HL7ChiefComplainSummary ()
-
 @property (nonnull, nonatomic, strong) NSMutableArray<HL7ChiefComplainSummaryEntry *> *entries;
 - (instancetype _Nonnull)initWithChiefComplainSection:(HL7ChiefComplainSection *_Nonnull)section;
-
 @end

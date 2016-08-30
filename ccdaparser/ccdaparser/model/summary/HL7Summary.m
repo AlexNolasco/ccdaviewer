@@ -24,14 +24,19 @@
 
 #import "HL7Summary_Private.h"
 #import "HL7TemplateElement.h"
+#import "HL7SummaryEntry.h"
 
 @implementation HL7Summary
 
 - (instancetype _Nonnull)initWithElement:(HL7TemplateElement *_Nullable)element
 {
     if ((self = [super init])) {
-        if (element != nil) {
-            [self setSectionTitle:[[element title] copy]];
+        if ([[element title] length]) {
+            [self setTitle:[element title]];
+        }
+
+        if ([[element firstTemplateId] length]) {
+            [self setTemplateId:[element firstTemplateId]];
         }
     }
     return self;
@@ -47,27 +52,43 @@
     return [[self allEntries] count] == 0;
 }
 
-#pragma mark -
+#pragma mark HL7SummaryProtocol
+- (HL7SummaryEntryArray *_Nullable)searchByString:(NSString *_Nullable)text
+{
+    // default implementation
+    HL7SummaryEntryMutableArray *result = [[HL7SummaryEntryMutableArray alloc] initWithCapacity:2];
+    [[self allEntries] enumerateObjectsUsingBlock:^(__kindof HL7SummaryEntry *entry, NSUInteger idx, BOOL *stop) {
+        NSRange range = [[entry narrative] rangeOfString:text options:NSCaseInsensitiveSearch];
+        if ([[entry narrative] length] && range.location != NSNotFound) {
+            [result addObject:entry];
+        }
+    }];
+    return [result copy];
+}
+
+#pragma mark NSCopying
 - (id)copyWithZone:(nullable NSZone *)zone
 {
     HL7Summary *clone = [[HL7Summary allocWithZone:zone] init];
-    [clone setSectionTitle:[[self sectionTitle] copy]];
+    [clone setTitle:[self title]];
     return clone;
 }
 
-#pragma mark -
+#pragma mark NSCoding
 - (id)initWithCoder:(NSCoder *)decoder
 {
     if (self = [super init]) {
-        [self setSectionTitle:[decoder decodeObjectForKey:@"sectionTitle"]];
+        [self setTitle:[decoder decodeObjectForKey:@"sectionTitle"]];
+        [self setTemplateId:[decoder decodeObjectForKey:@"templateId"]];
     }
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)encoder
 {
-    if ([self sectionTitle] != nil) {
-        [encoder encodeObject:[self sectionTitle] forKey:@"sectionTitle"];
+    if ([[self title] length]) {
+        [encoder encodeObject:[self title] forKey:@"sectionTitle"];
+        [encoder encodeObject:[self title] forKey:@"templateId"];
     }
 }
 @end

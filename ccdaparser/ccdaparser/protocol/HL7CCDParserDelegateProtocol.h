@@ -30,5 +30,5 @@
 
 @optional
 - (void)willParseSection:(NSString *)templateId;
-- (void)didFinishParsing:(NSError **)error;
+- (void)didFinishParsingWithError:(NSError **)error;
 @end

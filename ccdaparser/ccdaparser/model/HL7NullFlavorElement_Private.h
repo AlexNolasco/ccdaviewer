@@ -25,8 +25,6 @@
 #import "HL7NullFlavorElement.h"
 
 @interface HL7NullFlavorElement ()
-@property (nullable, nonatomic, strong) NSString *nullFlavor;
-//- (HL7NullFlavor)hl7NullFlavor;
-//+ (HL7NullFlavor)hl7NullFlavorFromString:(NSString *_Nullable)nullFlavor;
+@property (nullable, nonatomic, copy) NSString *nullFlavor;
 - (instancetype _Nonnull)initWithFlavorElement:(HL7NullFlavorElement *_Nullable)nullFlavorElement;
 @end

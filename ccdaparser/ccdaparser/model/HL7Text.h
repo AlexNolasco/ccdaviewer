@@ -25,11 +25,11 @@
 #import "HL7Element.h"
 
 @interface HL7Text : HL7Element <NSCopying, NSCoding>
-@property (nonnull, nonatomic, strong) NSMutableString *text;
+@property (nonnull, nonatomic, copy) NSMutableString *text;
 @property (nonnull, nonatomic, strong) NSMutableDictionary *identifiers;
 @property (nonnull, nonatomic, strong) NSMutableArray<NSString *> *references;
-@property (nullable, nonatomic, strong) NSString *mediaType;
-@property (nonnull, nonatomic, strong) NSMutableString *innerXML;
+@property (nullable, nonatomic, copy) NSString *mediaType;
+@property (nonnull, nonatomic, copy) NSMutableString *innerXML;
 @property (nonatomic, assign) BOOL isHtml;
 
 - (void)addValue:(nonnull NSString *)value forIdentifier:(nonnull NSString *)key;

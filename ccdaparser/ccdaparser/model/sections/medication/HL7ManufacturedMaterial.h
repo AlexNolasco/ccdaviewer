@@ -28,5 +28,5 @@
 
 @interface HL7ManufacturedMaterial : HL7Element
 @property (nonatomic, nullable, strong) HL7Code *code;
-@property (nonatomic, nullable, strong) NSString *name;
+@property (nonatomic, nullable, copy) NSString *name;
 @end

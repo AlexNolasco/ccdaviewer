@@ -24,8 +24,13 @@
 
 #import <Foundation/Foundation.h>
 @class HL7SummaryEntry;
+
+typedef NSArray<__kindof HL7SummaryEntry *> HL7SummaryEntryArray;
+typedef NSMutableArray<__kindof HL7SummaryEntry *> HL7SummaryEntryMutableArray;
+
 @protocol HL7SummaryProtocol <NSObject>
-- (NSArray<__kindof HL7SummaryEntry *> *_Nonnull)allEntries;
-- (NSString *_Nullable)sectionTitle;
+- (HL7SummaryEntryArray *_Nonnull)allEntries;
+- (NSString *_Nullable)title;
+- (NSString *_Nullable)templateId;
 - (BOOL)isEmpty;
 @end

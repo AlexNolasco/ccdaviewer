@@ -27,11 +27,11 @@
 
 @interface HL7MedicationSummaryEntry ()
 @property (nullable, nonatomic, strong) HL7CodeSummary *routeCode;
-@property (nullable, nonatomic, strong) NSString *doseQuantityValue;
-@property (nullable, nonatomic, strong) NSString *doseQuantityUnit;
+@property (nullable, nonatomic, copy) NSString *doseQuantityValue;
+@property (nullable, nonatomic, copy) NSString *doseQuantityUnit;
 @property (nullable, nonatomic, strong) HL7DateRange *effectiveTime;
-@property (nullable, nonatomic, strong) NSString *periodValue;
-@property (nullable, nonatomic, strong) NSString *periodUnit;
+@property (nullable, nonatomic, copy) NSString *periodValue;
+@property (nullable, nonatomic, copy) NSString *periodUnit;
 @property (nonatomic, assign) BOOL active;
 @property (nonatomic, assign) BOOL statusIsUnknown;
 - (instancetype _Nonnull)initWithMedicationEntry:(HL7MedicationEntry *_Nonnull)medicationEntry;

@@ -32,10 +32,12 @@
 + (NSString *_Nullable)statusCodeAsString:(HL7StatusCodeCode)statusCodeCode;
 + (NSString *_Nullable)moodCodeAsString:(HL7MoodCode)moodCode;
 + (NSString *_Nullable)problemSeverityAsString:(HL7ProblemSeverityCode)problemSeverityCode;
++ (NSString *_Nullable)confidentialityAsAsString:(HL7ConfidentialityCode)confidentialityCode;
 
 + (HL7NullFlavor)hl7NullFlavorFromString:(NSString *_Nullable)nullFlavor;
 + (HL7UseAddressType)hl7AddressTypeUseFromString:(NSString *_Nullable)useCode;
 + (HL7UseNameType)hl7NameUseFromString:(NSString *_Nullable)useNameCode;
 + (HL7UseTelecomType)hl7TelecomUseFromString:(NSString *_Nullable)useTelecomCode;
 + (HL7ProblemSeverityCode)hl7ProblemSeverityCodeFromString:(NSString *_Nullable)problemSeverityCode;
++ (HL7ConfidentialityCode)hl7ConfidentialityCodeFromString:(NSString *_Nullable)confidentialityCode;
 @end

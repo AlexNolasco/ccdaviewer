@@ -1,4 +1,4 @@
-/********************************************************************************
+    /********************************************************************************
  * The MIT License (MIT)                                                        *
  *                                                                              *
  * Copyright (C) 2016 Alex Nolasco                                              *
@@ -33,6 +33,8 @@
 #import "HL7PatientRole.h"
 #import "HL7Patient.h"
 #import "HL7Name.h"
+#import "HL7LanguageCommunication.h"
+#import "HL7LanguageCommunicationParser.h"
 #import "HL7ElementParser+Additions.h"
 
 @implementation HL7PatientParser
@@ -82,12 +84,27 @@
             [element setEthnicGroupCode:[HL7ElementParser codeFromReader:node withElementName:HL7ElementEthnicGroupCode]];
         }];
 
+    // race code
+    [plan when:HL7ElementRaceCode
+        parseWithBlock:^(ParserContext *context, IGXMLReader *node, BOOL *stop) {
+            [element setRaceCode:[HL7ElementParser codeFromReader:node withElementName:HL7ElementRaceCode]];
+        }];
+    
+    // religion
+    [plan when:HL7ElementReligiousAffilition parseWithBlock:^(ParserContext *context, IGXMLReader *node, BOOL *stop) {
+        [element setReligiousAffiliationCode:[HL7ElementParser codeFromReader:node withElementName:HL7ElementReligiousAffilition]];
+    }];
+    
+    // language communication
+    [plan when:HL7ElementLanguageCommunication parseWithBlock:^(ParserContext *context, IGXMLReader *node, BOOL *stop) {
+        [[[HL7LanguageCommunicationParser alloc] init] parse:context error:error];
+    }];
+    
     return plan;
 }
 
 - (BOOL)parse:(ParserContext *)context error:(NSError *__autoreleasing *)error
 {
-
     HL7Patient *patient = [[[[context hl7ccd] clinicalDocument] patientRole] patient];
     ParserPlan *parserPlan = [self createParsePlan:context HL7Element:patient error:error];
 

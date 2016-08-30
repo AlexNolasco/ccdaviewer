@@ -36,10 +36,11 @@
 @property (nonatomic, assign) HL7ProblemSeverityCode problemSeverityCode;
 @property (nullable, nonatomic, strong) NSMutableArray<HL7AllergyReactionSummary *> *reactions;
 
-/** Low reflects the date of onset, the high reflects when the allergy was known to be resolved (generally absent) */
+//! Low reflects the date of onset, the high reflects when the allergy was known to be resolved (generally absent) */
 @property (nullable, nonatomic, strong) HL7DateRange *dateOfOnsetRange;
 
-/** Represents when the allergy was first recorded in the patient's chart */
+//! Represents when the allergy was first recorded in the patient's chart
 @property (nullable, nonatomic, strong) NSDate *dateRecorded;
-
+@property (nonatomic, assign) BOOL noKnownMedicationAllergiesFound;
+@property (nonatomic, assign) BOOL noKnownAllergiesFound;
 @end

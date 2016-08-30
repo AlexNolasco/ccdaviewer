@@ -28,10 +28,10 @@
 
 @interface HL7Addr : HL7NullFlavorElement <NSCopying>
 @property (nonnull, nonatomic, strong) NSMutableArray<NSString *> *streetAddressLines;
-@property (nullable, nonatomic, strong) NSString *city;
-@property (nullable, nonatomic, strong) NSString *state;
-@property (nullable, nonatomic, strong) NSString *postalCode;
-@property (nullable, nonatomic, strong) NSString *country;
-@property (nullable, nonatomic, strong) NSString *uses;
+@property (nullable, nonatomic, copy) NSString *city;
+@property (nullable, nonatomic, copy) NSString *state;
+@property (nullable, nonatomic, copy) NSString *postalCode;
+@property (nullable, nonatomic, copy) NSString *country;
+@property (nullable, nonatomic, copy) NSString *uses;
 - (nullable NSString *)addressLine;
 @end

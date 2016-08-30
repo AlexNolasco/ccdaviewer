@@ -273,5 +273,7 @@ typedef NS_ENUM(NSInteger, HL7ProblemSeverityCode) {
     // 399166001
     HL7ProblemSeverityCodeFatal = 6
 };
+
+typedef NS_ENUM(NSInteger, HL7ConfidentialityCode) { HL7ConfidentialityCodeUnknown = 0, HL7ConfidentialityCodeLow = 1, HL7ConfidentialityCodeModerate = 2, HL7ConfidentialityCodeNormal = 3, HL7ConfidentialityCodeRestricted = 4, HL7ConfidentialityCodeUnrestricted = 5, HL7ConfidentialityCodeVeryRestricted = 6, HL7ConfidentialityCodeBusiness = 7, HL7ConfidentialityCodeClinician = 8, HL7ConfidentialityCodeIndividual = 9 };
 @interface HL7Enumerations : NSObject
 @end

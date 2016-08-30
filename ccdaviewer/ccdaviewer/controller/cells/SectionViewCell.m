@@ -32,20 +32,6 @@
     }
 }
 
-- (void)awakeFromNib
-{
-    // Initialization code
-}
-
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
 - (void)setEnabled:(BOOL)enabled
 {
     [[self enableSwitch] setOn:enabled];

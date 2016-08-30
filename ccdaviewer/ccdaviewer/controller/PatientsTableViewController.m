@@ -22,7 +22,6 @@
  *********************************************************************************/
 
 
-#import "CcdaViewController.h"
 #import "PatientsTableViewController.h"
 #import "URLManager.h"
 #import "ThemeManager.h"
@@ -31,16 +30,16 @@
 #import "NetworkSettings.h"
 #import "UIViewController+AlertMessage.h"
 #import "UIViewController+RegisterCell.h"
-#import "PatientViewCell.h"
 #import "SectionStorage.h"
+#import "PatientViewController.h"
 #import "FHIRPatient+Extensions.h"
 #import <SVProgressHUD/SVProgressHUD.h>
 
-static NSString *patientNibCellName = @"PatientCell";
+static NSString *kPatientsTableViewControllerCell = @"PatientCell";
 
 @interface PatientsTableViewController ()
 @property (nonatomic, strong) PatientsArray *patients;
-@property (strong, nonatomic) HL7CCDSummary *ccda;
+@property (strong, nonatomic) HL7CCDSummary *ccdSummary;
 @end
 
 @implementation PatientsTableViewController
@@ -50,13 +49,10 @@ static NSString *patientNibCellName = @"PatientCell";
     [super viewDidLoad];
 
     self.clearsSelectionOnViewWillAppear = YES;
-
-    [self registerCellWithNibName:patientNibCellName forTableView:[self tableView]];
     [self setTitle:NSLocalizedString(@"Patients.Title", nil)];
 
     // overrides UI setting
-    [[self tableView] setRowHeight:UITableViewAutomaticDimension];
-    [[self tableView] setEstimatedRowHeight:44];
+    [[self tableView] setRowHeight:60.0f];
 
     [[self refreshControl] setTintColor:[ThemeManager labelColor]];
     [self makePatientsRequest];
@@ -65,7 +61,7 @@ static NSString *patientNibCellName = @"PatientCell";
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    [self setCcda:nil];
+    [self setCcdSummary:nil];
 }
 
 #pragma mark -
@@ -123,7 +119,7 @@ static NSString *patientNibCellName = @"PatientCell";
 
         [MMStopwatchARC start:@"ccda"];
         HL7CCDSummary *summary = [parser parseXMLNSData:xmlData templates:[SectionStorage activeTemplateIds] withEncoding:@"UTF-8" error:&error];
-        [self setCcda:summary];
+        [self setCcdSummary:summary];
         [MMStopwatchARC stop:@"ccda"];
         [SVProgressHUD dismiss];
 
@@ -133,7 +129,7 @@ static NSString *patientNibCellName = @"PatientCell";
     });
 }
 
-#pragma mark - Table view data source
+#pragma mark UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -147,16 +143,19 @@ static NSString *patientNibCellName = @"PatientCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PatientViewCell *cell = [tableView dequeueReusableCellWithIdentifier:patientNibCellName];
-    [cell setTag:[indexPath row]];
-    return cell;
-}
+    FHIRPatient *patient = self.patients[indexPath.row];
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(PatientViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    FHIRPatient *patient = [[self patients] objectAtIndex:[indexPath row]];
-    [cell fillWithPatient:patient];
-    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kPatientsTableViewControllerCell];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kPatientsTableViewControllerCell];
+        cell.textLabel.numberOfLines = 0;
+        cell.detailTextLabel.text = nil;
+        cell.detailTextLabel.textColor = [UIColor grayColor];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    cell.textLabel.text = patient.fullName;
+    cell.detailTextLabel.text = patient.summary;
+    return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -170,13 +169,14 @@ static NSString *patientNibCellName = @"PatientCell";
     [self makePatientsRequest];
 }
 
-#pragma mark - Segue
+#pragma mark Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"ccdaSegue"]) {
-        CcdaViewController *vc = [segue destinationViewController];
-        [vc setCcda:[self ccda]];
+        UINavigationController *navController = [segue destinationViewController];
+        PatientViewController *vc = ([navController viewControllers][0]);
+        vc.ccdSummary = self.ccdSummary;
     }
 }
 @end

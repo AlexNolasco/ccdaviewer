@@ -29,4 +29,5 @@
 + (UIColor *)labelColor;
 + (UIColor *)female;
 + (UIColor *)male;
++ (UIColor *)progressBackgroundColor;
 @end

@@ -61,7 +61,7 @@
     if ([node isStartOfElementWithName:HL7ElementEntry]) {
         [[section entries] addObject:entry]; // Add entry
     } else if ([node isStartOfElementWithName:HL7ElementEncounter]) {
-        HL7EncounterActivity *encounterActivity = [[HL7EncounterActivity alloc] init];
+        HL7EncounterActivity *encounterActivity = [HL7EncounterActivity new];
         [context setElement:encounterActivity];
 
         [[[HL7EncounterActivityParser alloc] init] parse:context error:error];

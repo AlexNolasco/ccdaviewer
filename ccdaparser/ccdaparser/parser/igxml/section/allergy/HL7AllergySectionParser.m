@@ -61,17 +61,15 @@
 
 - (void)parse:(ParserContext *)context node:(IGXMLReader *)node into:(HL7Entry *)entry error:(NSError *__autoreleasing *)error
 {
-
     HL7AllergySection *section = (HL7AllergySection *)[context section];
 
-    if ([node isStartOfElementWithName:HL7ElementEntry]) {
-        // Add entry
+    if ([node isStartOfElementWithName:HL7ElementEntry]) { // Add entry
         [[section entries] addObject:entry];
     } else if ([node isStartOfElementWithName:HL7ElementAct]) {
         // Contains exactly one [1..1] Allergy Problem Act (templateId: 2.16.840.1.113883.10.20.22.4.30)
         HL7AllergyConcernAct *allergyConcernAct = [[HL7AllergyConcernAct alloc] init];
         [context setElement:allergyConcernAct];
-        [[[HL7AllergyConcernActParser alloc] init] parse:context error:error];
+        [[HL7AllergyConcernActParser new] parse:context error:error];
         [((HL7AllergyEntry *)entry) setProblemAct:allergyConcernAct];
     }
 }

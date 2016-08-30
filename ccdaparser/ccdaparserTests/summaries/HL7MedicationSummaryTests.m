@@ -72,7 +72,7 @@
 
     // assert
     XCTAssertNotNil(summary);
-    XCTAssertTrue([[summary sectionTitle] isEqualToString:@"Medications"]);
+    XCTAssertTrue([[summary title] isEqualToString:@"Medications"]);
     XCTAssertEqual([[summary allEntries] count], 0);
 }
 
@@ -92,7 +92,7 @@
 
     // assert
     XCTAssertNotNil(summary);
-    XCTAssertTrue([[summary sectionTitle] isEqualToString:@"MEDICATIONS"]);
+    XCTAssertTrue([[summary title] isEqualToString:@"MEDICATIONS"]);
     XCTAssertEqual([[summary allEntries] count], 2);
     summaryEntry = [summary allEntries][0];
     XCTAssertTrue([[summaryEntry narrative] isEqualToString:@"Proventil 0.09 MG/ACTUAT inhalant solution"]);

@@ -27,6 +27,7 @@
 
 @class HL7Addr;
 @class HL7Code;
+@class HL7CodeSystem;
 @class HL7Translation;
 @class HL7Telecom;
 @class HL7Name;
@@ -46,6 +47,7 @@
 
 /** parser extensions */
 @interface HL7ElementParser (Additions)
++ (nonnull HL7CodeSystem *)codeSystemFromReader:(nonnull IGXMLReader *)reader withElementName:(nonnull NSString *)name;
 + (nonnull HL7Code *)codeFromReader:(nonnull IGXMLReader *)reader withElementName:(nonnull NSString *)name withBlock:(void (^_Nullable)(IGXMLReader *_Nonnull))blk;
 + (nonnull HL7Code *)codeFromReader:(nonnull IGXMLReader *)reader withElementName:(nonnull NSString *)name;
 + (nonnull HL7Code *)codeFromReader:(nonnull IGXMLReader *)reader;
@@ -54,6 +56,7 @@
 + (nonnull HL7Code *)targetSiteCodeFromReader:(nonnull IGXMLReader *)reader;
 + (nonnull HL7Code *)priorityCodeFromReader:(nonnull IGXMLReader *)reader;
 + (nonnull HL7Code *)methodCodeFromReader:(nonnull IGXMLReader *)reader;
++ (nonnull HL7Code *)confidentialityCodeFromReader:(nonnull IGXMLReader *)reader;
 + (nonnull HL7DoseQuantity *)doseFromCodeReader:(nonnull IGXMLReader *)reader;
 + (nonnull HL7InterpretationCode *)interpretationCodeFromReader:(nonnull IGXMLReader *)reader;
 + (nonnull HL7Translation *)translationFromReader:(nonnull IGXMLReader *)reader;

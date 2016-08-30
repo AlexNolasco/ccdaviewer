@@ -29,7 +29,7 @@
 @interface HL7SocialHistorySummaryEntry ()
 @property (nullable, nonatomic, strong) HL7CodeSummary *codeSummary;
 @property (nullable, nonatomic, strong) HL7DateRange *dateRange;
-@property (nullable, nonatomic, strong) NSString *quantityNarrative;
-@property (nullable, nonatomic, strong) NSString *templateId;
+@property (nullable, nonatomic, copy) NSString *quantityNarrative;
+@property (nullable, nonatomic, copy) NSString *templateId;
 @property (assign, nonatomic) HL7XSIType dataType;
 @end

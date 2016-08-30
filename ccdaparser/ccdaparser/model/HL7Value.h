@@ -27,10 +27,10 @@
 @class HL7PhysicalQuantityInterval;
 
 @interface HL7Value : HL7Code <NSCopying, NSCoding>
-@property (nullable, nonatomic, strong) NSString *type;
-@property (nullable, nonatomic, strong) NSString *value;
-@property (nullable, nonatomic, strong) NSString *unit;
-@property (nullable, nonatomic, strong) NSString *text;
+@property (nullable, nonatomic, copy) NSString *type;
+@property (nullable, nonatomic, copy) NSString *value;
+@property (nullable, nonatomic, copy) NSString *unit;
+@property (nullable, nonatomic, copy) NSString *text;
 @property (nullable, nonatomic, strong) HL7PhysicalQuantityInterval *low;
 @property (nullable, nonatomic, strong) HL7PhysicalQuantityInterval *high;
 - (HL7XSIType)xsiType;

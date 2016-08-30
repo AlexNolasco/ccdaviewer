@@ -31,7 +31,7 @@
     return _narrative;
 }
 
-#pragma mark -
+#pragma mark NSCopying
 - (id)copyWithZone:(nullable NSZone *)zone
 {
     HL7SummaryEntry *clone = [[HL7SummaryEntry allocWithZone:zone] init];
@@ -39,7 +39,7 @@
     return clone;
 }
 
-#pragma mark -
+#pragma mark NSCoding
 - (id)initWithCoder:(NSCoder *)decoder
 {
     if (self = [super init]) {

@@ -66,22 +66,22 @@
     if ([node isStartOfElementWithName:HL7ElementEntry]) {
         [[section entries] addObject:entry]; // Add entry
     } else if ([node isStartOfElementWithName:HL7ElementProcedure]) {
-        HL7ProcedureActivityProcedure *procedure = [[HL7ProcedureActivityProcedure alloc] init];
+        HL7ProcedureActivityProcedure *procedure = [HL7ProcedureActivityProcedure new];
         [context setElement:procedure];
 
-        [[[HL7ProcedureActivityProcedureParser alloc] init] parse:context error:error];
+        [[HL7ProcedureActivityProcedureParser new] parse:context error:error];
         [((HL7ProcedureEntry *)entry) setProcedure:procedure];
     } else if ([node isStartOfElementWithName:HL7ElementObservation]) {
-        HL7ProcedureActivityObservation *observation = [[HL7ProcedureActivityObservation alloc] init];
+        HL7ProcedureActivityObservation *observation = [HL7ProcedureActivityObservation new];
         [context setElement:observation];
 
-        [[[HL7ProcedureObservationParser alloc] init] parse:context error:error];
+        [[HL7ProcedureObservationParser new] parse:context error:error];
         [((HL7ProcedureEntry *)entry) setObservation:observation];
     } else if ([node isStartOfElementWithName:HL7ElementAct]) {
-        HL7ProcedureActivityAct *act = [[HL7ProcedureActivityAct alloc] init];
+        HL7ProcedureActivityAct *act = [HL7ProcedureActivityAct new];
         [context setElement:act];
 
-        [[[HL7ProcedureActivityActParser alloc] init] parse:context error:error];
+        [[HL7ProcedureActivityActParser new] parse:context error:error];
         [((HL7ProcedureEntry *)entry) setAct:act];
     }
 }

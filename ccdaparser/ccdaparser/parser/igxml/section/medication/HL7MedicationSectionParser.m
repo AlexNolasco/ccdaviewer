@@ -62,8 +62,8 @@
         [[section entries] addObject:entry]; // Add entry
     } else if ([node isStartOfElementWithName:HL7ElementSubstanceAdministration]) {
 
-        HL7SubstanceAdministration *substanceAdministration = [[HL7SubstanceAdministration alloc] init];
-        HL7MedicationSubstanceAdministrationParser *substanceAdministrationParser = [[HL7MedicationSubstanceAdministrationParser alloc] init];
+        HL7SubstanceAdministration *substanceAdministration = [HL7SubstanceAdministration new];
+        HL7MedicationSubstanceAdministrationParser *substanceAdministrationParser = [HL7MedicationSubstanceAdministrationParser new];
 
         [context setElement:substanceAdministration];
         [substanceAdministrationParser parse:context error:error];

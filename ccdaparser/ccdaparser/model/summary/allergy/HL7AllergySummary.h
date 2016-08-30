@@ -29,4 +29,5 @@
 @property (nonatomic, readonly) BOOL noKnownAllergiesFound;
 @property (nonatomic, readonly) BOOL noKnownMedicationAllergiesFound;
 - (NSArray<HL7AllergySummaryEntry *> *)allEntries;
+- (NSInteger)countOfActualEntries;
 @end

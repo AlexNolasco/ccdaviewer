@@ -26,5 +26,6 @@
 
 @interface HL7CCDSummary ()
 @property (nullable, nonatomic, strong) HL7PatientSummary *patient;
+@property (nullable, nonatomic, strong) HL7ClinicalDocumentSummary *document;
 @property (nonnull, nonatomic, strong) NSMutableDictionary<NSString *, id<HL7SummaryProtocol>> *mutableSummaries;
 @end

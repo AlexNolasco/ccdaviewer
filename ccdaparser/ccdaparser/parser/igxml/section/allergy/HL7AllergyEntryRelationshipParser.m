@@ -50,7 +50,7 @@
         parseWithBlock:^(ParserContext *context, IGXMLReader *node, BOOL *stop) {
             HL7AllergyObservation *allergyObsevation = [[HL7AllergyObservation alloc] init];
             [context setElement:allergyObsevation];
-            [[[HL7AllergyObservationParser alloc] init] parse:context error:error];
+            [[HL7AllergyObservationParser new] parse:context error:error];
             [entryRelationship addChildElement:allergyObsevation];
         }];
 
@@ -59,7 +59,7 @@
         parseWithBlock:^(ParserContext *context, IGXMLReader *node, BOOL *stop) {
             HL7Act *act = [[HL7Act alloc] init];
             [context setElement:act];
-            [[[HL7ActParser alloc] init] parse:context error:error];
+            [[HL7ActParser new] parse:context error:error];
             [entryRelationship addChildElement:act];
         }];
     return plan;

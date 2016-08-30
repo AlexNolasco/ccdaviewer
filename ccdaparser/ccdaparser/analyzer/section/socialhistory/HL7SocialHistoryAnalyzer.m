@@ -65,7 +65,7 @@
             formatted = [value value];
         }
 
-        [entry setQuantityNarrative:[formatted copy]];
+        [entry setQuantityNarrative:formatted];
     } else if (dataType == HL7XSITypeCodedConcept) {
         // e.g. <value xsi:type="CD" code="..." displayName="Moderate cigarette smoker, 10-19/day" codeSystem="2.16.840.1.113883.6.96"/>
 

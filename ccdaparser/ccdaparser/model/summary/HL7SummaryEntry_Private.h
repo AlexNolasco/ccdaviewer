@@ -25,5 +25,5 @@
 #import "HL7SummaryEntry.h"
 
 @interface HL7SummaryEntry ()
-@property (nullable, nonatomic, strong) NSString *narrative;
+@property (nullable, nonatomic, copy) NSString *narrative;
 @end

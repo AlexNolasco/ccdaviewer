@@ -24,7 +24,7 @@
 
 #import "NetworkManager.h"
 #import "UIKit/UIKit.h"
-static const NSTimeInterval kDefaultTimeoutInSeconds = 5.0;
+static const NSTimeInterval kDefaultTimeoutInSeconds = 15.0;
 
 NSString *const HttpMimeHeaderContentType = @"Content-Type";
 

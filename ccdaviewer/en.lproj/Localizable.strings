@@ -1,10 +1,26 @@
-/* 
-  Localizable.strings
-  ccdaviewer
+/********************************************************************************
+ * The MIT License (MIT)                                                        *
+ *                                                                              *
+ * Copyright (C) 2016 Alex Nolasco                                              *
+ *                                                                              *
+ *Permission is hereby granted, free of charge, to any person obtaining a copy  *
+ *of this software and associated documentation files (the "Software"), to deal *
+ *in the Software without restriction, including without limitation the rights  *
+ *to use, copy, modify, merge, publish, distribute, sublicense, and/or sell     *
+ *copies of the Software, and to permit persons to whom the Software is         *
+ *furnished to do so, subject to the following conditions:                      *
+ *The above copyright notice and this permission notice shall be included in    *
+ *all copies or substantial portions of the Software.                           *
+ *                                                                              *
+ *THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR    *
+ *IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,      *
+ *FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE   *
+ *AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER        *
+ *LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, *
+ *OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN     *
+ *THE SOFTWARE.                                                                 *
+ *********************************************************************************/
 
-  Created by alexander nolasco on 5/8/16.
-  Copyright © 2016 coladapp.com. All rights reserved.
-*/
 "Common.Edit" = "Edit";
 "Common.Arrange" = "Arrange";
 "Common.Save" = "Save";
@@ -12,6 +28,10 @@
 "Common.OK" = "OK";
 "Common.Error" = "An error has occurred";
 "Common.UnknownName" = "Unknown";
+"Common.NoData" = "--";
+"Common.Close" = "Close";
+"Common.Pounds" = "Pounds";
+"Common.Feet" = "Feet";
 "Patient.NoInformation" = "No additional information";
 "Sections.Title" = "Sections";
 "Settings.Title" = "Settings";
@@ -20,20 +40,59 @@
 "NetworkSettings.About" = "CCDAViewer is a native iOS application for viewing CCDA summaries.  It was built as part of the HL7 tool challenge  to encourage the development of HL7 tools.";
 
 "SummaryPatientInfo.MarriageStatus" = "Marriage status: %@";
+"SummaryPatientInfo.DocumentDateUnknown" = "Document date unknown";
 "SummaryAllergy.NoAllergies" = "Patient has no allergies";
 "SummaryAllergy.NoKnownAllergies" = "Patient has no known allergies";
+"SummaryAllergy.NoMedicalAllergies" = "Patient has no medical allergies";
 "SummaryAllergy.NoAdditionalInformation" = "Allergy information ";
 "SummaryAllergy.PatientHasAllergies" = "Patient has %ld allergie(s)";
 "SummaryAllergy.ReactionAndOther" = "%@. +%ld other reaction(s)";
+"SummaryAllergy.DateOfOnset" = "Started: %@";
+"SummaryAllergy.DateOfOnsetStartAndEnd" = "Started: %@ / Resolved: %@";
+"SummaryAllergy.DateOfOnsetUnknown" = "Unknown date of onset";
 
 "SummaryAllergy.NoKnownMedicationAllergies" = "Patient is not allergic to medications";
-"SummaryPatient.Legend" = "%@, %@ years old %@";
+"SummaryPatient.Legend" = "%@, %@ years old";
+"SummaryPatient.Legend.Age" = "%@ years old";
 "SummaryPatient.LegendEmpty" = "No additional information";
 "SummaryMedication.DoseInformationNotAvailable" = "No dose information";
 "SummaryMedication.Active" = "Active";
 "SummaryMedication.Inactive" = "Inactive";
 
+"SummarySocialHistory.NoDateRange" = "No Date Range";
+"SummaryProblem.DateOfOnsetUnknown" = "Unknown date of onset";
+"SummaryResults.NoDate" = "No Date";
+"SummaryResults.Entries" = "%ld item(s)";
+
 "SectionsActionSheet.Cancel" = "Cancel";
 
-"Loading.Patients" = "Loading patient list..";
+"Loading.Patients" = "Loading list..";
 "Loading.Ccda" = "Loading patient data..";
+"PatientViewController.Entries" = "%ld entries";
+"PatientViewController.Entry" = "1 entry";
+"PatientViewController.NoEntries" = "No entries";
+
+"%d days ago" = "%d days ago";
+"%d hours ago" = "%d hours ago";
+"%d minutes ago" = "%d minutes ago";
+"%d months ago" = "%d months ago";
+"%d seconds ago" = "%d seconds ago";
+"%d weeks ago" = "%d weeks ago";
+"%d years ago" = "%d years ago";
+"A minute ago" = "A minute ago";
+"An hour ago" = "An hour ago";
+"Just now" = "Just now";
+"Last month" = "Last month";
+"Last week" = "Last week";
+"Last year" = "Last year";
+"Yesterday" = "Yesterday";
+"1 year ago" = "1 year ago";
+"1 month ago" = "1 month ago";
+"1 week ago" = "1 week ago";
+"1 day ago" = "1 day ago";
+"This morning" = "This morning";
+"This afternoon" = "This afternoon";
+"Today" = "Today";
+"This week" = "This week";
+"This month" = "This month";
+"This year" = "This year";

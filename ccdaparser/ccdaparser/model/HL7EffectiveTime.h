@@ -31,7 +31,7 @@
 @property (nonnull, nonatomic, strong) HL7EffectiveTimeElement *low;
 @property (nonnull, nonatomic, strong) HL7EffectiveTimeElement *high;
 @property (nullable, nonatomic, strong) HL7Period *period;
-@property (nullable, nonatomic, strong) NSString *type;
+@property (nullable, nonatomic, copy) NSString *type;
 @property (nonatomic, assign, readonly) HL7XSITimeInterval xsiTimeInterval;
 - (NSString *_Nullable)valueTimeOrLowElementString;
 - (NSDate *_Nullable)valueTimeOrLowElementNSDate;

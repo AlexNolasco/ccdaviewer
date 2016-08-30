@@ -28,22 +28,22 @@
 NSString *const SectionsKey = @"sections";
 
 @implementation SectionStorage
-- (HL7SectionInfoArray *)getAll
+- (HL7SectionInfoArray *)sections
 {
     NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:SectionsKey];
-    HL7SectionInfoArray *arrayOfSections;
+    HL7SectionInfoArray *sections;
 
     if (data != nil) {
-        arrayOfSections = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+        sections = [NSKeyedUnarchiver unarchiveObjectWithData:data];
     } else {
-        arrayOfSections = [[[HL7Parser alloc] init] getSections];
+        sections = [[[HL7Parser alloc] init] sections];
     }
-    return arrayOfSections;
+    return sections;
 }
 
-- (HL7SectionInfoArray *)getAllActive
+- (HL7SectionInfoArray *)activeSections
 {
-    HL7SectionInfoMutableArray *all = [[HL7SectionInfoMutableArray alloc] initWithArray:[self getAll]];
+    HL7SectionInfoMutableArray *all = [[HL7SectionInfoMutableArray alloc] initWithArray:[self sections]];
     HL7SectionInfoMutableArray *result = [[HL7SectionInfoMutableArray alloc] initWithCapacity:[all count]];
 
     for (HL7SectionInfo *section in all) {
@@ -54,14 +54,14 @@ NSString *const SectionsKey = @"sections";
     return [result copy];
 }
 
-+ (HL7SectionInfoArray *)activeSections
++ (HL7SectionInfoArray *)allActiveSections
 {
-    return [[SectionStorage sharedIntance] getAllActive];
+    return [[SectionStorage sharedIntance] activeSections];
 }
 
 + (HL7SectionInfoArray *)activeSectionsFilteredBySummary:(HL7CCDSummary *)ccdSummary
 {
-    HL7SectionInfoArray *allActive = [[SectionStorage sharedIntance] getAllActive];
+    HL7SectionInfoArray *allActive = [[SectionStorage sharedIntance] activeSections];
     HL7SectionInfoMutableArray *result = [[HL7SectionInfoMutableArray alloc] initWithCapacity:[allActive count]];
 
     [allActive enumerateObjectsUsingBlock:^(HL7SectionInfo *_Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
@@ -86,10 +86,10 @@ NSString *const SectionsKey = @"sections";
 
 + (NSSet<NSString *> *)activeTemplateIds
 {
-    HL7SectionInfoArray *activeSections = [SectionStorage activeSections];
+    HL7SectionInfoArray *activeSections = [SectionStorage allActiveSections];
     NSMutableSet *templates = [[NSMutableSet alloc] initWithCapacity:[activeSections count]];
 
-    for (HL7SectionInfo *info in [SectionStorage activeSections]) {
+    for (HL7SectionInfo *info in [SectionStorage allActiveSections]) {
         [templates addObject:[info templateId]];
     }
     return [templates copy];

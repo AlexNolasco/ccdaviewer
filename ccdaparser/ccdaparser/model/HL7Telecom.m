@@ -90,7 +90,7 @@ NSString *const HTTPS_PREFIX = @"https://";
     return NO;
 }
 
-#pragma mark -
+#pragma mark NSCopying
 - (id)copyWithZone:(nullable NSZone *)zone
 {
     HL7Telecom *clone = [super copyWithZone:zone];
@@ -99,7 +99,7 @@ NSString *const HTTPS_PREFIX = @"https://";
     return clone;
 }
 
-#pragma mark -
+#pragma mark NSCoding
 - (id)initWithCoder:(NSCoder *)decoder
 {
     if ((self = [super initWithCoder:decoder])) {

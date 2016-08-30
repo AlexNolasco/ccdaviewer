@@ -26,8 +26,8 @@
 #import "HL7ElementSectionParserProtocol.h"
 
 @interface HL7SectionInfo ()
-@property (nullable, nonatomic, strong) NSString *templateId;
-@property (nullable, nonatomic, strong) NSString *name;
+@property (nullable, nonatomic, copy) NSString *templateId;
+@property (nullable, nonatomic, copy) NSString *name;
 
 - (instancetype _Nonnull)initWithSectionParser:(id<HL7ElementSectionParserProtocol> _Nonnull)sectionParser;
 @end

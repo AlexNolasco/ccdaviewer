@@ -48,10 +48,6 @@
 
 - (HL7VitalSignsSummaryEntry *)mostRecentEntry
 {
-    //    NSArray *unsorted = [self entries];
-    //    NSArray *sortdesc = @[[NSSortDescriptor sortDescriptorWithKey:@"organizerEffectiveTime" ascending:NO] ];
-    //
-    //    NSArray *sortedDescending = [unsorted sortedArrayUsingDescriptors:sortdesc];
     return [[self allEntries] firstObject];
 }
 
