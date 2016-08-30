@@ -42,16 +42,5 @@
         view.backgroundColor = [UIColor whiteColor];
         view;
     });
-    //    [self addHorizontalLine];
 }
-
-//- (void) addHorizontalLine
-//{
-//    UIView *horizontalLine = [[UIView alloc]initWithFrame:CGRectMake(0, self.frame.size.height,  self.frame.size.width, 5)];
-//    horizontalLine.backgroundColor = [UIColor blackColor];
-//    horizontalLine.translatesAutoresizingMaskIntoConstraints = NO;
-//    [self addSubview:horizontalLine];
-//
-//    [horizontalLine pinEdges:JRTViewPinBottomEdge | JRTViewPinRightEdge | JRTViewPinLeftEdge toSameEdgesOfView:self];
-//}
 @end
