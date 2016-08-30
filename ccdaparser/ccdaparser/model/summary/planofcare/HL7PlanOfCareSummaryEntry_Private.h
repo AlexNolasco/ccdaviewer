@@ -25,6 +25,6 @@
 #import "HL7PlanOfCareSummaryEntry.h"
 
 @interface HL7PlanOfCareSummaryEntry ()
-@property (nullable, nonatomic, strong) NSDate *date;
+@property (nullable, nonatomic, copy) NSDate *date;
 @property (nonatomic, assign) HL7MoodCode moodCode;
 @end

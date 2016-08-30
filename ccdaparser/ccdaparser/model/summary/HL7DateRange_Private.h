@@ -26,9 +26,9 @@
 @class HL7EffectiveTime;
 
 @interface HL7DateRange ()
-@property (nullable, nonatomic, strong) NSDate *start;
-@property (nullable, nonatomic, strong) NSDate *end;
-@property (nullable, nonatomic, strong) NSString *nullFlavor;
+@property (nullable, nonatomic, copy) NSDate *start;
+@property (nullable, nonatomic, copy) NSDate *end;
+@property (nullable, nonatomic, copy) NSString *nullFlavor;
 - (instancetype _Nonnull)initWithStart:(NSDate *_Nullable)start end:(NSDate *_Nullable)end;
 - (instancetype _Nonnull)initWithEffectiveTime:(HL7EffectiveTime *_Nullable)effectiveTime;
 + (instancetype _Nonnull)dateRangeWithEffectiveTime:(HL7EffectiveTime *_Nullable)effectiveTime;

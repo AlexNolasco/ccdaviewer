@@ -25,6 +25,6 @@
 #import "HL7Element.h"
 
 @interface HL7DoseQuantity : HL7Element
-@property (nullable, nonatomic, strong) NSString *value;
-@property (nullable, nonatomic, strong) NSString *unit;
+@property (nullable, nonatomic, copy) NSString *value;
+@property (nullable, nonatomic, copy) NSString *unit;
 @end

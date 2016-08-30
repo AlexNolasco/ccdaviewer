@@ -25,8 +25,6 @@
 #import "HL7ProcedureSummaryEntry.h"
 @class HL7ProcedureEntry;
 @interface HL7ProcedureSummaryEntry ()
-@property (nullable, nonatomic, strong) NSDate *date;
-@property (nullable, nonatomic, strong) NSString *dateAsString;
+@property (nullable, nonatomic, copy) NSDate *date;
 - (instancetype _Nonnull)initWithProcedureEntry:(HL7ProcedureEntry *_Nonnull)procedureEntry;
-
 @end

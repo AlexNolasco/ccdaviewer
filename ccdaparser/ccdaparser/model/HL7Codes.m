@@ -53,3 +53,7 @@ NSString *const CODELOINCSmokingStatus = @"72166-2";
 
 // 2.16.840.1.113883.5.83
 NSString *const CODEObservationInterpretation = @"2.16.840.1.113883.5.83";
+
+
+NSString *const CODEHL7Role = @"2.16.840.1.113883.5.111";
+NSString *const CODEHL7ReligiousAffiliation = @"2.16.840.1.113883.5.1076";

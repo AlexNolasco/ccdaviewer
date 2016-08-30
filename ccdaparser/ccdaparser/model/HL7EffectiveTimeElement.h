@@ -25,6 +25,6 @@
 #import "HL7NullFlavorElement.h"
 
 @interface HL7EffectiveTimeElement : HL7NullFlavorElement <NSCopying, NSCoding>
-@property (nullable, nonatomic, strong) NSString *value;
+@property (nullable, nonatomic, copy) NSString *value;
 - (NSDate *_Nullable)valueAsNSDate;
 @end

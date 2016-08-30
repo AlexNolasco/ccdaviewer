@@ -27,7 +27,7 @@
 @class HL7Code;
 
 @interface HL7CodeSummary ()
-@property (nullable, nonatomic, strong) NSString *resolvedName;
+@property (nullable, nonatomic, copy) NSString *resolvedName;
 - (instancetype _Nonnull)initWithValue:(HL7Value *_Nonnull)value;
 - (instancetype _Nonnull)initWithCode:(HL7Code *_Nullable)code;
 + (instancetype _Nonnull)codeFromCode:(HL7Code *_Nullable)code;

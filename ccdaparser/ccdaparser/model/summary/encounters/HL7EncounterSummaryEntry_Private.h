@@ -26,6 +26,6 @@
 @class HL7EncounterEntry;
 
 @interface HL7EncounterSummaryEntry ()
-@property (nullable, nonatomic, strong) NSDate *date;
+@property (nullable, nonatomic, copy) NSDate *date;
 - (instancetype _Nonnull)initWithEntry:(HL7EncounterEntry *_Nonnull)entry;
 @end

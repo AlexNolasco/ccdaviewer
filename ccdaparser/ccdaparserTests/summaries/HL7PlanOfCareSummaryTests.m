@@ -74,7 +74,7 @@
 
     // assert
     XCTAssertNotNil(summary);
-    XCTAssertTrue([[summary sectionTitle] isEqualToString:@"Plan of Care"]);
+    XCTAssertTrue([[summary title] isEqualToString:@"Plan of Care"]);
     XCTAssertEqual([[summary allEntries] count], 3);
     summaryEntry = [summary allEntries][0];
     XCTAssertEqual([summaryEntry moodCode], HL7MoodCodeGol);
@@ -107,7 +107,7 @@
 
     // assert
     XCTAssertNotNil(summary);
-    XCTAssertTrue([[summary sectionTitle] isEqualToString:@"CARE PLAN"]);
+    XCTAssertTrue([[summary title] isEqualToString:@"CARE PLAN"]);
     XCTAssertEqual([[summary allEntries] count], 3);
 }
 

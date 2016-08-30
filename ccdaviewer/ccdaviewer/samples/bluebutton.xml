@@ -416,6 +416,7 @@
          </associatedPerson>
       </associatedEntity>
    </participant>
+   
    <participant typeCode="IND">
       <associatedEntity classCode="PRS">
          <code
@@ -443,6 +444,7 @@
          </associatedPerson>
       </associatedEntity>
    </participant>
+   
    <documentationOf
       typeCode="DOC">
       <serviceEvent

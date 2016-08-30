@@ -28,7 +28,7 @@
 @class HL7PlayingEntity;
 
 @interface HL7Participant : HL7TemplateElement <NSCopying>
-@property (nullable, nonatomic, strong) NSString *typeCode;
+@property (nullable, nonatomic, copy) NSString *typeCode;
 @property (nonnull, nonatomic, strong) HL7ParticipantRole *participantRole;
 
 /** returns the code found in participantRole / playingEntity / Code */

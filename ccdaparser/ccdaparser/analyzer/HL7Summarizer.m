@@ -22,14 +22,20 @@
  *********************************************************************************/
 
 
-#import "HL7Summarizer.h"
-#import "NSArray+Subclasses.h"
-#import "HL7SectionSummaryProtocol.h"
 #import "HL7Analyzer.h"
+#import "HL7CCD.h"
 #import "HL7CCDSummary_Private.h"
+#import "HL7ClinicalDocument.h"
+#import "HL7ClinicalDocumentSummary.h"
+#import "HL7Code.h"
+#import "HL7CodeSummary_Private.h"
+#import "HL7EffectiveTime.h"
+#import "HL7Enums_Private.h"
 #import "HL7PatientRoleAnalyzer.h"
+#import "HL7SectionSummaryProtocol.h"
+#import "HL7Summarizer.h"
 #import "HL7SummaryInfo.h"
-#import "HL7CCDSummary_Private.h"
+#import "NSArray+Subclasses.h"
 
 @implementation HL7Summarizer
 
@@ -39,15 +45,15 @@
 
     for (Class classInfo in [NSArray classGetSubclasses:[HL7Analyzer class]]) {
         id<HL7SectionSummaryProtocol> summaryClass = [classInfo new];
-        if ([[summaryClass templateId] length] > 0) {
+        if ([[summaryClass templateId] length]) {
             [result setObject:summaryClass forKey:[summaryClass templateId]];
         }
     }
     return result;
 }
 
-/** templateId => HL7Summary */
-- (NSDictionary<NSString *, NSString *> *_Nonnull)getDictionaryOfSummaryImplementations;
+// templateId => HL7Summary
+- (NSDictionaryTemplateIdToSummaryClassName *_Nonnull)getDictionaryOfSummaryImplementations;
 {
     NSMutableDictionary *analyzers = [self getAllAnalyzers];
     NSMutableDictionary *result = [[NSMutableDictionary alloc] initWithCapacity:[analyzers count]];
@@ -59,12 +65,22 @@
     return [result copy];
 }
 
+//! TODO: could be a summarizer class for document summarys
+- (void)populateDocumentSummary:(HL7CCD *)ccda intoSummary:(HL7CCDSummary *)summary
+{
+    summary.document.title = ccda.clinicalDocument.title;
+    summary.document.code = [HL7CodeSummary codeFromCode:ccda.clinicalDocument.code];
+    summary.document.effectiveTime = [ccda.clinicalDocument.effectiveTime valueTimeOrLowElementNSDate];
+    summary.document.confidentialityCode = [HL7Enumerations hl7ConfidentialityCodeFromString:ccda.clinicalDocument.confidentialityCode.code];
+}
+
 - (HL7CCDSummary *)summarizeCcda:(HL7CCD *)ccda templates:(NSSet<NSString *> *)templates
 {
     if (!ccda) {
         return nil;
     }
 
+    // Filter analyzers
     NSMutableDictionary *analyzers = [self getAllAnalyzers]; // => HL7Analyzer*
     if (![analyzers count]) {
         return nil;
@@ -80,17 +96,25 @@
     }];
     [analyzers removeObjectsForKeys:remove];
 
+    // Create summary
     HL7CCDSummary *summary = [HL7CCDSummary new];
 
-    [analyzers enumerateKeysAndObjectsUsingBlock:^(id _Nonnull key, id _Nonnull obj, BOOL *_Nonnull stop) {
-        id<HL7SummaryProtocol> analysis = [obj analyzeSectionUsingDocument:ccda];
+    // Document section summary
+    [self populateDocumentSummary:ccda intoSummary:summary];
+
+    // Sections/Patient
+    [analyzers enumerateKeysAndObjectsUsingBlock:^(id templateId, id analyzer, BOOL *stop) {
+
+        id<HL7SummaryProtocol> analysis = [analyzer analyzeSectionUsingDocument:ccda];
 
         if ([analysis isKindOfClass:[HL7PatientSummary class]]) {
             [summary setPatient:(HL7PatientSummary *)analysis];
         } else {
-            [[summary mutableSummaries] setObject:analysis forKey:key];
+            [[summary mutableSummaries] setObject:analysis forKey:templateId];
         }
     }];
+
+
     return summary;
 }
 @end

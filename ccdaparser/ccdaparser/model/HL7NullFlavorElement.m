@@ -46,7 +46,7 @@
     return [HL7Enumerations hl7NullFlavorFromString:[self nullFlavor]];
 }
 
-#pragma mark -
+#pragma mark NSCopying
 - (id)copyWithZone:(NSZone *)zone
 {
     HL7NullFlavorElement *clone = [[[self class] allocWithZone:zone] init];
@@ -54,7 +54,7 @@
     return clone;
 }
 
-#pragma mark -
+#pragma mark NSCoding
 - (id)initWithCoder:(NSCoder *)decoder
 {
     if (self = [super init]) {

@@ -26,8 +26,8 @@
 #import "HL7Enums.h"
 
 @interface HL7Telecom ()
-@property (nullable, nonatomic, strong) NSString *value;
-@property (nullable, nonatomic, strong) NSString *uses;
+@property (nullable, nonatomic, copy) NSString *value;
+@property (nullable, nonatomic, copy) NSString *uses;
 @property (nonatomic, assign, readonly) HL7TelecomType telecomType;
 - (NSString *_Nullable)valueWithoutPrefix;
 - (BOOL)usedFor:(HL7UseTelecomType)purpose;

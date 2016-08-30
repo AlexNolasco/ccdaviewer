@@ -29,9 +29,9 @@
 
 @interface HL7VitalSignsSummaryItem ()
 @property (nullable, nonatomic, strong) HL7CodeSummary *codeSummary;
-@property (nullable, nonatomic, strong) NSDate *effectiveTime;
-@property (nullable, nonatomic, strong) NSString *unit;
-@property (nullable, nonatomic, strong) NSString *value;
+@property (nullable, nonatomic, copy) NSDate *effectiveTime;
+@property (nullable, nonatomic, copy) NSString *unit;
+@property (nullable, nonatomic, copy) NSString *value;
 - (instancetype _Nonnull)initWithObservation:(HL7VitalSignsObservation *_Nonnull)observation;
 + (instancetype _Nullable)createWithObservation:(HL7VitalSignsObservation *_Nonnull)observation;
 @end

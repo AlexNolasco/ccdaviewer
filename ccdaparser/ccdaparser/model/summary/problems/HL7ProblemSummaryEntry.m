@@ -42,7 +42,6 @@
 - (instancetype _Nonnull)initWithAct:(HL7ProblemConcernAct *_Nonnull)act
 {
     if ((self = [super init])) {
-
         [self setStatusCode:[[act statusCode] statusCode]];
         [self setConcernAuthored:[HL7DateRange dateRangeWithEffectiveTime:[act effectiveTime]]];
 
@@ -51,19 +50,14 @@
             [self setBiologicalOnSet:[HL7DateRange dateRangeWithEffectiveTime:[observation effectiveTime]]];
 
             if ([[[observation value] displayName] length]) {
-
-
-                if ([[observation value] isCodeSystem:CodeSystemIdSNOMEDCT] && [[observation value] originalTextElement]) { // just letting us know it's a "problem"
-                    // NSString * referenceWithoutHash = [[[observation value] originalTextElement] referenceValueWithoutHash];
-
+                if ([[observation value] isCodeSystem:CodeSystemIdSNOMEDCT] && [[observation value] originalTextElement]) {
                     NSString *possibleValue = [[[observation value] originalTextElement] getActualValueFromTextElement:[[observation parentSection] text]];
 
                     [self setNarrative:possibleValue];
                 }
 
-
                 if (![[self narrative] length]) {
-                    [self setNarrative:[[[observation value] displayName] copy]];
+                    [self setNarrative:[[observation value] displayName]];
                 }
             }
         }
@@ -76,18 +70,18 @@
     return [HL7Enumerations statusCodeAsString:[self statusCode]];
 }
 
-#pragma mark -
+#pragma mark NSCopying
 - (id)copyWithZone:(nullable NSZone *)zone
 {
     HL7ProblemSummaryEntry *clone = [super copyWithZone:zone];
     [clone setBiologicalOnSet:[[self biologicalOnSet] copy]];
     [clone setConcernAuthored:[[self concernAuthored] copy]];
     [clone setStatusCode:[self statusCode]];
-    [clone setStatus:[[self status] copy]];
+    [clone setStatus:[self status]];
     return clone;
 }
 
-#pragma mark -
+#pragma mark NSCoding
 - (id)initWithCoder:(NSCoder *)decoder
 {
     if (self = [super initWithCoder:decoder]) {

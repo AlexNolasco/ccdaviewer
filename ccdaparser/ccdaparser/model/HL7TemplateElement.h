@@ -32,9 +32,9 @@
 @class HL7Section;
 
 @interface HL7TemplateElement : HL7Element <NSCopying, NSCoding, HL7ClassMoodProtocol>
-@property (nullable, nonatomic, strong) NSString *classCode;
-@property (nullable, nonatomic, strong) NSString *moodCode;
-@property (nullable, nonatomic, strong) NSMutableString *title;
+@property (nullable, nonatomic, copy) NSString *classCode;
+@property (nullable, nonatomic, copy) NSString *moodCode;
+@property (nullable, nonatomic, copy) NSMutableString *title;
 @property (nullable, nonatomic, strong) HL7Code *code;
 @property (nullable, nonatomic, strong) HL7Identifier *identifier;
 @property (nullable, nonatomic, strong) HL7StatusCode *statusCode;

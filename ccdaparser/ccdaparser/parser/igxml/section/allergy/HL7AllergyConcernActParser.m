@@ -45,9 +45,9 @@
     // Entry relationship
     [parserPlan when:HL7ElementEntryRelationship
         parseWithBlock:^(ParserContext *context, IGXMLReader *node, BOOL *stop) {
-            HL7EntryRelationship *entryRelationship = [[HL7EntryRelationship alloc] init];
+            HL7EntryRelationship *entryRelationship = [HL7EntryRelationship new];
             [context setElement:entryRelationship];
-            [[[HL7AllergyEntryRelationshipParser alloc] init] parse:context error:error];
+            [[HL7AllergyEntryRelationshipParser new] parse:context error:error];
             [[allergyConcernAct descendants] addObject:entryRelationship];
         }];
     return parserPlan;

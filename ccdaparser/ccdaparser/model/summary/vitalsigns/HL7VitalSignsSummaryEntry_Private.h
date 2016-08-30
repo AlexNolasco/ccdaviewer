@@ -35,7 +35,7 @@
 @property (nullable, nonatomic, strong) HL7VitalSignsSummaryItem *weight;
 @property (nullable, nonatomic, strong) HL7VitalSignsSummaryItem *height;
 @property (nullable, nonatomic, strong) HL7VitalSignsSummaryItem *temperature;
-@property (nullable, nonatomic, strong) NSDate *organizerEffetiveTime;
-@property (nullable, nonatomic, strong) NSString *organizerEffectiveTimeHumanized;
+@property (nullable, nonatomic, copy) NSDate *organizerEffetiveTime;
+@property (nullable, nonatomic, copy) NSString *organizerEffectiveTimeHumanized;
 - (instancetype _Nonnull)initWithOrganizer:(HL7VitalSignsOrganizer *_Nonnull)organizer sectionText:(HL7Text *_Nullable)sectionText;
 @end

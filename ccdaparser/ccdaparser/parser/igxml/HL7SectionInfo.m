@@ -26,12 +26,11 @@
 
 @implementation HL7SectionInfo
 
-
 - (instancetype _Nonnull)initWithSectionParser:(id<HL7ElementSectionParserProtocol> _Nonnull)sectionParser
 {
     if ((self = [super init])) {
-        [self setTemplateId:[[sectionParser templateId] copy]];
-        [self setName:[[sectionParser name] copy]];
+        [self setTemplateId:[sectionParser templateId]];
+        [self setName:[sectionParser name]];
         [self setEnabled:[sectionParser enabled]];
     }
     return self;
@@ -42,7 +41,13 @@
     return [NSString stringWithFormat:@"name: %@ templateId: %@ enabled: %d", [self name], [self templateId], [self enabled]];
 }
 
-#pragma mark -
+
+- (NSString *_Nullable)nameAsKey
+{
+    return [self.name stringByReplacingOccurrencesOfString:@" " withString:@""];
+}
+
+#pragma mark NSCopying
 - (id)copyWithZone:(nullable NSZone *)zone
 {
     HL7SectionInfo *clone = [[HL7SectionInfo allocWithZone:zone] init];
@@ -52,7 +57,7 @@
     return clone;
 }
 
-#pragma mark -
+#pragma mark NSCoding
 - (id)initWithCoder:(NSCoder *)decoder
 {
     if (self = [super init]) {

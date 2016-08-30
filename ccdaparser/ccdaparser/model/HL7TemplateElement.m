@@ -58,23 +58,23 @@
 }
 
 
-#pragma mark -
+#pragma mark NSCopying
 - (id)copyWithZone:(nullable NSZone *)zone
 {
     HL7TemplateElement *clone = [[self class] allocWithZone:zone];
     [clone setTitle:[[self title] copy]];
     [clone setCode:[[self code] copyWithZone:zone]];
-    [clone setTemplateIds:[[NSMutableArray allocWithZone:zone] initWithArray:[self templateIds] copyItems:YES]];
     [clone setIdentifier:[[self identifier] copyWithZone:zone]];
-    [clone setClassCode:[[self classCode] copy]];
+    [clone setTemplateIds:[[NSMutableArray allocWithZone:zone] initWithArray:[self templateIds] copyItems:YES]];
     [clone setMoodCode:[[self moodCode] copy]];
+    [clone setClassCode:[[self classCode] copy]];
     return clone;
 }
 
-#pragma mark -
+#pragma mark NSCoding
 - (id)initWithCoder:(NSCoder *)decoder
 {
-    if (self = [super init]) {
+    if ((self = [super init])) {
         [self setTitle:[decoder decodeObjectForKey:@"title"]];
         [self setCode:[decoder decodeObjectForKey:@"code"]];
         [self setIdentifier:[decoder decodeObjectForKey:@"identifier"]];

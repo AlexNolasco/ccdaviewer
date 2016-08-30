@@ -58,7 +58,7 @@
     HL7VitalSignsSummary *summary = [[HL7VitalSignsSummary alloc] initWithElement:vitalSignsSection];
 
     if (vitalSignsSection != nil) {
-        [summary setSectionTitle:[[vitalSignsSection title] copy]];
+        [summary setTitle:[[vitalSignsSection title] copy]];
         if (vitalSignsSection != nil) {
             for (HL7VitalSignsEntry *entry in [vitalSignsSection entries]) {
                 HL7VitalSignsSummaryEntry *summaryEntry = [self createVitalSignsSummaryEntryFromOrganizer:[entry organizer] sectionText:[vitalSignsSection text]];

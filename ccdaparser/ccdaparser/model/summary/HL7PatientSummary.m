@@ -24,10 +24,12 @@
 
 #import "HL7PatientSummary.h"
 #import "HL7PatientSummary_Private.h"
+#import "HL7GuardianSummary_Private.h"
 #import "HL7Name.h"
 #import "HL7PatientRole.h"
 #import "HL7Patient.h"
 #import "HL7Code.h"
+#import "HL7Codes.h"
 #import "HelperMacros.h"
 #import "HL7Telecom_Private.h"
 #import "HelperMacros.h"
@@ -45,11 +47,25 @@
         }
         [self setNames:[[NSArray alloc] initWithArray:[patient names] copyItems:YES]];
         [self setGenderCode:[patient gender]];
-        [self setGuardians:[[NSArray alloc] initWithArray:[patient guardians] copyItems:YES]];
         [self setMaritalStatusCode:[patient maritalStatus]];
         [self setEthnicGroupCode:[[patient ethnicGroupCode] copy]];
+        [self setRaceCode:[[patient raceCode] copy]];
+        [self setReligiousAffiliationCode:[[patient religiousAffiliationCode] copy]];        
+        [self setPreferredLanguage:[patient preferredLanguageAsString]];
+        
+        [self setGuardians:[[NSArray alloc] initWithArray:[patient guardians] copyItems:YES]];
+        NSMutableArray<HL7GuardianSummary*>* guardians = [[NSMutableArray alloc] initWithCapacity:1];
+        [patient.guardians enumerateObjectsUsingBlock:^(HL7Guardian * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+           [guardians addObject:[[HL7GuardianSummary alloc] initWithGuardian:obj]];
+        }];
+        self.guardians = [guardians copy];
     }
     return self;
+}
+
+- (NSString *_Nullable)templateId
+{
+    return nil;
 }
 
 - (NSArray<__kindof HL7SummaryEntry *> *)allEntries
@@ -57,7 +73,7 @@
     return [NSArray new]; // technically patient role can have many patients. TODO: move to array.
 }
 
-- (NSString *_Nullable)sectionTitle
+- (NSString *_Nullable)title
 {
     return LOCALIZED_STRING(@"parser.patientRole");
 }
@@ -105,12 +121,10 @@
 
     // try mobile
     NSString *number = [self telecomByType:HL7TelecomTypeTelephone usedFor:HL7UseTelecomTypeMobileContact];
-    if (![number length]) {
-        // then home
+    if (![number length]) { // then home
         number = [self telecomByType:HL7TelecomTypeTelephone usedFor:HL7UseTelecomTypeHome];
     }
-    if (![number length]) {
-        // then emergency contact
+    if (![number length]) { // then emergency contact
         number = [self telecomByType:HL7TelecomTypeTelephone usedFor:HL7UseTelecomTypeHomePrimary];
     }
 
@@ -148,7 +162,7 @@
 - (NSString *_Nullable)fullName
 {
     if (![[self names] count]) {
-        return @"empty";
+        return nil;
     }
     return [[self name] description];
 }
@@ -171,9 +185,25 @@
     return [[self ethnicGroupCode] displayName];
 }
 
+- (NSString *_Nullable)race
+{
+    if ([self raceCode] == nil) {
+        return nil;
+    }
+    return [[self raceCode] displayName];
+}
+
+- (NSString *_Nullable)religiousAffiliation
+{
+    if ([self religiousAffiliationCode] == nil || ![[[self religiousAffiliationCode] code] isEqualToString:CODEHL7ReligiousAffiliation]) {
+    }
+    
+    return [[self religiousAffiliationCode] displayName];
+}
+
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"name: %@ age: %@ gender: %@", [[self name] description], [[self age] stringValue], [self gender]];
+    return [NSString stringWithFormat:@"name: %@ age: %@ gender: %@ religious affiliation: %@", self.name.description, self.age.stringValue, self.gender, self.religiousAffiliation];
 }
 
 - (BOOL)ageHasValue
@@ -184,7 +214,12 @@
     return NO;
 }
 
-#pragma mark -
+- (BOOL)isEmpty
+{
+    return NO;
+}
+
+#pragma mark NSCopying
 - (id)copyWithZone:(nullable NSZone *)zone
 {
     HL7PatientSummary *clone = [[HL7PatientSummary allocWithZone:zone] init];
@@ -198,12 +233,7 @@
     return clone;
 }
 
-- (BOOL)isEmpty
-{
-    return NO;
-}
-
-#pragma mark -
+#pragma mark NSCoding
 - (id)initWithCoder:(NSCoder *)decoder
 {
     if ((self = [super init])) {
@@ -215,6 +245,9 @@
         [self setMaritalStatusCode:[decoder decodeIntegerForKey:@"maritalStatusCode"]];
         [self setAge:[decoder decodeObjectForKey:@"age"]];
         [self setEthnicGroupCode:[decoder decodeObjectForKey:@"ethnicGroupCode"]];
+        [self setRaceCode:[decoder decodeObjectForKey:@"raceCode"]];
+        [self setReligiousAffiliationCode:[decoder decodeObjectForKey:@"religiousAffilication"]];
+        [self setPreferredLanguage:[decoder decodeObjectForKey:@"preferredLanguage"]];
     }
     return self;
 }
@@ -224,10 +257,13 @@
     [encoder encodeObject:[self dob] forKey:@"dob"];
     [encoder encodeObject:[self telecoms] forKey:@"telecoms"];
     [encoder encodeObject:[self names] forKey:@"names"];
-    [encoder encodeObject:[self guardians] forKey:@"guardians"];
     [encoder encodeInteger:[self genderCode] forKey:@"gender"];
+    [encoder encodeObject:[self guardians] forKey:@"guardians"];
     [encoder encodeInteger:[self maritalStatusCode] forKey:@"maritalStatusCode"];
     [encoder encodeObject:[self age] forKey:@"age"];
     [encoder encodeObject:[self ethnicGroupCode] forKey:@"ethnicGroupCode"];
+    [encoder encodeObject:[self raceCode] forKey:@"raceCode"];
+    [encoder encodeObject:[self religiousAffiliation] forKey:@"religiousAffilication"];
+    [encoder encodeObject:[self preferredLanguage] forKey:@"preferredLanguage"];
 }
 @end

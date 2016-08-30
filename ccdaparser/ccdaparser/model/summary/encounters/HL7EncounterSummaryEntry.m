@@ -56,15 +56,15 @@
     return self;
 }
 
-#pragma mark -
+#pragma mark NSCopying
 - (id)copyWithZone:(nullable NSZone *)zone
 {
     HL7EncounterSummaryEntry *clone = [super copyWithZone:zone];
-    [clone setDate:[[self date] copy]];
+    [clone setDate:[self date]];
     return clone;
 }
 
-#pragma mark -
+#pragma mark NSCoding
 - (id)initWithCoder:(NSCoder *)decoder
 {
     if (self = [super initWithCoder:decoder]) {

@@ -56,7 +56,6 @@
 
 - (void)parse:(ParserContext *)context node:(IGXMLReader *)node into:(HL7Entry *)entry error:(NSError *__autoreleasing *)error
 {
-
     HL7SocialHistorySection *section = (HL7SocialHistorySection *)[context section];
     if ([node isStartOfElementWithName:HL7ElementEntry]) {
         [[section entries] addObject:entry]; // Add entry

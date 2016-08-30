@@ -39,4 +39,9 @@
 {
     return [UIColor colorWithRed:0.64 green:0.76 blue:0.96 alpha:1.0];
 }
+
++ (UIColor *)progressBackgroundColor;
+{
+    return [UIColor colorWithRed:240 / 255 green:240 / 255 blue:240 / 255 alpha:0.1];
+}
 @end

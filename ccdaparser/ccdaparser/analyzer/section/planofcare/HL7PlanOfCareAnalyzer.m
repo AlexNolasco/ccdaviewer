@@ -46,7 +46,6 @@
 
 - (HL7PlanOfCareSummaryEntry *)createSummaryEntryFromElement:(HL7PlanOfCareEntry *)entry
 {
-
     HL7Code *code = [[entry planOfCareActivity] code];
 
     if ([[code displayName] length]) {

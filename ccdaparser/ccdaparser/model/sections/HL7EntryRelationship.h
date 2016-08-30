@@ -27,8 +27,8 @@
 @class HL7Observation;
 
 @interface HL7EntryRelationship : HL7Element <HL7ElementContainerProtocol>
-@property (nullable, nonatomic, strong) NSString *typeCode;
-@property (nullable, nonatomic, strong) NSString *inversionInd;
+@property (nullable, nonatomic, copy) NSString *typeCode;
+@property (nullable, nonatomic, copy) NSString *inversionInd;
 @property (nonnull, nonatomic, strong) NSMutableArray<__kindof HL7Element *> *descendants;
 /* false if inversionInd is null, true if inversionInd is either true or false **/
 - (BOOL)hasInversionInd;

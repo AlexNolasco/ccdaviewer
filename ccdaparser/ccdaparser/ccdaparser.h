@@ -33,9 +33,11 @@ FOUNDATION_EXPORT const unsigned char ccdaparserVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <ccdaparser/PublicHeader.h>
 
 #import <ccdaparser/HL7Parser.h>
+#import <ccdaparser/HL7SummaryInfo.h>
 #import <ccdaparser/HL7Enums.h>
 #import <ccdaparser/HL7Const.h>
 #import <ccdaparser/HL7SummaryProtocol.h>
+#import <ccdaparser/HL7SummarySearchProtocol.h>
 #import <ccdaparser/HL7Element.h>
 #import <ccdaparser/HL7NullFlavorElement.h>
 #import <ccdaparser/HL7NamePart.h>
@@ -43,6 +45,7 @@ FOUNDATION_EXPORT const unsigned char ccdaparserVersionString[];
 #import <ccdaparser/HL7NullFlavorElement.h>
 #import <ccdaparser/HL7DateRange.h>
 #import <ccdaparser/HL7CodeSystem.h>
+#import <ccdaparser/HL7LanguageCommunication.h>
 #import <ccdaparser/HL7CodeSummary.h>
 #import <ccdaparser/HL7PatientSummary.h>
 #import <ccdaparser/HL7GuardianSummary.h>
@@ -73,3 +76,4 @@ FOUNDATION_EXPORT const unsigned char ccdaparserVersionString[];
 #import <ccdaparser/HL7ProcedureSummary.h>
 #import <ccdaparser/HL7EncounterSummaryEntry.h>
 #import <ccdaparser/HL7EncounterSummary.h>
+#import <ccdaparser/HL7ClinicalDocumentSummary.h>

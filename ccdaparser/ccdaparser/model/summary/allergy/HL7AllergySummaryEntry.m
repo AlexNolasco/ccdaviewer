@@ -27,22 +27,9 @@
 #import "HL7DateRange.h"
 #import "HL7CodeSummary.h"
 #import "HL7Enums_Private.h"
+#import "NSDate+TimeAgo.h"
 
 @implementation HL7AllergySummaryEntry
-
-- (id)copyWithZone:(nullable NSZone *)zone
-{
-    HL7AllergySummaryEntry *clone = [[HL7AllergySummaryEntry allocWithZone:zone] init];
-    [clone setAllergenCode:[[self allergenCode] copyWithZone:zone]];
-    [clone setAllergenValue:[[self allergenValue] copyWithZone:zone]];
-    [clone setReactionCode:[[self reactionCode] copyWithZone:zone]];
-    [clone setStatusCode:[[self statusCode] copyWithZone:zone]];
-    [clone setSeverityCode:[[self severityCode] copyWithZone:zone]];
-    [clone setDateRecorded:[[self dateRecorded] copyWithZone:zone]];
-    [clone setDateOfOnsetRange:[[self dateOfOnsetRange] copyWithZone:zone]];
-    [clone setReactions:[[NSMutableArray allocWithZone:zone] initWithArray:[self reactions] copyItems:YES]];
-    return clone;
-}
 
 - (NSString *)allergen
 {
@@ -84,7 +71,22 @@
     return [self allergen];
 }
 
-#pragma mark -
+#pragma mark NSCopying
+- (id)copyWithZone:(nullable NSZone *)zone
+{
+    HL7AllergySummaryEntry *clone = [[HL7AllergySummaryEntry allocWithZone:zone] init];
+    [clone setAllergenCode:[[self allergenCode] copyWithZone:zone]];
+    [clone setAllergenValue:[[self allergenValue] copyWithZone:zone]];
+    [clone setReactionCode:[[self reactionCode] copyWithZone:zone]];
+    [clone setStatusCode:[[self statusCode] copyWithZone:zone]];
+    [clone setSeverityCode:[[self severityCode] copyWithZone:zone]];
+    [clone setDateRecorded:[[self dateRecorded] copyWithZone:zone]];
+    [clone setDateOfOnsetRange:[[self dateOfOnsetRange] copyWithZone:zone]];
+    [clone setReactions:[[NSMutableArray allocWithZone:zone] initWithArray:[self reactions] copyItems:YES]];
+    return clone;
+}
+
+#pragma mark NSCoding
 - (id)initWithCoder:(NSCoder *)decoder
 {
     if (self = [super init]) {

@@ -75,7 +75,7 @@
     // assert
     XCTAssertNotNil(summary);
     XCTAssertEqual([[summary allEntries] count], 1);
-    XCTAssertTrue([[summary sectionTitle] isEqualToString:@"ENCOUNTERS"]);
+    XCTAssertTrue([[summary title] isEqualToString:@"ENCOUNTERS"]);
     entry = [summary allEntries][0];
     XCTAssertTrue([[entry date] isEqualToISO8601String:@"20120806"]);
     XCTAssertTrue([[entry narrative] isEqualToString:@"Pnuemonia"]);

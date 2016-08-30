@@ -62,7 +62,7 @@
     if ([node isStartOfElementWithName:HL7ElementEntry]) {
         [[section entries] addObject:entry]; // Add entry
     } else if ([node isStartOfElementWithName:HL7ElementOrganizer]) {
-        HL7ResultOrganizer *organizer = [[HL7ResultOrganizer alloc] init];
+        HL7ResultOrganizer *organizer = [HL7ResultOrganizer new];
         [context setElement:organizer];
         [[[HL7ResultOrganizerParser alloc] init] parse:context error:error];
         [((HL7ResultEntry *)entry) setOrganizer:organizer];

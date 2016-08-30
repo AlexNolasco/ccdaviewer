@@ -27,8 +27,8 @@
 @class HL7Text;
 
 @interface HL7Observation : HL7TemplateElement <NSCopying, NSCoding>
-@property (nullable, nonatomic, strong) NSString *nullFlavor;
-@property (nullable, nonatomic, strong) NSString *negationInd;
+@property (nullable, nonatomic, copy) NSString *nullFlavor;
+@property (nullable, nonatomic, copy) NSString *negationInd;
 @property (nullable, nonatomic, strong) HL7Value *value;
 @property (nullable, nonatomic, strong) HL7Text *text;
 

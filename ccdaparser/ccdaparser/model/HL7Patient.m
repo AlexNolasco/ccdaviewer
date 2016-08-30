@@ -26,7 +26,9 @@
 #import "HL7Name.h"
 #import "HL7Code.h"
 #import "HL7CodeMapper.h"
+#import "HL7LanguageCommunication.h"
 #import "NSDate+Additions.h"
+#import "ISO639Translator.h"
 
 @implementation HL7Patient
 - (nullable NSDate *)birthday
@@ -76,8 +78,51 @@
 - (NSMutableArray *)guardians
 {
     if (_guardians == nil) {
-        _guardians = [[NSMutableArray alloc] init];
+        _guardians = [[NSMutableArray alloc] initWithCapacity:1];
     }
     return _guardians;
+}
+
+- (NSMutableArray *)languages
+{
+    if (_languages == nil) {
+        _languages = [[NSMutableArray alloc] initWithCapacity:1];
+    }
+    return _languages;
+}
+
+- (HL7LanguageCommunication *)preferredLanguage
+{
+  __block HL7LanguageCommunication * language;
+    
+    if ([self.languages count] == 0) {
+        return nil;
+    }
+    
+    if ([self.languages count] == 1) {
+        language = [self.languages firstObject];
+    }
+    else {
+        [self.languages enumerateObjectsUsingBlock:^(HL7LanguageCommunication * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+           if (obj.preferenceInd) {
+                language = obj;
+                *stop = YES;
+           }
+        }];
+        if (language == nil) {
+            language = [self.languages firstObject];
+        }
+    }
+    return language;
+}
+
+- (NSString * _Nullable)preferredLanguageAsString
+{
+    HL7LanguageCommunication * language = [self preferredLanguage];
+    
+    if (language == nil) {
+        return nil;
+    }
+    return [ISO639Translator codeToString:language.modeCode.code];
 }
 @end

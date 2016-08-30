@@ -82,7 +82,7 @@
     return [NSString stringWithFormat:@"\n%@: {\tlow=%@, high=%@}", [[self class] description], [[self low] description], [[self high] description]];
 }
 
-#pragma mark -
+#pragma mark NSCopying
 
 - (id)copyWithZone:(nullable NSZone *)zone
 {
@@ -94,7 +94,7 @@
     return clone;
 }
 
-#pragma mark -
+#pragma mark NSCoding
 - (id)initWithCoder:(NSCoder *)decoder
 {
     if (self = [super init]) {

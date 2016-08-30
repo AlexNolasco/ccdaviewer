@@ -44,7 +44,7 @@
     return result;
 }
 
-#pragma mark -
+#pragma mark NSCopying
 - (id)copyWithZone:(nullable NSZone *)zone
 {
     HL7CodeSummary *clone = [super copyWithZone:zone];
@@ -52,7 +52,7 @@
     return clone;
 }
 
-#pragma mark -
+#pragma mark NSCoding
 - (id)initWithCoder:(NSCoder *)decoder
 {
     if (self = [super initWithCoder:decoder]) {

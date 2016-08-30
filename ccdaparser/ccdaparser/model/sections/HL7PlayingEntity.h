@@ -27,8 +27,8 @@
 @class HL7Name;
 
 @interface HL7PlayingEntity : HL7Element <NSCopying>
-@property (nullable, nonatomic, strong) NSString *classCode;
-@property (nullable, nonatomic, strong) NSString *determinerCode;
+@property (nullable, nonatomic, copy) NSString *classCode;
+@property (nullable, nonatomic, copy) NSString *determinerCode;
 @property (nullable, nonatomic, strong) HL7Code *code;
 @property (nullable, nonatomic, strong) HL7Name *name;
 @end

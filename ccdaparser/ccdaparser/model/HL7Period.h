@@ -25,7 +25,7 @@
 #import "HL7Element.h"
 
 @interface HL7Period : HL7Element <NSCopying, NSCoding>
-@property (nullable, nonatomic, strong) NSString *value;
-@property (nullable, nonatomic, strong) NSString *unit;
+@property (nullable, nonatomic, copy) NSString *value;
+@property (nullable, nonatomic, copy) NSString *unit;
 - (instancetype _Nonnull)initWithValue:(NSString *_Nullable)value unit:(NSString *_Nullable)unit;
 @end

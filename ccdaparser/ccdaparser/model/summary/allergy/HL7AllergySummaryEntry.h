@@ -38,19 +38,20 @@
 - (HL7CodeSummary *_Nullable)severityCode;
 - (HL7ProblemSeverityCode)problemSeverityCode;
 
-/** Low reflects the date of onset, the high reflects when the allergy was known to be resolved (generally absent) */
-//@property (nullable, nonatomic, strong) HL7DateRange * dateOfOnsetRange;
+//! Low reflects the date of onset, the high reflects when the allergy was known to be resolved (generally absent)
 - (HL7DateRange *_Nullable)dateOfOnsetRange;
 
-/** Represents when the allergy was first recorded in the patient's chart */
-//@property (nullable, nonatomic, strong) NSDate * dateRecorded;
+//! Represents when the allergy was first recorded in the patient's chart
 - (NSDate *_Nullable)dateRecorded;
-
 - (NSMutableArray<HL7AllergyReactionSummary *> *_Nonnull)allReactions;
 - (NSString *_Nullable)allergen;
 - (NSString *_Nullable)firstReaction;
 - (NSString *_Nullable)status;
 - (NSString *_Nullable)severity;
+//! date of onset start
 - (NSDate *_Nullable)dateOfOnset;
 
+//! Entry is a no known
+- (BOOL)noKnownMedicationAllergiesFound;
+- (BOOL)noKnownAllergiesFound;
 @end

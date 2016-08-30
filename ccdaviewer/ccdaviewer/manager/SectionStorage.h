@@ -25,17 +25,15 @@
 #import <Foundation/Foundation.h>
 @class HL7SectionInfo;
 @class HL7CCDSummary;
-@class HL7CCDSummary;
 
 typedef NSMutableArray<HL7SectionInfo *> HL7SectionInfoMutableArray;
 typedef NSArray<HL7SectionInfo *> HL7SectionInfoArray;
 
 @interface SectionStorage : NSObject
 + (instancetype)sharedIntance;
-- (HL7SectionInfoArray *)getAll;
+- (HL7SectionInfoArray *)sections;
 - (void)save:(HL7SectionInfoMutableArray *)array;
-- (HL7SectionInfoArray *)getAllActive;
+- (HL7SectionInfoArray *)activeSections;
 + (NSSet<NSString *> *)activeTemplateIds;
-+ (HL7SectionInfoArray *)activeSections;
 + (HL7SectionInfoArray *)activeSectionsFilteredBySummary:(HL7CCDSummary *)ccdSummary;
 @end

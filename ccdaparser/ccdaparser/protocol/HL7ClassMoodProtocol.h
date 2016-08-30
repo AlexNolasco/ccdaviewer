@@ -25,6 +25,6 @@
 #import <Foundation/Foundation.h>
 
 @protocol HL7ClassMoodProtocol <NSObject>
-@property (nullable, nonatomic, strong) NSString *classCode;
-@property (nullable, nonatomic, strong) NSString *moodCode;
+@property (nullable, nonatomic, copy) NSString *classCode;
+@property (nullable, nonatomic, copy) NSString *moodCode;
 @end

@@ -72,24 +72,24 @@
         return;
     }
     if ([node isStartOfElementWithName:HL7ElementAct]) {
-        blk([[HL7ActParser alloc] init], [[HL7PlanOfCareActivityAct alloc] init]);
+        blk([HL7ActParser new], [HL7PlanOfCareActivityAct new]);
     } else if ([node isStartOfElementWithName:HL7ElementEncounter]) {
-        blk([[HL7PlanOfCareElementParser alloc] init], [[HL7PlanOfCareEncounter alloc] init]);
+        blk([HL7PlanOfCareElementParser new], [HL7PlanOfCareEncounter new]);
     } else if ([node isStartOfElementWithName:HL7ElementObservation]) {
-        blk([[HL7ObservationParser alloc] init], [[HL7PlanOfCareObservation alloc] init]);
+        blk([HL7ObservationParser new], [HL7PlanOfCareObservation new]);
     } else if ([node isStartOfElementWithName:HL7ElementProcedure]) {
-        blk([[HL7PlanOfCareElementParser alloc] init], [[HL7PlanOfCareProcedure alloc] init]);
+        blk([HL7PlanOfCareElementParser new], [HL7PlanOfCareProcedure new]);
     } else if ([node isStartOfElementWithName:HL7ElementSubstanceAdministration]) {
-        blk([[HL7PlanOfCareElementParser alloc] init], [[HL7PlanOfCareSubstanceAdministration alloc] init]);
+        blk([HL7PlanOfCareElementParser new], [HL7PlanOfCareSubstanceAdministration new]);
     } else if ([node isStartOfElementWithName:HL7ElementSupply]) {
-        blk([[HL7PlanOfCareElementParser alloc] init], [[HL7PlanOfCareActivitySupply alloc] init]);
+        blk([HL7PlanOfCareElementParser new], [HL7PlanOfCareActivitySupply new]);
     }
 }
 
 - (void)parse:(ParserContext *)context node:(IGXMLReader *)node into:(HL7Entry *)entry error:(NSError *__autoreleasing *)error
 {
-
     HL7PlanOfCareSection *section = (HL7PlanOfCareSection *)[context section];
+
     if ([node isStartOfElementWithName:HL7ElementEntry]) {
         _entryDepth = [node depth] + 1;
         [[section entries] addObject:entry]; // Add entry

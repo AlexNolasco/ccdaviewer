@@ -23,7 +23,7 @@
 
 
 #import "HL7SummaryProtocol.h"
+#import "HL7SummarySearchProtocol.h"
 
-@interface HL7Summary : NSObject <HL7SummaryProtocol, NSCopying, NSCoding>
-- (NSString *_Nullable)sectionTitle;
+@interface HL7Summary : NSObject <NSCopying, NSCoding, HL7SummaryProtocol, HL7SummarySearchProtocol>
 @end

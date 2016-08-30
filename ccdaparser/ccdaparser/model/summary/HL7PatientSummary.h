@@ -27,6 +27,7 @@
 #import "HL7SummaryProtocol.h"
 
 @class HL7GuardianSummary;
+@class HL7Name;
 
 @interface HL7PatientSummary : NSObject <HL7SummaryProtocol, NSCopying, NSCoding>
 - (NSDate *_Nullable)dob;
@@ -35,10 +36,15 @@
 - (NSString *_Nullable)gender;
 - (HL7AdministrativeGenderCode)genderCode;
 - (NSString *_Nullable)maritalStatus;
+- (HL7MaritalStatusCode)maritalStatusCode;
 - (NSString *_Nullable)fullName;
+- (HL7Name * _Nullable)name;
 - (NSString *_Nullable)ethnicGroup;
+- (NSString *_Nullable)race;
+- (NSString *_Nullable)religiousAffiliation;
 /** Primary home phone number or first */
 - (NSString *_Nullable)phoneNumber;
 - (NSString *_Nullable)emailAddress;
+- (NSString *_Nullable)preferredLanguage;
 - (NSArray<HL7GuardianSummary *> *_Nullable)guardians;
 @end

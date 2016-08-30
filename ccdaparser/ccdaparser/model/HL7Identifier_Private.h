@@ -25,6 +25,6 @@
 #import "HL7Identifier.h"
 
 @interface HL7Identifier ()
-@property (nullable, nonatomic, strong) NSString *extension;
-@property (nullable, nonatomic, strong) NSString *root;
+@property (nullable, nonatomic, copy) NSString *extension;
+@property (nullable, nonatomic, copy) NSString *root;
 @end

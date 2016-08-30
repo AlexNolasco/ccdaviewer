@@ -25,7 +25,7 @@
 #import "HL7NullFlavorElement_Private.h"
 
 @interface HL7PhysicalQuantityInterval : HL7NullFlavorElement <NSCopying, NSCoding>
-@property (nullable, nonatomic, strong) NSString *value;
-@property (nullable, nonatomic, strong) NSString *unit;
+@property (nullable, nonatomic, copy) NSString *value;
+@property (nullable, nonatomic, copy) NSString *unit;
 - (BOOL)hasValueAndUnit;
 @end

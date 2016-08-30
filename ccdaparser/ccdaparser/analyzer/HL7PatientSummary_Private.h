@@ -38,6 +38,9 @@
 @property (assign) HL7AdministrativeGenderCode genderCode;
 @property (assign) HL7MaritalStatusCode maritalStatusCode;
 @property (nullable, nonatomic, strong) HL7Code *ethnicGroupCode;
+@property (nullable, nonatomic, strong) HL7Code *raceCode;
+@property (nullable, nonatomic, strong) HL7Code *religiousAffiliationCode;
 @property (nullable, nonatomic, strong) NSArray<HL7GuardianSummary *> *guardians;
+@property (nullable, nonatomic, copy)  NSString *preferredLanguage;
 - (instancetype _Nonnull)initWithPatientRole:(HL7PatientRole *_Nonnull)patientRole;
 @end

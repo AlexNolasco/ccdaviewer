@@ -40,12 +40,23 @@
     return [[self entries] copy];
 }
 
+- (NSInteger)countOfActualEntries
+{
+    __block NSInteger blockResult = 0;
+    [[self entries] enumerateObjectsUsingBlock:^(HL7AllergySummaryEntry *_Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
+        if (!obj.noKnownMedicationAllergiesFound && !obj.noKnownAllergiesFound) {
+            blockResult += 1;
+        }
+    }];
+    return blockResult;
+}
+
 - (BOOL)isEmpty
 {
     return NO;
 }
 
-#pragma mark -
+#pragma mark NSCopying
 - (id)copyWithZone:(nullable NSZone *)zone
 {
     HL7AllergySummary *clone = [super copyWithZone:zone];
@@ -55,7 +66,7 @@
     return clone;
 }
 
-#pragma mark -
+#pragma mark NSCoding
 - (id)initWithCoder:(NSCoder *)decoder
 {
     if (self = [super initWithCoder:decoder]) {
