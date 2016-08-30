@@ -19,7 +19,7 @@ objects for the viewer to display.
 
 ##Screenshots
 
-![alt text](https://github.com/alexandern/ccdaviewer/blob/master/screenshots/screen4.png "Screenshot")
+![alt text](https://github.com/alexandern/ccdaviewer/blob/master/screenshots/screen1.png "Screenshot")
 ![alt text](https://github.com/alexandern/ccdaviewer/blob/master/screenshots/screen2.png "Screenshot")
 ![alt text](https://github.com/alexandern/ccdaviewer/blob/master/screenshots/screen3.png "Screenshot")
                         
