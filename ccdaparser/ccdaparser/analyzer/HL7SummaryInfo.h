@@ -23,8 +23,9 @@
 
 
 #import <Foundation/Foundation.h>
+typedef NSDictionary<NSString *, NSString *> NSDictionaryTemplateIdToSummaryClassName;
 
 @interface HL7SummaryInfo : NSObject
-@property (nullable, nonatomic, strong) NSString *name;
-@property (nullable, nonatomic, strong) NSString *templateId;
+@property (nullable, nonatomic, copy) NSString *name;
+@property (nullable, nonatomic, copy) NSString *templateId;
 @end

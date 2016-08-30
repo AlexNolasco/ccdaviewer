@@ -42,7 +42,7 @@
     return [[[self streetAddressLines] firstObject] copy];
 }
 
-#pragma mark -
+#pragma mark NSCopying
 - (id)copyWithZone:(nullable NSZone *)zone
 {
     HL7Addr *clone = [[HL7Addr allocWithZone:zone] init];

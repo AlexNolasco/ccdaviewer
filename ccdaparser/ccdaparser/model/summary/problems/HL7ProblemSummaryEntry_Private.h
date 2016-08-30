@@ -30,6 +30,6 @@
 @property (nullable, nonatomic, strong) HL7DateRange *biologicalOnSet;
 @property (nullable, nonatomic, strong) HL7DateRange *concernAuthored;
 @property (nonatomic, assign) HL7StatusCodeCode statusCode;
-@property (nullable, nonatomic, strong) NSString *status;
+@property (nullable, nonatomic, copy) NSString *status;
 - (instancetype _Nonnull)initWithAct:(HL7ProblemConcernAct *_Nonnull)act;
 @end

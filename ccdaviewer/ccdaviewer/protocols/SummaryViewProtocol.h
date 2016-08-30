@@ -26,6 +26,7 @@
 #import <ccdaparser/ccdaparser.h>
 
 @protocol SummaryViewProtocol <NSObject>
-- (void)fillUsingSummary:(id<HL7SummaryProtocol>)summary;
 - (void)fillUsingSummaryEntry:(HL7SummaryEntry *)entry rowIndex:(NSUInteger)row;
+@optional
+- (void)fillUsingSummary:(id<HL7SummaryProtocol>)summary;
 @end

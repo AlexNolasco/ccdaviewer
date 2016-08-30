@@ -147,6 +147,14 @@
 		5647AF801CD98F440044CC36 /* HL7CodeSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A5843E1CB2183E007B8F3E /* HL7CodeSystem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		564A00EB1CFBB3D30011A5EE /* NSDate+TimeAgo.h in Headers */ = {isa = PBXBuildFile; fileRef = 564A00E91CFBB3D30011A5EE /* NSDate+TimeAgo.h */; };
 		564A00EC1CFBB3D30011A5EE /* NSDate+TimeAgo.m in Sources */ = {isa = PBXBuildFile; fileRef = 564A00EA1CFBB3D30011A5EE /* NSDate+TimeAgo.m */; };
+		56581EB81D65684A003D24C9 /* HL7ClinicalDocumentSummary.h in Headers */ = {isa = PBXBuildFile; fileRef = 56581EB61D65684A003D24C9 /* HL7ClinicalDocumentSummary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		56581EB91D65684A003D24C9 /* HL7ClinicalDocumentSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = 56581EB71D65684A003D24C9 /* HL7ClinicalDocumentSummary.m */; };
+		5663AB951D72475A004DCFB1 /* HL7LanguageCommunication.h in Headers */ = {isa = PBXBuildFile; fileRef = 5663AB931D72475A004DCFB1 /* HL7LanguageCommunication.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5663AB961D72475A004DCFB1 /* HL7LanguageCommunication.m in Sources */ = {isa = PBXBuildFile; fileRef = 5663AB941D72475A004DCFB1 /* HL7LanguageCommunication.m */; };
+		5663AB991D724B7C004DCFB1 /* HL7LanguageCommunicationParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 5663AB971D724B7C004DCFB1 /* HL7LanguageCommunicationParser.h */; };
+		5663AB9A1D724B7C004DCFB1 /* HL7LanguageCommunicationParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5663AB981D724B7C004DCFB1 /* HL7LanguageCommunicationParser.m */; };
+		5663AB9D1D725653004DCFB1 /* ISO639Translator.h in Headers */ = {isa = PBXBuildFile; fileRef = 5663AB9B1D725653004DCFB1 /* ISO639Translator.h */; };
+		5663AB9E1D725653004DCFB1 /* ISO639Translator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5663AB9C1D725653004DCFB1 /* ISO639Translator.m */; };
 		5668DE631CD428AD003C894C /* HL7ProblemSection.h in Headers */ = {isa = PBXBuildFile; fileRef = 5668DE611CD428AD003C894C /* HL7ProblemSection.h */; };
 		5668DE641CD428AD003C894C /* HL7ProblemSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5668DE621CD428AD003C894C /* HL7ProblemSection.m */; };
 		5668DE671CD428D2003C894C /* HL7ProblemEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 5668DE651CD428D2003C894C /* HL7ProblemEntry.h */; };
@@ -250,7 +258,7 @@
 		56A0EC851CDAC8B200542148 /* HL7Telecom_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A0EC841CDAC8B200542148 /* HL7Telecom_Private.h */; };
 		56A0EC871CDAD05E00542148 /* HL7Identifier_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A0EC861CDAD05E00542148 /* HL7Identifier_Private.h */; };
 		56A0ECAC1CDCB58700542148 /* HL7Enums_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A0ECAB1CDCB58700542148 /* HL7Enums_Private.h */; };
-		56A2A1F21CF2986700CDD9A5 /* HL7SummaryInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A2A1F01CF2986700CDD9A5 /* HL7SummaryInfo.h */; };
+		56A2A1F21CF2986700CDD9A5 /* HL7SummaryInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A2A1F01CF2986700CDD9A5 /* HL7SummaryInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56A2A1F31CF2986700CDD9A5 /* HL7SummaryInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A2A1F11CF2986700CDD9A5 /* HL7SummaryInfo.m */; };
 		56A583B61CB20529007B8F3E /* ccdaparser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A583AB1CB20528007B8F3E /* ccdaparser.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		56A584361CB2145A007B8F3E /* HL7Element.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A584341CB2145A007B8F3E /* HL7Element.m */; };
@@ -477,6 +485,7 @@
 		56E5A45A1CF3F15600F1A180 /* HL7ChiefComplainSummaryEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 56E5A4581CF3F15600F1A180 /* HL7ChiefComplainSummaryEntry.h */; };
 		56E5A45B1CF3F15600F1A180 /* HL7ChiefComplainSummaryEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E5A4591CF3F15600F1A180 /* HL7ChiefComplainSummaryEntry.m */; };
 		56E5A4611CF3F1D400F1A180 /* HL7ChiefComplainSummaryEntry_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 56E5A4601CF3F1D400F1A180 /* HL7ChiefComplainSummaryEntry_Private.h */; };
+		56E9A0581D5D5A27005267F2 /* HL7SummarySearchProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 56E9A0571D5D5A27005267F2 /* HL7SummarySearchProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56ED3E221CBC6B0800818ED4 /* HL7AllergySummary_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 56ED3E211CBC6B0800818ED4 /* HL7AllergySummary_Private.h */; };
 		56ED3E241CBC6EE900818ED4 /* HL7PatientSummary_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 56ED3E231CBC6EE900818ED4 /* HL7PatientSummary_Private.h */; };
 		56ED3E291CBC728400818ED4 /* HL7PatientSummaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ED3E281CBC728400818ED4 /* HL7PatientSummaryTests.m */; };
@@ -689,6 +698,14 @@
 		5647AF7B1CD98DD60044CC36 /* HL7Element_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HL7Element_Private.h; sourceTree = "<group>"; };
 		564A00E91CFBB3D30011A5EE /* NSDate+TimeAgo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TimeAgo.h"; sourceTree = "<group>"; };
 		564A00EA1CFBB3D30011A5EE /* NSDate+TimeAgo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TimeAgo.m"; sourceTree = "<group>"; };
+		56581EB61D65684A003D24C9 /* HL7ClinicalDocumentSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HL7ClinicalDocumentSummary.h; sourceTree = "<group>"; };
+		56581EB71D65684A003D24C9 /* HL7ClinicalDocumentSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HL7ClinicalDocumentSummary.m; sourceTree = "<group>"; };
+		5663AB931D72475A004DCFB1 /* HL7LanguageCommunication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HL7LanguageCommunication.h; sourceTree = "<group>"; };
+		5663AB941D72475A004DCFB1 /* HL7LanguageCommunication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HL7LanguageCommunication.m; sourceTree = "<group>"; };
+		5663AB971D724B7C004DCFB1 /* HL7LanguageCommunicationParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HL7LanguageCommunicationParser.h; sourceTree = "<group>"; };
+		5663AB981D724B7C004DCFB1 /* HL7LanguageCommunicationParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HL7LanguageCommunicationParser.m; sourceTree = "<group>"; };
+		5663AB9B1D725653004DCFB1 /* ISO639Translator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISO639Translator.h; sourceTree = "<group>"; };
+		5663AB9C1D725653004DCFB1 /* ISO639Translator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISO639Translator.m; sourceTree = "<group>"; };
 		5668DE611CD428AD003C894C /* HL7ProblemSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HL7ProblemSection.h; sourceTree = "<group>"; };
 		5668DE621CD428AD003C894C /* HL7ProblemSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HL7ProblemSection.m; sourceTree = "<group>"; };
 		5668DE651CD428D2003C894C /* HL7ProblemEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HL7ProblemEntry.h; sourceTree = "<group>"; };
@@ -1025,6 +1042,7 @@
 		56E5A4581CF3F15600F1A180 /* HL7ChiefComplainSummaryEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HL7ChiefComplainSummaryEntry.h; sourceTree = "<group>"; };
 		56E5A4591CF3F15600F1A180 /* HL7ChiefComplainSummaryEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HL7ChiefComplainSummaryEntry.m; sourceTree = "<group>"; };
 		56E5A4601CF3F1D400F1A180 /* HL7ChiefComplainSummaryEntry_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HL7ChiefComplainSummaryEntry_Private.h; sourceTree = "<group>"; };
+		56E9A0571D5D5A27005267F2 /* HL7SummarySearchProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HL7SummarySearchProtocol.h; sourceTree = "<group>"; };
 		56ED3E211CBC6B0800818ED4 /* HL7AllergySummary_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HL7AllergySummary_Private.h; sourceTree = "<group>"; };
 		56ED3E231CBC6EE900818ED4 /* HL7PatientSummary_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HL7PatientSummary_Private.h; path = ../../analyzer/HL7PatientSummary_Private.h; sourceTree = "<group>"; };
 		56ED3E281CBC728400818ED4 /* HL7PatientSummaryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HL7PatientSummaryTests.m; sourceTree = "<group>"; };
@@ -1660,6 +1678,8 @@
 				56A585A41CB287A4007B8F3E /* HL7Element+Additions.m */,
 				560A9BC21CCBC3060000502A /* HL7DoseQuantity.h */,
 				560A9BC31CCBC3060000502A /* HL7DoseQuantity.m */,
+				5663AB931D72475A004DCFB1 /* HL7LanguageCommunication.h */,
+				5663AB941D72475A004DCFB1 /* HL7LanguageCommunication.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -1739,6 +1759,7 @@
 				56A584D21CB218EC007B8F3E /* HL7ElementStructureBodyProtocol.h */,
 				56A584D31CB218EC007B8F3E /* HL7SectionSummaryProtocol.h */,
 				560FEE851CB5D14C00131529 /* HL7SummaryProtocol.h */,
+				56E9A0571D5D5A27005267F2 /* HL7SummarySearchProtocol.h */,
 				5670F2711CD0830D001C5FCF /* HL7ClassMoodProtocol.h */,
 				56038E691CD8164800D745F2 /* HL7EntryRelationshipContainerProtocol.h */,
 			);
@@ -1763,6 +1784,8 @@
 		56A584E81CB2197E007B8F3E /* helper */ = {
 			isa = PBXGroup;
 			children = (
+				5663AB9B1D725653004DCFB1 /* ISO639Translator.h */,
+				5663AB9C1D725653004DCFB1 /* ISO639Translator.m */,
 				56A584E91CB219A0007B8F3E /* HL7CodeMapper.h */,
 				56A584EA1CB219A0007B8F3E /* HL7CodeMapper.m */,
 				560C15861CCDB8AC00C07482 /* HelperMacros.h */,
@@ -1807,6 +1830,8 @@
 				56EF9AEF1CDE652E002ED9B3 /* HL7SectionInfo.h */,
 				56EF9AF31CDE6580002ED9B3 /* HL7SectionInfo_Private.h */,
 				56EF9AF01CDE652E002ED9B3 /* HL7SectionInfo.m */,
+				5663AB971D724B7C004DCFB1 /* HL7LanguageCommunicationParser.h */,
+				5663AB981D724B7C004DCFB1 /* HL7LanguageCommunicationParser.m */,
 			);
 			path = igxml;
 			sourceTree = "<group>";
@@ -1886,6 +1911,8 @@
 		56A585AB1CB287F7007B8F3E /* summary */ = {
 			isa = PBXGroup;
 			children = (
+				56581EB61D65684A003D24C9 /* HL7ClinicalDocumentSummary.h */,
+				56581EB71D65684A003D24C9 /* HL7ClinicalDocumentSummary.m */,
 				56E1926D1CD6CBEE009AD1B5 /* encounters */,
 				56E1924A1CD647BA009AD1B5 /* procedures */,
 				5668DE871CD54268003C894C /* problems */,
@@ -2356,6 +2383,7 @@
 				5678C7D01CE56D510023F2EC /* ObjectiveSugar.h in Headers */,
 				56A584D51CB218EC007B8F3E /* HL7ElementSectionParserProtocol.h in Headers */,
 				567E21201CCF8B04002908D3 /* HL7Instructions.h in Headers */,
+				5663AB991D724B7C004DCFB1 /* HL7LanguageCommunicationParser.h in Headers */,
 				56A584671CB2183E007B8F3E /* HL7Section.h in Headers */,
 				560A9BBE1CCB9A7B0000502A /* HL7MedicationSummaryEntry.h in Headers */,
 				56A5853A1CB21B45007B8F3E /* HL7PatientParser.h in Headers */,
@@ -2371,7 +2399,9 @@
 				56ED3E241CBC6EE900818ED4 /* HL7PatientSummary_Private.h in Headers */,
 				56ED3EA51CC1BF0C00818ED4 /* HL7SocialHistorySummary_Private.h in Headers */,
 				56E5A4611CF3F1D400F1A180 /* HL7ChiefComplainSummaryEntry_Private.h in Headers */,
+				56581EB81D65684A003D24C9 /* HL7ClinicalDocumentSummary.h in Headers */,
 				56ED3E761CBF1FFF00818ED4 /* HL7ChiefComplainAnalyzer.h in Headers */,
+				5663AB9D1D725653004DCFB1 /* ISO639Translator.h in Headers */,
 				5670F29D1CD2D255001C5FCF /* HL7PatientInstructionsEntry.h in Headers */,
 				560C15721CCDA2D000C07482 /* HL7ResultAnalyzer.h in Headers */,
 				560A9BE61CCC821B0000502A /* HL7ResultSectionParser.h in Headers */,
@@ -2420,6 +2450,7 @@
 				56ED3E5A1CBDCF1600818ED4 /* HL7AllergySectionParser.h in Headers */,
 				5647AF741CD987660044CC36 /* HL7Name_Private.h in Headers */,
 				5668DE7F1CD43378003C894C /* HL7ProblemObservationParser.h in Headers */,
+				56E9A0581D5D5A27005267F2 /* HL7SummarySearchProtocol.h in Headers */,
 				56E1926B1CD6AC01009AD1B5 /* HL7ProcedureAnalyzer.h in Headers */,
 				56AE285D1CC85BED00EF8908 /* HL7MedicationEntry.h in Headers */,
 				5668DE631CD428AD003C894C /* HL7ProblemSection.h in Headers */,
@@ -2540,6 +2571,7 @@
 				560FEECE1CBB4C9A00131529 /* HL7PatientRoleAnalyzer.h in Headers */,
 				5668DE901CD54380003C894C /* HL7ProblemSummary.h in Headers */,
 				560A9BEA1CCC828B0000502A /* HL7ResultEntry.h in Headers */,
+				5663AB951D72475A004DCFB1 /* HL7LanguageCommunication.h in Headers */,
 				56E192591CD6878C009AD1B5 /* HL7ProcedureActivityObservation.h in Headers */,
 				56AE28481CC854B100EF8908 /* HL7SubstanceAdministration.h in Headers */,
 			);
@@ -2595,6 +2627,7 @@
 				TargetAttributes = {
 					56A583AA1CB20528007B8F3E = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = DFNSQU5Z75;
 					};
 					56A583B41CB20529007B8F3E = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -2669,6 +2702,7 @@
 				56A585611CB21B6A007B8F3E /* HL7SectionParser.m in Sources */,
 				560A9BEB1CCC828B0000502A /* HL7ResultEntry.m in Sources */,
 				56A584E31CB21928007B8F3E /* IGXMLReader+Additions.m in Sources */,
+				56581EB91D65684A003D24C9 /* HL7ClinicalDocumentSummary.m in Sources */,
 				563D39B31CF15827009904BB /* NSArray+Subclasses.m in Sources */,
 				5670F2A81CD2DBBC001C5FCF /* HL7PatientInstrutionsAnalyzer.m in Sources */,
 				560FEE7E1CB390C900131529 /* HL7Codes.m in Sources */,
@@ -2723,6 +2757,7 @@
 				56ED3E951CC1AEFB00818ED4 /* HL7PhysicalQuantityInterval.m in Sources */,
 				56A585651CB21B6A007B8F3E /* HL7StructuredBodyParser.m in Sources */,
 				56245BDA1CC5A4B500EBCC79 /* HL7VitalSignsSummaryEntry.m in Sources */,
+				5663AB961D72475A004DCFB1 /* HL7LanguageCommunication.m in Sources */,
 				560A9BBF1CCB9A7B0000502A /* HL7MedicationSummaryEntry.m in Sources */,
 				5668DE641CD428AD003C894C /* HL7ProblemSection.m in Sources */,
 				563D39AF1CF1578A009904BB /* HL7Summarizer.m in Sources */,
@@ -2763,6 +2798,7 @@
 				56245BD61CC5A47D00EBCC79 /* HL7VitalSignsSummary.m in Sources */,
 				560FEEC21CBB48F400131529 /* HL7AllergySummaryEntry.m in Sources */,
 				56A584AA1CB21879007B8F3E /* HL7Act.m in Sources */,
+				5663AB9A1D724B7C004DCFB1 /* HL7LanguageCommunicationParser.m in Sources */,
 				56E192911CD6D604009AD1B5 /* HL7EncounterDiagnosisParser.m in Sources */,
 				56E1927D1CD6CDE6009AD1B5 /* HL7IndicationObservation.m in Sources */,
 				56E192811CD6CE23009AD1B5 /* HL7EncounterDiagnosis.m in Sources */,
@@ -2832,6 +2868,7 @@
 				567E211D1CCF8AB6002908D3 /* HL7PlanOfCareActivitySupply.m in Sources */,
 				56245BBB1CC45FA500EBCC79 /* HL7VitalSignsSection.m in Sources */,
 				56A5855B1CB21B6A007B8F3E /* HL7EntryRelationshipParser.m in Sources */,
+				5663AB9E1D725653004DCFB1 /* ISO639Translator.m in Sources */,
 				56A584891CB2183E007B8F3E /* HL7EffectiveTime.m in Sources */,
 				56A584EC1CB219A0007B8F3E /* HL7CodeMapper.m in Sources */,
 				560C156B1CCD7E9400C07482 /* HL7OrganizerParser.m in Sources */,

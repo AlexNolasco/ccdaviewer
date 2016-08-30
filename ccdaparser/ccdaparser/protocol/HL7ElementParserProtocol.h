@@ -23,10 +23,9 @@
 
 
 #import <Foundation/Foundation.h>
-
 @class ParserContext;
+
 @protocol HL7ElementParserProtocol <NSObject>
 - (NSString *)designatedElementName;
 - (BOOL)parse:(ParserContext *)context error:(NSError *__autoreleasing *)error;
-
 @end

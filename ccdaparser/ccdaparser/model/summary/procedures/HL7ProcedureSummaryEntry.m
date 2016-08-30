@@ -21,7 +21,6 @@
  *THE SOFTWARE.                                                                 *
  *********************************************************************************/
 
-
 #import "HL7ProcedureSummaryEntry_Private.h"
 #import "HL7SummaryEntry_Private.h"
 #import "HL7ProcedureEntry.h"
@@ -46,7 +45,6 @@
         if (procedure != nil) {
             [self setNarrative:[[[procedure code] displayName] removeMultipleSpaces]];
             [self setDate:[[procedure effectiveTime] valueTimeOrLowElementNSDate]];
-
         } else if (observation != nil) {
             [self setNarrative:[[[observation code] displayName] copy]];
             [self setDate:[[[observation effectiveTime] valueAsNSDate] copy]];
@@ -58,23 +56,15 @@
     return self;
 }
 
-- (NSString *)dateAsString
-{
-    if (_dateAsString == nil && [self date]) {
-        _dateAsString = [[self date] toShortDateString];
-    }
-    return _dateAsString;
-}
-
-#pragma mark -
+#pragma mark NSCopying
 - (id)copyWithZone:(nullable NSZone *)zone
 {
     HL7ProcedureSummaryEntry *clone = [super copyWithZone:zone];
-    [clone setDate:[[self date] copy]];
+    [clone setDate:[self date]];
     return clone;
 }
 
-#pragma mark -
+#pragma mark NSCoding
 - (id)initWithCoder:(NSCoder *)decoder
 {
     if (self = [super initWithCoder:decoder]) {

@@ -47,6 +47,12 @@
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleCustom];
     [SVProgressHUD setForegroundColor:[ThemeManager labelColor]];
+    [SVProgressHUD setBackgroundColor:[ThemeManager progressBackgroundColor]];
+
+    UIPageControl *pageControl = [UIPageControl appearance];
+    pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
+    pageControl.backgroundColor = [UIColor clearColor];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1808" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uAg-nu-suo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uAg-nu-suo">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--KNF:Sections-->
+        <!--Sections-->
         <scene sceneID="pZU-G7-t9L">
             <objects>
-                <viewController title="KNF:Sections" id="jXH-61-EtH" customClass="SectionsViewController" sceneMemberID="viewController">
+                <viewController title="Sections" id="jXH-61-EtH" customClass="SectionsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VjU-B1-sNC"/>
                         <viewControllerLayoutGuide type="bottom" id="c9S-bk-CvO"/>
@@ -36,7 +36,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="KNF:Sections" id="xdf-Gf-Wag"/>
+                    <navigationItem key="navigationItem" title="Sections" id="xdf-Gf-Wag"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="table" destination="I6h-jE-5OE" id="UVu-r7-B8R"/>
@@ -63,12 +63,12 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="InV-es-gcb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-318" y="37"/>
+            <point key="canvasLocation" x="-214" y="45"/>
         </scene>
-        <!--KNF:Patients-->
+        <!--Patients-->
         <scene sceneID="kbz-Z0-8ox">
             <objects>
-                <tableViewController title="KNF:Patients" clearsSelectionOnViewWillAppear="NO" id="Zzq-S3-aTS" customClass="PatientsTableViewController" sceneMemberID="viewController">
+                <tableViewController title="Patients" clearsSelectionOnViewWillAppear="NO" id="Zzq-S3-aTS" customClass="PatientsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UhU-Dr-cTD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -86,20 +86,20 @@
                         </connections>
                     </refreshControl>
                     <connections>
-                        <segue destination="CRO-4Z-wcc" kind="presentation" identifier="ccdaSegue" modalPresentationStyle="fullScreen" id="ans-na-cGk"/>
+                        <segue destination="CRO-4Z-wcc" kind="show" identifier="ccdaSegue" id="ans-na-cGk"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4rP-Wj-dVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2216" y="-314"/>
+            <point key="canvasLocation" x="2000" y="-314"/>
         </scene>
-        <!--Viewer-->
+        <!--Patient-->
         <scene sceneID="D9n-U0-Yil">
             <objects>
-                <viewControllerPlaceholder storyboardName="Viewer" id="CRO-4Z-wcc" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Patient" id="CRO-4Z-wcc" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sBq-Ge-wSb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2733" y="-296"/>
+            <point key="canvasLocation" x="2729" y="-314"/>
         </scene>
         <!--Sections-->
         <scene sceneID="rFG-Ze-Tny">
@@ -120,10 +120,10 @@
             </objects>
             <point key="canvasLocation" x="502" y="368"/>
         </scene>
-        <!--KNF:Settings-->
+        <!--Settings-->
         <scene sceneID="hJi-Ku-ruy">
             <objects>
-                <tableViewController title="KNF:Settings" id="jXX-cm-dh5" customClass="SettingsTableViewController" sceneMemberID="viewController">
+                <tableViewController title="Settings" id="jXX-cm-dh5" customClass="SettingsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="1" sectionHeaderHeight="1" sectionFooterHeight="1" id="Aue-Io-IWT">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -220,7 +220,7 @@
                             <outlet property="delegate" destination="jXX-cm-dh5" id="lkA-xP-Uxs"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="JR7-JI-1r2">
+                    <navigationItem key="navigationItem" title="Settings" id="JR7-JI-1r2">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="aBi-XF-sTS">
                             <connections>
                                 <action selector="saveSettings:" destination="jXX-cm-dh5" id="dHL-9b-35V"/>
@@ -238,7 +238,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bwx-E8-Zrp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1282" y="1099"/>
+            <point key="canvasLocation" x="1314" y="1099"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Zuy-aZ-oim">
@@ -257,13 +257,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jc5-cT-rL4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="470" y="1099"/>
+            <point key="canvasLocation" x="502" y="1099"/>
         </scene>
-        <!--KNF:Patients-->
+        <!--Patients-->
         <scene sceneID="bDP-AL-a5x">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oPD-jy-t3u" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="KNF:Patients" image="Patients" id="fyn-Gx-0ay"/>
+                    <tabBarItem key="tabBarItem" title="Patients" image="Patients" id="fyn-Gx-0ay"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EOK-4G-nWQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -276,7 +276,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="52t-uS-oH2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="506" y="-432"/>
+            <point key="canvasLocation" x="502" y="-314"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IH6-qX-Lqs">
@@ -295,7 +295,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1xy-Pe-il7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1404" y="-314"/>
+            <point key="canvasLocation" x="1314" y="-314"/>
         </scene>
     </scenes>
     <resources>

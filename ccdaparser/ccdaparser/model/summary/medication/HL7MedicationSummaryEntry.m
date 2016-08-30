@@ -66,13 +66,13 @@
 - (id)copyWithZone:(nullable NSZone *)zone
 {
     HL7MedicationSummaryEntry *clone = [super copyWithZone:zone];
-    [clone setRouteCode:[[self routeCode] copy]];
-    [clone setDoseQuantityValue:[[self doseQuantityUnit] copy]];
-    [clone setDoseQuantityUnit:[[self doseQuantityValue] copy]];
-    [clone setEffectiveTime:[[self effectiveTime] copy]];
+    [clone setRouteCode:[self routeCode]];
+    [clone setDoseQuantityValue:[self doseQuantityUnit]];
+    [clone setDoseQuantityUnit:[self doseQuantityValue]];
+    [clone setEffectiveTime:[self effectiveTime]];
     [clone setActive:[self active]];
-    [clone setPeriodUnit:[[self periodUnit] copy]];
-    [clone setPeriodValue:[[self periodValue] copy]];
+    [clone setPeriodUnit:[self periodUnit]];
+    [clone setPeriodValue:[self periodValue]];
     [clone setStatusIsUnknown:[self statusIsUnknown]];
     return clone;
 }

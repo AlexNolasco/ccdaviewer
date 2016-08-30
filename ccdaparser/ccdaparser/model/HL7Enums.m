@@ -69,6 +69,11 @@
     return [self enumName:@"HL7ProblemSeverityCode" code:problemSeverityCode];
 }
 
++ (NSString *_Nullable)confidentialityAsAsString:(HL7ConfidentialityCode)confidentialityCode
+{
+    return [self enumName:@"HL7ConfidentialityCode" code:confidentialityCode];
+}
+
 + (HL7NullFlavor)hl7NullFlavorFromString:(NSString *)nullFlavor
 {
     if (![nullFlavor length]) {
@@ -215,6 +220,31 @@
         return HL7ProblemSeverityCodeFatal;
     } else {
         return HL7ProblemSeverityCodeUnknown;
+    }
+}
+
++ (HL7ConfidentialityCode)hl7ConfidentialityCodeFromString:(NSString *_Nullable)confidentialityCode
+{
+    if ([confidentialityCode isEqualToString:@"L"]) {
+        return HL7ConfidentialityCodeLow;
+    } else if ([confidentialityCode isEqualToString:@"M"]) {
+        return HL7ConfidentialityCodeModerate;
+    } else if ([confidentialityCode isEqualToString:@"N"]) {
+        return HL7ConfidentialityCodeNormal;
+    } else if ([confidentialityCode isEqualToString:@"R"]) {
+        return HL7ConfidentialityCodeRestricted;
+    } else if ([confidentialityCode isEqualToString:@"U"]) {
+        return HL7ConfidentialityCodeUnrestricted;
+    } else if ([confidentialityCode isEqualToString:@"V"]) {
+        return HL7ConfidentialityCodeVeryRestricted;
+    } else if ([confidentialityCode isEqualToString:@"B"]) {
+        return HL7ConfidentialityCodeBusiness;
+    } else if ([confidentialityCode isEqualToString:@"D"]) {
+        return HL7ConfidentialityCodeClinician;
+    } else if ([confidentialityCode isEqualToString:@"I"]) {
+        return HL7ConfidentialityCodeIndividual;
+    } else {
+        return HL7ConfidentialityCodeUnknown;
     }
 }
 @end

@@ -23,10 +23,13 @@
 
 
 #import <Foundation/Foundation.h>
-
+@class HL7SectionInfo;
+typedef NSArray<HL7SectionInfo *> NSArraySectionInfo;
 
 @interface HL7SectionInfo : NSObject <NSCopying, NSCoding>
+@property (nonatomic, assign) BOOL enabled;
 - (NSString *_Nullable)templateId;
 - (NSString *_Nullable)name;
-@property (nonatomic, assign) BOOL enabled;
+//! Same as name without spaces
+- (NSString *_Nullable)nameAsKey;
 @end

@@ -65,13 +65,13 @@
     }
 }
 
-- (NSArray<HL7SectionInfo *> *_Nonnull)getSections
+- (NSArraySectionInfo *_Nonnull)sections
 {
-    HL7SectionMapper *mapper = [[HL7SectionMapper alloc] init];
+    HL7SectionMapper *mapper = [HL7SectionMapper new];
     return [mapper availableParsers];
 }
 
-- (NSDictionary<NSString *, NSString *> *_Nonnull)getSummaries
+- (NSDictionaryTemplateIdToSummaryClassName *_Nonnull)summaries
 {
     return [[HL7Summarizer new] getDictionaryOfSummaryImplementations];
 }

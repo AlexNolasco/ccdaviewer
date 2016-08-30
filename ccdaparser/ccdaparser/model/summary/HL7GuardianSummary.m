@@ -26,6 +26,7 @@
 #import "HL7Guardian.h"
 #import "HL7Name.h"
 #import "HL7Code.h"
+#import "HL7Codes.h"
 #import "HL7CodeSummary.h"
 #import "HL7Telecom_Private.h"
 
@@ -47,13 +48,29 @@
 
 - (NSString *)phoneNumber
 {
-    // HL7Telecom * number [ self ]
-    for (HL7Telecom *telecom in [self telecoms]) {
-        return [telecom description];
-    }
-    return nil;
+    return [[self phoneNumbers] firstObject];
 }
-#pragma mark -
+
+- (NSArray<NSString*>* _Nonnull)phoneNumbers
+{
+    NSMutableArray<NSString*>* numbers = [[NSMutableArray alloc] initWithCapacity:[[self telecoms] count]];
+    for (HL7Telecom *telecom in [self telecoms]) {
+        if ([telecom telecomType] == HL7TelecomTypeTelephone) {
+            [numbers addObject:[telecom valueWithoutPrefix]];
+        }
+    }
+    return [numbers copy];
+}
+
+- (NSString *_Nullable)relationship
+{
+    if ([self code] == nil || ![[[self code] codeSystem] isEqualToString:CODEHL7Role]) {
+        return nil;
+    }
+    return [[self code] displayName];
+}
+
+#pragma mark NSCopying
 - (id)copyWithZone:(nullable NSZone *)zone
 {
     HL7GuardianSummary *clone = [HL7GuardianSummary allocWithZone:zone];
@@ -63,7 +80,7 @@
     return clone;
 }
 
-#pragma mark -
+#pragma mark NSCoding
 - (id)initWithCoder:(NSCoder *)decoder
 {
     if ((self = [super init])) {

@@ -29,7 +29,7 @@
 @class HL7AssignedAuthor;
 
 @interface HL7Author : HL7Element <NSCopying, NSCoding>
-@property (nullable, nonatomic, strong) NSString *typeCode;
+@property (nullable, nonatomic, copy) NSString *typeCode;
 @property (nullable, nonatomic, strong) HL7TemplateId *templateId;
 @property (nullable, nonatomic, strong) HL7Time *time;
 @property (nullable, nonatomic, strong) HL7Author *author;

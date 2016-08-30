@@ -42,7 +42,6 @@
 
 - (ParserPlan *)createParsePlan:(ParserContext *)context HL7Element:(HL7Guardian *)element error:(NSError *__autoreleasing *)error
 {
-
     ParserPlan *plan = [ParserPlan planAtDepth:[[context reader] depth]];
 
     // code
@@ -81,9 +80,8 @@
 
 - (BOOL)parse:(ParserContext *)context error:(NSError *__autoreleasing *)error
 {
-
     HL7Patient *patient = [[[[context hl7ccd] clinicalDocument] patientRole] patient];
-    HL7Guardian *guardian = [[HL7Guardian alloc] init];
+    HL7Guardian *guardian = [HL7Guardian new];
     ParserPlan *parserPlan = [self createParsePlan:context HL7Element:guardian error:error];
 
     [self iterate:(ParserContext *)context

@@ -36,6 +36,7 @@
     return _assignedAuthor;
 }
 
+#pragma mark NSCopying
 - (id)copyWithZone:(nullable NSZone *)zone
 {
     HL7Author *clone = [[HL7Author allocWithZone:zone] init];
@@ -46,7 +47,7 @@
     return clone;
 }
 
-#pragma mark -
+#pragma mark NSCoding
 - (id)initWithCoder:(NSCoder *)decoder
 {
     if (self = [super init]) {

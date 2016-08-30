@@ -25,9 +25,13 @@
 #import <Foundation/Foundation.h>
 #import "HL7SummaryProtocol.h"
 @class HL7PatientSummary;
+@class HL7ClinicalDocumentSummary;
+
+typedef NSDictionary<NSString *, id<HL7SummaryProtocol>> NSDictionaryTemplateIdToSummary;
 
 @interface HL7CCDSummary : NSObject <NSCopying, NSCoding>
+- (HL7ClinicalDocumentSummary *_Nullable)document;
 - (HL7PatientSummary *_Nullable)patient;
-- (NSDictionary<NSString *, id<HL7SummaryProtocol>> *_Nonnull)summaries;
+- (NSDictionaryTemplateIdToSummary *_Nullable)summaries;
 - (id<HL7SummaryProtocol> _Nullable)getSummaryByClass:(Class _Nonnull)className;
 @end

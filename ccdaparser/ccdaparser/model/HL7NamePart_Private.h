@@ -25,7 +25,7 @@
 #import "HL7NamePart.h"
 
 @interface HL7NamePart ()
-@property (nullable, nonatomic, strong) NSString *text;
-@property (nullable, nonatomic, strong) NSString *qualifier;
+@property (nullable, nonatomic, copy) NSString *text;
+@property (nullable, nonatomic, copy) NSString *qualifier;
 - (nonnull instancetype)initWithText:(nullable NSString *)text;
 @end

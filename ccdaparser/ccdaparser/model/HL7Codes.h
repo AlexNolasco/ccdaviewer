@@ -50,3 +50,6 @@ extern NSString *const CODELOINCTemperature;
 extern NSString *const CODELOINCSmokingStatus;
 
 extern NSString *const CODEObservationInterpretation;
+
+extern NSString *const CODEHL7Role;
+extern NSString *const CODEHL7ReligiousAffiliation;

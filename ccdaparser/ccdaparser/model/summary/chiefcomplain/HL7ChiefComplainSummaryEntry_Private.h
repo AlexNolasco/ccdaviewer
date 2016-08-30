@@ -27,7 +27,7 @@
 
 @interface HL7ChiefComplainSummaryEntry ()
 @property (nullable, nonatomic, strong) HL7CodeSummary *code;
-@property (nullable, nonatomic, strong) NSString *reasonPlainText;
-@property (nullable, nonatomic, strong) NSString *reasonHtml;
+@property (nullable, nonatomic, copy) NSString *reasonPlainText;
+@property (nullable, nonatomic, copy) NSString *reasonHtml;
 - (instancetype _Nonnull)initWithChiefComplainSection:(HL7ChiefComplainSection *_Nonnull)section;
 @end

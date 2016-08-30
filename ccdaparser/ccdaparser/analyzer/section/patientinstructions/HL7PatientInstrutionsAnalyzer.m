@@ -21,7 +21,6 @@
  *THE SOFTWARE.                                                                 *
  *********************************************************************************/
 
-
 #import "HL7PatientInstrutionsAnalyzer.h"
 #import "HL7Const.h"
 #import "HL7CCD.h"
@@ -51,7 +50,6 @@
 - (id<HL7SummaryProtocol> _Nonnull)analyzeSectionUsingDocument:(HL7CCD *_Nonnull)document
 {
     HL7PatientInstructionsSection *section = (HL7PatientInstructionsSection *)[document getSectionByTemplateId:[self templateId]];
-
     HL7PatientInstructionsSummary *summary = [[HL7PatientInstructionsSummary alloc] initWithElement:section];
 
     for (HL7PatientInstructionsEntry *entry in [section entries]) {

@@ -34,8 +34,9 @@
 {
     if ((self = [super init])) {
         [self setCode:[[HL7CodeSummary alloc] initWithCodeSystem:(HL7CodeSystem *)[section code]]];
-        [self setReasonPlainText:[[[section text] text] copy]];
-        [self setReasonHtml:[[[section text] toHtml] copy]];
+
+        [self setReasonPlainText:section.text.text];
+        [self setReasonHtml:[section.text toHtml]];
     }
     return self;
 }

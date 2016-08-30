@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Eb8-Eb-gb2" customClass="PatientSummaryInfo">
+            <rect key="frame" x="0.0" y="0.0" width="357" height="177"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="357" height="177"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="120" placeholderIntrinsicHeight="60" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ciw-s2-5X4">
+                        <rect key="frame" x="99" y="59" width="160" height="60"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="40" placeholderIntrinsicHeight="60" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pFZ-69-fOA">
+                                <rect key="frame" x="0.0" y="0.0" width="40" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="35" placeholderIntrinsicHeight="35" text="52" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Dg-ZM-mPT">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="35"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" placeholderIntrinsicWidth="35" placeholderIntrinsicHeight="20" text="BMI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHP-8c-Vba">
+                                        <rect key="frame" x="0.0" y="35" width="40" height="25"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="40" placeholderIntrinsicHeight="60" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6hO-JI-FzJ">
+                                <rect key="frame" x="60" y="0.0" width="40" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="35" placeholderIntrinsicHeight="35" text="120" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04m-3r-aGs">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="35"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" placeholderIntrinsicWidth="35" placeholderIntrinsicHeight="20" text="Pounds" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0N-wu-ebn">
+                                        <rect key="frame" x="0.0" y="35" width="40" height="25"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="40" placeholderIntrinsicHeight="60" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lh5-Qe-GTU">
+                                <rect key="frame" x="120" y="0.0" width="40" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="35" placeholderIntrinsicHeight="35" text="52" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R94-NG-sIY">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="35"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" placeholderIntrinsicWidth="35" placeholderIntrinsicHeight="20" text="Years" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISC-F4-izf">
+                                        <rect key="frame" x="0.0" y="35" width="40" height="25"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="8pC-nZ-9Fw"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="Ciw-s2-5X4" firstAttribute="centerX" secondItem="Eb8-Eb-gb2" secondAttribute="centerX" id="K40-2i-NvY"/>
+                <constraint firstItem="Ciw-s2-5X4" firstAttribute="centerY" secondItem="Eb8-Eb-gb2" secondAttribute="centerY" id="Sz0-HC-sLu"/>
+            </constraints>
+            <size key="customSize" width="357" height="177"/>
+            <connections>
+                <outlet property="bmiLabel" destination="3Dg-ZM-mPT" id="89E-Uv-AUL"/>
+                <outlet property="bmiUnitsLabel" destination="dHP-8c-Vba" id="kOo-bn-b31"/>
+                <outlet property="weightLabel" destination="04m-3r-aGs" id="Rt0-jn-ruh"/>
+                <outlet property="weightUnitsLabel" destination="H0N-wu-ebn" id="tzV-43-iz4"/>
+                <outlet property="yearsLabel" destination="R94-NG-sIY" id="fpg-fB-KKI"/>
+                <outlet property="yearsUnitsLabel" destination="ISC-F4-izf" id="NaF-w8-g1J"/>
+            </connections>
+            <point key="canvasLocation" x="237.5" y="84.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

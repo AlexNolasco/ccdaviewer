@@ -24,10 +24,10 @@
 
 #import <Foundation/Foundation.h>
 #import "HL7SectionMapperProtocol.h"
-@class HL7SectionInfo;
+#import "HL7SectionInfo.h"
 
 /** Default section mapper */
 @interface HL7SectionMapper : NSObject <HL7SectionMapperProtocol>
-@property (nonnull, nonatomic, strong) NSMutableDictionary *mappers;
-- (NSArray<HL7SectionInfo *> *_Nonnull)availableParsers;
+@property (nonnull, nonatomic, strong) NSMutableDictionary *parsers;
+- (NSArraySectionInfo *_Nonnull)availableParsers;
 @end

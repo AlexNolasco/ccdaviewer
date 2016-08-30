@@ -73,7 +73,7 @@
 
     // assert
     XCTAssertNotNil(summary);
-    XCTAssertTrue([[summary sectionTitle] isEqualToString:@"Vital Signs"]);
+    XCTAssertTrue([[summary title] isEqualToString:@"Vital Signs"]);
     XCTAssertEqual([[summary allEntries] count], 1);
     HL7VitalSignsSummaryEntry *entry = [summary allEntries][0];
     XCTAssertNotNil([entry bmi]);
@@ -100,7 +100,7 @@
 
     // assert
     XCTAssertNotNil(summary);
-    XCTAssertTrue([[summary sectionTitle] isEqualToString:@"Vital Signs"]);
+    XCTAssertTrue([[summary title] isEqualToString:@"Vital Signs"]);
     XCTAssertEqual([[summary allEntries] count], 3);
     HL7VitalSignsSummaryEntry *recent = [summary mostRecentEntry];
     XCTAssertNotNil(recent);

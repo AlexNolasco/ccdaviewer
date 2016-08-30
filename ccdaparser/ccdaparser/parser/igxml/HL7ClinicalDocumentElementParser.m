@@ -47,7 +47,7 @@
 - (ParserPlan *)createParsePlan:(ParserContext *)context HL7Element:(HL7ClinicalDocument *)element error:(NSError *__autoreleasing *)error
 {
 
-    ParserPlan *plan = [ParserPlan plan];
+    ParserPlan *plan = [ParserPlan planAtDepth:[[context reader] depth]];
 
     [plan when:HL7ElementClinicalDocument
         parseWithBlock:^(ParserContext *context, IGXMLReader *node, BOOL *stop) {
@@ -81,14 +81,19 @@
             [element setCode:[HL7ElementParser codeFromReader:node]];
         }];
 
+    [plan when:HL7ElementClinicalDocumentConfidentialityCode
+        parseWithBlock:^(ParserContext *context, IGXMLReader *node, BOOL *stop) {
+            [element setConfidentialityCode:[HL7ElementParser confidentialityCodeFromReader:node]];
+        }];
+
     // recordTarget
     [plan when:HL7ElementRecordTarget
         parseWithBlock:^(ParserContext *context, IGXMLReader *node, BOOL *stop) {
             [[[HL7RecordTargetParser alloc] init] parse:context error:error];
         }];
 
-    // structureBody
-    [plan when:HL7ElementStructuredBody
+    // CDA Body
+    [plan when:HL7ElementComponent
         parseWithBlock:^(ParserContext *context, IGXMLReader *node, BOOL *stop) {
             [[[HL7StructuredBodyParser alloc] initWithMapper:_sectionMapper] parse:context error:error];
         }];

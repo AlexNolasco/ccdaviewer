@@ -26,5 +26,4 @@
 
 @interface HL7ProcedureSummaryEntry : HL7SummaryEntry <NSCoding, NSCopying>
 - (NSDate *_Nullable)date;
-- (NSString *_Nonnull)dateAsString;
 @end

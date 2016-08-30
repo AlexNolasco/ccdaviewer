@@ -63,6 +63,7 @@ extern NSString *const HL7AttributeUnit;
 
 // ClinicalDocument
 extern NSString *const HL7ElementClinicalDocument;
+extern NSString *const HL7ElementClinicalDocumentConfidentialityCode;
 
 // recordTarget
 extern NSString *const HL7ElementRecordTarget;
@@ -87,6 +88,13 @@ extern NSString *const HL7ElementGuardian;
 extern NSString *const HL7ElementGuardianPerson;
 extern NSString *const HL7ElementReference;
 extern NSString *const HL7ElementEthnicGroupCode;
+extern NSString *const HL7ElementRaceCode;
+extern NSString *const HL7ElementReligiousAffilition;
+extern NSString *const HL7ElementLanguageCommunication;
+extern NSString *const HL7ElementLanguageCode;
+extern NSString *const HL7ElementModeCode;
+extern NSString *const HL7ElementProficiencyLevelCode;
+extern NSString *const HL7ElementPreferenceInd;
 
 // medications
 extern NSString *const HL7ElementSubstanceAdministration;

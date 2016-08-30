@@ -76,7 +76,7 @@
     [clone setHeight:[[self height] copy]];
     [clone setWeight:[[self weight] copy]];
     [clone setTemperature:[[self temperature] copy]];
-    [clone setOrganizerEffetiveTime:[[self organizerEffectiveTime] copy]];
+    [clone setOrganizerEffetiveTime:[self organizerEffectiveTime]];
     return clone;
 }
 

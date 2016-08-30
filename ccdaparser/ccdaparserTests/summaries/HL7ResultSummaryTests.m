@@ -73,7 +73,7 @@
 
     // assert
     XCTAssertNotNil(summary);
-    XCTAssertTrue([[summary sectionTitle] isEqualToString:@"RESULTS"]);
+    XCTAssertTrue([[summary title] isEqualToString:@"RESULTS"]);
     XCTAssertEqual([[summary allEntries] count], 6);
     summaryEntry = [summary allEntries][0];
     XCTAssertTrue([[summaryEntry narrative] isEqualToString:@"Hemoglobin"]);

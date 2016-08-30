@@ -26,8 +26,8 @@
 @class HL7Text;
 
 @interface HL7OriginalText : HL7Element <NSCopying, NSCoding>
-@property (nullable, nonatomic, strong) NSString *referenceValue;
-@property (nullable, nonatomic, strong) NSString *text;
+@property (nullable, nonatomic, copy) NSString *referenceValue;
+@property (nullable, nonatomic, copy) NSString *text;
 - (BOOL)hasReferenceId;
 - (nullable NSString *)referenceValueWithoutHash;
 /** Gets the actual value

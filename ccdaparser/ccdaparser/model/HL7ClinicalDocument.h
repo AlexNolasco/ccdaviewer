@@ -24,10 +24,13 @@
 
 #import <Foundation/Foundation.h>
 #import "HL7TemplateElement.h"
+#import "HL7Enums.h"
 @class HL7PatientRole;
 @class HL7Identifier;
+@class HL7Code;
 
 @interface HL7ClinicalDocument : HL7TemplateElement
-@property (nullable, nonatomic, strong) NSString *version;
+@property (nullable, nonatomic, copy) NSString *version;
 @property (nonnull, nonatomic, strong) HL7PatientRole *patientRole;
+@property (nullable, nonatomic, strong) HL7Code *confidentialityCode;
 @end

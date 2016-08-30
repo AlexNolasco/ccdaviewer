@@ -32,7 +32,6 @@
 #import "HL7EffectiveTime.h"
 #import "HL7InterpretationCode.h"
 #import "HL7ResultReferenceRange.h"
-#import "NSDate+Additions.h"
 
 @implementation HL7ResultSummaryEntry
 
@@ -49,27 +48,19 @@
     return self;
 }
 
-- (NSString *)dateAsString
-{
-    if (_dateAsString == nil && [self date]) {
-        _dateAsString = [[self date] toShortDateString];
-    }
-    return _dateAsString;
-}
-
-#pragma mark -
+#pragma mark NSCopying
 - (id)copyWithZone:(nullable NSZone *)zone
 {
     HL7ResultSummaryEntry *clone = [super copyWithZone:zone];
-    [clone setValue:[[self value] copy]];
-    [clone setUnits:[[self units] copy]];
-    [clone setRange:[[self range] copy]];
-    [clone setDate:[[self date] copy]];
-    [clone setInterpretation:[[self interpretation] copy]];
+    [clone setValue:[self value]];
+    [clone setUnits:[self units]];
+    [clone setRange:[self range]];
+    [clone setDate:[self date]];
+    [clone setInterpretation:[self interpretation]];
     return clone;
 }
 
-#pragma mark -
+#pragma mark NSCoding
 - (id)initWithCoder:(NSCoder *)decoder
 {
     if ((self = [super initWithCoder:decoder])) {

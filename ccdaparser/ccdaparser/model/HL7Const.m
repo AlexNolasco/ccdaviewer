@@ -63,6 +63,7 @@ NSString *const HL7AttributeUnit = @"unit";
 
 // ClinicalDocument
 NSString *const HL7ElementClinicalDocument = @"ClinicalDocument";
+NSString *const HL7ElementClinicalDocumentConfidentialityCode = @"confidentialityCode";
 
 // recordTarget
 NSString *const HL7ElementRecordTarget = @"recordTarget";
@@ -87,7 +88,13 @@ NSString *const HL7ElementGuardian = @"guardian";
 NSString *const HL7ElementGuardianPerson = @"guardianPerson";
 NSString *const HL7ElementReference = @"reference";
 NSString *const HL7ElementEthnicGroupCode = @"ethnicGroupCode";
-
+NSString *const HL7ElementRaceCode = @"raceCode";
+NSString *const HL7ElementReligiousAffilition = @"religiousAffiliationCode";
+NSString *const HL7ElementLanguageCommunication = @"languageCommunication";
+NSString *const HL7ElementLanguageCode = @"languageCode";
+NSString *const HL7ElementModeCode = @"modeCode";
+NSString *const HL7ElementProficiencyLevelCode = @"proficiencyLevelCode";
+NSString *const HL7ElementPreferenceInd = @"preferenceInd";
 
 // medications
 NSString *const HL7ElementSubstanceAdministration = @"substanceAdministration";

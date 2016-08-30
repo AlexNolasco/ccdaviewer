@@ -23,11 +23,11 @@
 
 
 #import <Foundation/Foundation.h>
+#import "HL7SummaryInfo.h"
 @class HL7CCDSummary;
 @class HL7CCD;
-@class HL7SummaryInfo;
 
 @interface HL7Summarizer : NSObject
-- (NSDictionary<NSString *, NSString *> *_Nonnull)getDictionaryOfSummaryImplementations;
+- (NSDictionaryTemplateIdToSummaryClassName *_Nonnull)getDictionaryOfSummaryImplementations;
 - (HL7CCDSummary *_Nullable)summarizeCcda:(HL7CCD *_Nullable)ccda templates:(NSSet<NSString *> *_Nullable)templates;
 @end

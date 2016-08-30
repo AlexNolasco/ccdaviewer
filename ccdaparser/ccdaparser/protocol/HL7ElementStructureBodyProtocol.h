@@ -24,6 +24,7 @@
 
 #import <Foundation/Foundation.h>
 #import "HL7SectionMapperProtocol.h"
+
 // obsolete
 @protocol HL7ElementStructureBodyProtocol <NSObject>
 @optional

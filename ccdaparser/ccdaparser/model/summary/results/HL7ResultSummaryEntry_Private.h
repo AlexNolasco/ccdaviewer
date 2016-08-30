@@ -26,11 +26,11 @@
 @class HL7ResultObservation;
 
 @interface HL7ResultSummaryEntry ()
-@property (nullable, nonatomic, strong) NSString *value;
-@property (nullable, nonatomic, strong) NSString *units;
-@property (nullable, nonatomic, strong) NSString *range;
-@property (nullable, nonatomic, strong) NSDate *date;
-@property (nullable, nonatomic, strong) NSString *interpretation;
-@property (nullable, nonatomic, strong) NSString *dateAsString;
+@property (nullable, nonatomic, copy) NSString *value;
+@property (nullable, nonatomic, copy) NSString *units;
+@property (nullable, nonatomic, copy) NSString *range;
+@property (nullable, nonatomic, copy) NSDate *date;
+@property (nullable, nonatomic, copy) NSString *interpretation;
+@property (nullable, nonatomic, copy) NSString *dateAsString;
 - (instancetype _Nonnull)initWithObservation:(HL7ResultObservation *_Nonnull)observation;
 @end

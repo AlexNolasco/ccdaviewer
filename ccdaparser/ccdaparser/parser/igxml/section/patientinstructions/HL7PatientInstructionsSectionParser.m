@@ -64,7 +64,7 @@
     if ([node isStartOfElementWithName:HL7ElementEntry]) {
         [[section entries] addObject:entry]; // Add entry
     } else if ([node isStartOfElementWithName:HL7ElementAct]) {
-        HL7Act *act = [[HL7Act alloc] init];
+        HL7Act *act = [HL7Act new];
         [context setElement:act];
         [[[HL7ActParser alloc] init] parse:context error:error];
         [((HL7PatientInstructionsEntry *)entry) setAct:act];

@@ -34,12 +34,12 @@
 {
     if ((self = [super init])) {
         [self setEffectiveTime:[[HL7DateRange alloc] initWithEffectiveTime:[act effectiveTime]]];
-        [self setNarrative:[[[act text] text] copy]];
+        [self setNarrative:[[act text] text]];
     }
     return self;
 }
 
-#pragma mark -
+#pragma mark NSCopying
 - (id)copyWithZone:(nullable NSZone *)zone
 {
     HL7PatientInstructionsSummaryEntry *clone = [super copyWithZone:zone];
@@ -48,7 +48,7 @@
     return clone;
 }
 
-#pragma mark -
+#pragma mark NSCoding
 - (id)initWithCoder:(NSCoder *)decoder
 {
     if (self = [super initWithCoder:decoder]) {

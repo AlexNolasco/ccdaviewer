@@ -55,7 +55,6 @@
 
 - (HL7AllergySummaryEntry *)createAllergySummaryFrom:(HL7AllergyEntry *)allergyEntry andSection:(HL7AllergySection *)section
 {
-
     if (![allergyEntry problemAct]) {
         return nil;
     }
@@ -65,7 +64,7 @@
         return nil;
     }
 
-    HL7AllergySummaryEntry *result = [[HL7AllergySummaryEntry alloc] init];
+    HL7AllergySummaryEntry *result = [HL7AllergySummaryEntry new];
     [result setDateOfOnsetRange:[[HL7DateRange alloc] initWithStart:[[[observation effectiveTime] low] valueAsNSDate] end:[[[observation effectiveTime] high] valueAsNSDate]]];
 
     // allergen code
@@ -91,6 +90,10 @@
     HL7CodeSummary *severityCodeSummary = [[HL7CodeSummary alloc] initWithValue:[allergyEntry severityValue]];
     [severityCodeSummary setResolvedName:[allergyEntry getSeverityUsingSectionTextAsReference:[section text]]];
     [result setSeverityCode:severityCodeSummary];
+
+    // no knowns
+    [result setNoKnownAllergiesFound:allergyEntry.allergen.noKnownAllergiesFound];
+    [result setNoKnownMedicationAllergiesFound:allergyEntry.allergen.noKnownMedicationAllergiesFound];
 
     // reactions
     if ([allergyEntry reactions] > 0) {
@@ -120,6 +123,7 @@
     if (allergySection != nil) {
         [summary setNoKnownAllergiesFound:[allergySection noKnownAllergiesFound]];
         [summary setNoKnownMedicationAllergiesFound:[allergySection noKnownMedicationAllergiesFound]];
+
 
         for (HL7AllergyEntry *allergyEntry in [allergySection entries]) {
             HL7AllergySummaryEntry *analyzedEntry = [self createAllergySummaryFrom:allergyEntry andSection:allergySection];

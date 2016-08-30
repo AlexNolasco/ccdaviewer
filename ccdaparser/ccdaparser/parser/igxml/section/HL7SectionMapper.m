@@ -31,7 +31,7 @@
 
 @implementation HL7SectionMapper
 
-- (nonnull NSMutableDictionary *)getParsers
+- (nonnull NSMutableDictionary *)dictionaryOfParsers
 {
     NSMutableDictionary *result = [[NSMutableDictionary alloc] initWithCapacity:10];
 
@@ -45,23 +45,23 @@
     return result;
 }
 
-- (NSMutableDictionary *)mappers
+- (NSMutableDictionary *)parsers
 {
-    if (_mappers == nil) {
-        _mappers = [self getParsers];
+    if (_parsers == nil) {
+        _parsers = [self dictionaryOfParsers];
     }
-    return _mappers;
+    return _parsers;
 }
 
-- (NSArray<HL7SectionInfo *> *_Nonnull)availableParsers
+- (NSArraySectionInfo *_Nonnull)availableParsers
 {
-    NSMutableArray<HL7SectionInfo *> *parsers = [[NSMutableArray alloc] initWithCapacity:10];
+    NSMutableArray<HL7SectionInfo *> *arrayOfSections = [[NSMutableArray alloc] initWithCapacity:10];
 
-    [[self mappers] enumerateKeysAndObjectsUsingBlock:^(id _Nonnull key, id _Nonnull obj, BOOL *_Nonnull stop) {
-        [parsers addObject:[[HL7SectionInfo alloc] initWithSectionParser:(id<HL7ElementSectionParserProtocol>)obj]];
+    [[self parsers] enumerateKeysAndObjectsUsingBlock:^(id _Nonnull key, id _Nonnull obj, BOOL *_Nonnull stop) {
+        [arrayOfSections addObject:[[HL7SectionInfo alloc] initWithSectionParser:(id<HL7ElementSectionParserProtocol>)obj]];
     }];
 
-    return [parsers sortedArrayUsingComparator:^NSComparisonResult(id _Nonnull obj1, id _Nonnull obj2) {
+    return [arrayOfSections sortedArrayUsingComparator:^NSComparisonResult(id _Nonnull obj1, id _Nonnull obj2) {
         NSString *first = [(HL7SectionInfo *)obj1 name];
         NSString *second = [(HL7SectionInfo *)obj2 name];
         return [first compare:second];
@@ -70,7 +70,7 @@
 
 - (void)enableParsers:(NSSet<NSString *> *)templateIds
 {
-    [[self mappers] enumerateKeysAndObjectsUsingBlock:^(id _Nonnull key, id _Nonnull obj, BOOL *_Nonnull stop) {
+    [[self parsers] enumerateKeysAndObjectsUsingBlock:^(id _Nonnull key, id _Nonnull obj, BOOL *_Nonnull stop) {
         if (templateIds == nil || ![templateIds containsObject:key]) { // disable all when nil
             [((id<HL7ElementSectionParserProtocol>)obj) setEnabled:NO];
         }
@@ -80,7 +80,7 @@
 - (id<HL7ElementSectionParserProtocol>)getParserForSection:(HL7Section *)section
 {
     for (HL7TemplateId *templateId in [section templateIds]) {
-        id<HL7ElementSectionParserProtocol> parser = [[self mappers] objectForKey:[templateId root]];
+        id<HL7ElementSectionParserProtocol> parser = [[self parsers] objectForKey:[templateId root]];
         if (parser != nil) {
             return parser;
         }

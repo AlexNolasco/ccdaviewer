@@ -27,17 +27,23 @@
 @class HL7Name;
 @class HL7Code;
 @class HL7Guardian;
+@class HL7LanguageCommunication;
 
 @interface HL7Patient : HL7Element
-@property (nullable, nonatomic, strong) NSString *birthTime;
+@property (nullable, nonatomic, copy) NSString *birthTime;
 @property (nonnull, nonatomic, strong) NSMutableArray<HL7Name *> *names;
 @property (nullable, nonatomic, strong) HL7Code *administrativeGenderCode;
 @property (nullable, nonatomic, strong) HL7Code *maritalStatusCode;
 @property (nullable, nonatomic, strong) HL7Code *ethnicGroupCode;
+@property (nullable, nonatomic, strong) HL7Code *raceCode;
+@property (nullable, nonatomic, strong) HL7Code *religiousAffiliationCode;
 @property (nonnull, nonatomic, strong) NSMutableArray<HL7Guardian *> *guardians;
+@property (nonnull, nonatomic, strong) NSMutableArray<HL7LanguageCommunication*>* languages;
 - (nullable NSDate *)birthday;
 - (NSUInteger)age;
 - (HL7AdministrativeGenderCode)gender;
 - (HL7MaritalStatusCode)maritalStatus;
 - (HL7Name *_Nullable)name;
+- (HL7LanguageCommunication * _Nullable)preferredLanguage;
+- (NSString * _Nullable)preferredLanguageAsString;
 @end

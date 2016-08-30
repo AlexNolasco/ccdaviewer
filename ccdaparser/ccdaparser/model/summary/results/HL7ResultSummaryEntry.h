@@ -30,5 +30,4 @@
 - (NSString *_Nullable)range;
 - (NSDate *_Nullable)date;
 - (NSString *_Nullable)interpretation;
-- (NSString *_Nullable)dateAsString;
 @end
