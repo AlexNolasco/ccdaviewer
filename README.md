@@ -1,4 +1,4 @@
-# C-CCDA Viewer for iOS
+# C-CDA Viewer for iOS
 
 C-CDA viewer is an iOS application for viewing C-CDAs on the iPhone or iPad developed as part of the C-CDA Rendering Tool Challenge - HL7.
 ---
