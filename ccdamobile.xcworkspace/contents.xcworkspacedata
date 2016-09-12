@@ -4,7 +4,4 @@
    <FileRef
       location = "group:ccdaviewer/ccdaviewer.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:ccdaparser/ccdaparser.xcodeproj">
-   </FileRef>
 </Workspace>

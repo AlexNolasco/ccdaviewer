@@ -80,8 +80,6 @@
 		56A584161CB205F9007B8F3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56A584141CB205F9007B8F3E /* Main.storyboard */; };
 		56A5841B1CB205F9007B8F3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56A584191CB205F9007B8F3E /* LaunchScreen.storyboard */; };
 		56A584261CB205F9007B8F3E /* ccdaviewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A584251CB205F9007B8F3E /* ccdaviewerTests.m */; };
-		56ACDE401CE7AB1900E43AB3 /* ccdaparser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56ACDE3F1CE7AB1900E43AB3 /* ccdaparser.framework */; };
-		56ACDE411CE7AB1900E43AB3 /* ccdaparser.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 56ACDE3F1CE7AB1900E43AB3 /* ccdaparser.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		56B168C81CF1D56F008E7324 /* MMStopwatchARC.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B168C71CF1D56F008E7324 /* MMStopwatchARC.m */; };
 		56B16EC21D3C141D00170694 /* Patient.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56B16EC11D3C141D00170694 /* Patient.storyboard */; };
 		56B16EC61D3C3A5600170694 /* PatientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B16EC51D3C3A5600170694 /* PatientViewController.m */; };
@@ -103,6 +101,8 @@
 		56E50D041CE2A65B00705FED /* FHIRPeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E50CFD1CE2A65B00705FED /* FHIRPeriod.m */; };
 		56E50D051CE2A65B00705FED /* FHIRTelecom.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E50CFF1CE2A65B00705FED /* FHIRTelecom.m */; };
 		56EF9AEC1CDE2522002ED9B3 /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 56EF9AEB1CDE2522002ED9B3 /* ReadMe.txt */; };
+		87D53B5C1D871B3B00B5C758 /* ccdaparser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87D53B5A1D871AEA00B5C758 /* ccdaparser.framework */; };
+		87D53B5D1D871B3B00B5C758 /* ccdaparser.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 87D53B5A1D871AEA00B5C758 /* ccdaparser.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,8 +122,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				87D53B5D1D871B3B00B5C758 /* ccdaparser.framework in Embed Frameworks */,
 				56C71A881CF804440024CFF2 /* SVProgressHUD.framework in Embed Frameworks */,
-				56ACDE411CE7AB1900E43AB3 /* ccdaparser.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,7 +188,6 @@
 		5649E7731D66D72B000DBA11 /* NSDate+Formatting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Formatting.m"; sourceTree = "<group>"; };
 		564A00DB1CFB716D0011A5EE /* UIColor+LightAndDark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+LightAndDark.h"; sourceTree = "<group>"; };
 		564A00DC1CFB716D0011A5EE /* UIColor+LightAndDark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+LightAndDark.m"; sourceTree = "<group>"; };
-		564A00E51CFB8CDB0011A5EE /* MBCircularProgressBar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBCircularProgressBar.framework; path = Carthage/Build/iOS/MBCircularProgressBar.framework; sourceTree = "<group>"; };
 		564DD2881D6A6391002D4E0C /* ViewerResultsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewerResultsCell.xib; sourceTree = "<group>"; };
 		564DD28A1D6A63FC002D4E0C /* ViewerResultsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewerResultsCell.h; sourceTree = "<group>"; };
 		564DD28B1D6A63FC002D4E0C /* ViewerResultsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewerResultsCell.m; sourceTree = "<group>"; };
@@ -261,7 +260,6 @@
 		56A584211CB205F9007B8F3E /* ccdaviewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ccdaviewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56A584251CB205F9007B8F3E /* ccdaviewerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ccdaviewerTests.m; sourceTree = "<group>"; };
 		56A584271CB205F9007B8F3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		56ACDE3F1CE7AB1900E43AB3 /* ccdaparser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = ccdaparser.framework; path = "/Users/us/Library/Developer/Xcode/DerivedData/ccdamobile-hbscwdcilsoearakyedfonktpubr/Build/Products/Debug-iphoneos/ccdaparser.framework"; sourceTree = "<absolute>"; };
 		56B168C61CF1D56F008E7324 /* MMStopwatchARC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMStopwatchARC.h; sourceTree = "<group>"; };
 		56B168C71CF1D56F008E7324 /* MMStopwatchARC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMStopwatchARC.m; sourceTree = "<group>"; };
 		56B16EC11D3C141D00170694 /* Patient.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Patient.storyboard; sourceTree = "<group>"; };
@@ -300,6 +298,7 @@
 		56E50CFE1CE2A65B00705FED /* FHIRTelecom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FHIRTelecom.h; sourceTree = "<group>"; };
 		56E50CFF1CE2A65B00705FED /* FHIRTelecom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FHIRTelecom.m; sourceTree = "<group>"; };
 		56EF9AEB1CDE2522002ED9B3 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
+		87D53B5A1D871AEA00B5C758 /* ccdaparser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ccdaparser.framework; path = Carthage/Build/iOS/ccdaparser.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,8 +306,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87D53B5C1D871B3B00B5C758 /* ccdaparser.framework in Frameworks */,
 				56C71A871CF804440024CFF2 /* SVProgressHUD.framework in Frameworks */,
-				56ACDE401CE7AB1900E43AB3 /* ccdaparser.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +324,7 @@
 		2ADA1228C5A01C27B2A8559C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				87D53B5A1D871AEA00B5C758 /* ccdaparser.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -608,9 +608,7 @@
 		56A583FF1CB205F9007B8F3E = {
 			isa = PBXGroup;
 			children = (
-				564A00E51CFB8CDB0011A5EE /* MBCircularProgressBar.framework */,
 				56C71A861CF804430024CFF2 /* SVProgressHUD.framework */,
-				56ACDE3F1CE7AB1900E43AB3 /* ccdaparser.framework */,
 				5665084C1CE03FE4001D8AD1 /* Localizable.strings */,
 				56A5840A1CB205F9007B8F3E /* ccdaviewer */,
 				56A584241CB205F9007B8F3E /* ccdaviewerTests */,
