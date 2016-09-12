@@ -101,6 +101,8 @@
 		56E50D041CE2A65B00705FED /* FHIRPeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E50CFD1CE2A65B00705FED /* FHIRPeriod.m */; };
 		56E50D051CE2A65B00705FED /* FHIRTelecom.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E50CFF1CE2A65B00705FED /* FHIRTelecom.m */; };
 		56EF9AEC1CDE2522002ED9B3 /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 56EF9AEB1CDE2522002ED9B3 /* ReadMe.txt */; };
+		87D53B5C1D871B3B00B5C758 /* ccdaparser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87D53B5A1D871AEA00B5C758 /* ccdaparser.framework */; };
+		87D53B5D1D871B3B00B5C758 /* ccdaparser.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 87D53B5A1D871AEA00B5C758 /* ccdaparser.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +122,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				87D53B5D1D871B3B00B5C758 /* ccdaparser.framework in Embed Frameworks */,
 				56C71A881CF804440024CFF2 /* SVProgressHUD.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -295,6 +298,7 @@
 		56E50CFE1CE2A65B00705FED /* FHIRTelecom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FHIRTelecom.h; sourceTree = "<group>"; };
 		56E50CFF1CE2A65B00705FED /* FHIRTelecom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FHIRTelecom.m; sourceTree = "<group>"; };
 		56EF9AEB1CDE2522002ED9B3 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
+		87D53B5A1D871AEA00B5C758 /* ccdaparser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ccdaparser.framework; path = Carthage/Build/iOS/ccdaparser.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +306,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87D53B5C1D871B3B00B5C758 /* ccdaparser.framework in Frameworks */,
 				56C71A871CF804440024CFF2 /* SVProgressHUD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,6 +324,7 @@
 		2ADA1228C5A01C27B2A8559C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				87D53B5A1D871AEA00B5C758 /* ccdaparser.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
