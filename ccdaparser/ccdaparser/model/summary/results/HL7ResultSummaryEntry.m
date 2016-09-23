@@ -32,18 +32,21 @@
 #import "HL7EffectiveTime.h"
 #import "HL7InterpretationCode.h"
 #import "HL7ResultReferenceRange.h"
+#import "HL7CodeSummary_Private.h"
 
 @implementation HL7ResultSummaryEntry
 
 - (instancetype _Nonnull)initWithObservation:(HL7ResultObservation *_Nonnull)observation
 {
-    if (self = [super init]) {
-        [self setNarrative:[[[observation code] displayName] copy]];
-        [self setValue:[[[observation value] value] copy]];
-        [self setUnits:[[[observation value] unit] copy]];
-        [self setDate:[[observation effectiveTime] valueAsNSDate]];
-        [self setInterpretation:[[[observation firstInterpretationCode] displayName] copy]];
-        [self setRange:[[[observation firstReferenceRange] observationRangeAsString] copy]];
+    if (self = [super init]) {    
+        [super setNarrative:[[[observation code] displayName] copy]];
+        _value = [[observation value] value];
+        _units = [[observation value] unit];
+        _date = [[observation effectiveTime] valueAsNSDate];
+        _interpretation = [[observation firstInterpretationCode] displayName];
+        _range = [[observation firstReferenceRange] observationRangeAsString];
+        _code = [[HL7CodeSummary alloc] initWithCode:observation.code];
+        _resultRange = HL7ResultRangeUnknown;
     }
     return self;
 }
@@ -52,11 +55,13 @@
 - (id)copyWithZone:(nullable NSZone *)zone
 {
     HL7ResultSummaryEntry *clone = [super copyWithZone:zone];
-    [clone setValue:[self value]];
-    [clone setUnits:[self units]];
-    [clone setRange:[self range]];
-    [clone setDate:[self date]];
-    [clone setInterpretation:[self interpretation]];
+    [clone setValue:self.value];
+    [clone setUnits:self.units];
+    [clone setRange:self.range];
+    [clone setDate:self.date];
+    [clone setInterpretation:self.interpretation];
+    [clone setCode:self.code];
+    [clone setResultRange:self.resultRange];
     return clone;
 }
 
@@ -69,6 +74,8 @@
         [self setRange:[decoder decodeObjectForKey:@"range"]];
         [self setDate:[decoder decodeObjectForKey:@"date"]];
         [self setInterpretation:[decoder decodeObjectForKey:@"interpretation"]];
+        [self setCode:[decoder decodeObjectForKey:@"code"]];
+        [self setResultRange:[decoder decodeIntegerForKey:@"resultRange"]];
     }
     return self;
 }
@@ -81,5 +88,7 @@
     [encoder encodeObject:[self range] forKey:@"range"];
     [encoder encodeObject:[self date] forKey:@"date"];
     [encoder encodeObject:[self interpretation] forKey:@"interpretation"];
+    [encoder encodeObject:[self code] forKey:@"code"];
+    [encoder encodeInteger:[self resultRange] forKey:@"resultRange"];
 }
 @end

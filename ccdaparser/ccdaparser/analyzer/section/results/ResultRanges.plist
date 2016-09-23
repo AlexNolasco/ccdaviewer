@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1751-7</key>
+	<dict>
+		<key>classType</key>
+		<string>CHEM/Lab</string>
+		<key>units</key>
+		<string>g/dL</string>
+		<key>ranges</key>
+		<dict>
+			<key>both</key>
+			<dict>
+				<key>min</key>
+				<real>3.9</real>
+				<key>max</key>
+				<integer>5</integer>
+			</dict>
+		</dict>
+	</dict>
+	<key>1742-6</key>
+	<dict>
+		<key>classType</key>
+		<string>CHEM/Lab</string>
+		<key>units</key>
+		<string>IU/L</string>
+		<key>ranges</key>
+		<dict>
+			<key>both</key>
+			<dict>
+				<key>min</key>
+				<integer>8</integer>
+				<key>max</key>
+				<integer>37</integer>
+			</dict>
+		</dict>
+	</dict>
+	<key>718-7</key>
+	<dict>
+		<key>classType</key>
+		<string>HEM/BC/Lab</string>
+		<key>units</key>
+		<string>g/dL</string>
+		<key>ranges</key>
+		<dict>
+			<key>male</key>
+			<dict>
+				<key>min</key>
+				<integer>13</integer>
+				<key>max</key>
+				<integer>18</integer>
+			</dict>
+			<key>female</key>
+			<dict>
+				<key>min</key>
+				<integer>12</integer>
+				<key>max</key>
+				<integer>16</integer>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
