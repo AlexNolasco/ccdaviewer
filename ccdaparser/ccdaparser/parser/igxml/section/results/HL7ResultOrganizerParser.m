@@ -50,8 +50,8 @@
                 untilEndOfElementName:HL7ElementComponent
                            usingBlock:^(ParserContext *context, BOOL *stop) {
                                if ([node isStartOfElementWithName:HL7ElementObservation]) { // observation
-                                   HL7ResultObservation *observation = [[HL7ResultObservation alloc] init];
-                                   HL7ResultObservationParser *observationParser = [[HL7ResultObservationParser alloc] init];
+                                   HL7ResultObservation *observation = [HL7ResultObservation new];
+                                   HL7ResultObservationParser *observationParser = [HL7ResultObservationParser new];
                                    [context setElement:observation];
                                    [observationParser parse:context error:error];
                                    [[organizer observations] addObject:observation];

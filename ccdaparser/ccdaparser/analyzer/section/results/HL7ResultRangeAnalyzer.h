@@ -22,17 +22,10 @@
  *********************************************************************************/
 
 
-#import "HL7ResultSummaryEntry.h"
+#import <Foundation/Foundation.h>
+#import "HL7Enums.h"
 @class HL7ResultObservation;
 
-@interface HL7ResultSummaryEntry ()
-@property (nullable, nonatomic, copy) NSString *value;
-@property (nullable, nonatomic, copy) NSString *units;
-@property (nullable, nonatomic, copy) NSString *range;
-@property (nullable, nonatomic, copy) NSDate *date;
-@property (nullable, nonatomic, copy) NSString *interpretation;
-@property (nullable, nonatomic, copy) NSString *dateAsString;
-@property (nullable, nonatomic, strong) HL7CodeSummary * code;
-@property (assign, nonatomic) HL7ResultRange resultRange;
-- (instancetype _Nonnull)initWithObservation:(HL7ResultObservation *_Nonnull)observation;
+@interface HL7ResultRangeAnalyzer : NSObject
+- (HL7ResultRange) resultRangeForSummaryEntry: (HL7ResultObservation *)resultObservation forGender:(HL7AdministrativeGenderCode) genderCode;
 @end

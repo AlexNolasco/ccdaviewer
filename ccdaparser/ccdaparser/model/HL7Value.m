@@ -41,7 +41,14 @@
 
 - (BOOL)physicalUnitsAreEqual
 {
-    return [[[self low] unit] isEqualToString:[[self high] unit]];
+    return [self.low.unit isEqualToString:self.high.unit];
+}
+
+- (NSNumber *)valueAsDecimalNumber
+{
+    NSNumberFormatter *numberFormatter = [NSNumberFormatter new]; // US default locale
+    numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
+    return [numberFormatter numberFromString:self.value];
 }
 
 - (HL7XSIType)xsiType

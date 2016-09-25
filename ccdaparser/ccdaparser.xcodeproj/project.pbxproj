@@ -406,6 +406,10 @@
 		56A585A61CB287A4007B8F3E /* HL7Analyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A585A01CB287A4007B8F3E /* HL7Analyzer.m */; };
 		56A585A91CB287A4007B8F3E /* HL7Element+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A585A31CB287A4007B8F3E /* HL7Element+Additions.h */; };
 		56A585AA1CB287A4007B8F3E /* HL7Element+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A585A41CB287A4007B8F3E /* HL7Element+Additions.m */; };
+		56AC55611D9385A5004DED7E /* HL7ResultRangeAnalyzer.h in Headers */ = {isa = PBXBuildFile; fileRef = 56AC555F1D9385A5004DED7E /* HL7ResultRangeAnalyzer.h */; };
+		56AC55621D9385A5004DED7E /* HL7ResultRangeAnalyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AC55601D9385A5004DED7E /* HL7ResultRangeAnalyzer.m */; };
+		56AC55641D94B1FF004DED7E /* ResultRanges.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56AC55631D94B1FF004DED7E /* ResultRanges.plist */; };
+		56AC55681D94D538004DED7E /* HL7ResultRangeAnalyzerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AC55671D94D538004DED7E /* HL7ResultRangeAnalyzerTests.m */; };
 		56AE28441CC84CFC00EF8908 /* HL7Period.h in Headers */ = {isa = PBXBuildFile; fileRef = 56AE28421CC84CFC00EF8908 /* HL7Period.h */; };
 		56AE28451CC84CFC00EF8908 /* HL7Period.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AE28431CC84CFC00EF8908 /* HL7Period.m */; };
 		56AE28481CC854B100EF8908 /* HL7SubstanceAdministration.h in Headers */ = {isa = PBXBuildFile; fileRef = 56AE28461CC854B100EF8908 /* HL7SubstanceAdministration.h */; };
@@ -963,6 +967,10 @@
 		56A585A01CB287A4007B8F3E /* HL7Analyzer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HL7Analyzer.m; sourceTree = "<group>"; };
 		56A585A31CB287A4007B8F3E /* HL7Element+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "HL7Element+Additions.h"; path = "../analyzer/HL7Element+Additions.h"; sourceTree = "<group>"; };
 		56A585A41CB287A4007B8F3E /* HL7Element+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "HL7Element+Additions.m"; path = "../analyzer/HL7Element+Additions.m"; sourceTree = "<group>"; };
+		56AC555F1D9385A5004DED7E /* HL7ResultRangeAnalyzer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HL7ResultRangeAnalyzer.h; sourceTree = "<group>"; };
+		56AC55601D9385A5004DED7E /* HL7ResultRangeAnalyzer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HL7ResultRangeAnalyzer.m; sourceTree = "<group>"; };
+		56AC55631D94B1FF004DED7E /* ResultRanges.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ResultRanges.plist; sourceTree = "<group>"; };
+		56AC55671D94D538004DED7E /* HL7ResultRangeAnalyzerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HL7ResultRangeAnalyzerTests.m; sourceTree = "<group>"; };
 		56AE28421CC84CFC00EF8908 /* HL7Period.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HL7Period.h; sourceTree = "<group>"; };
 		56AE28431CC84CFC00EF8908 /* HL7Period.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HL7Period.m; sourceTree = "<group>"; };
 		56AE28461CC854B100EF8908 /* HL7SubstanceAdministration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HL7SubstanceAdministration.h; sourceTree = "<group>"; };
@@ -1192,8 +1200,11 @@
 		560C156F1CCDA2A300C07482 /* results */ = {
 			isa = PBXGroup;
 			children = (
+				56AC55631D94B1FF004DED7E /* ResultRanges.plist */,
 				560C15701CCDA2CF00C07482 /* HL7ResultAnalyzer.h */,
 				560C15711CCDA2CF00C07482 /* HL7ResultAnalyzer.m */,
+				56AC555F1D9385A5004DED7E /* HL7ResultRangeAnalyzer.h */,
+				56AC55601D9385A5004DED7E /* HL7ResultRangeAnalyzer.m */,
 			);
 			path = results;
 			sourceTree = "<group>";
@@ -1565,6 +1576,7 @@
 		56A583B91CB20529007B8F3E /* ccdaparserTests */ = {
 			isa = PBXGroup;
 			children = (
+				56AC55671D94D538004DED7E /* HL7ResultRangeAnalyzerTests.m */,
 				56BC02DC1CFCAF140013C380 /* removeSpacesTests.m */,
 				56EF9AF51CDE6E51002ED9B3 /* HL7SectionMapperTests.m */,
 				560C15841CCDB3E900C07482 /* HL7InterpretationCodeTests.m */,
@@ -2461,6 +2473,7 @@
 				56D420901CD59D93006748CD /* HL7ProcedureSection.h in Headers */,
 				56BC02DA1CFCAE2F0013C380 /* NSString+StripSpaces.h in Headers */,
 				56AE28651CC9A22900EF8908 /* HL7MedicationSubstanceAdministrationParser.h in Headers */,
+				56AC55611D9385A5004DED7E /* HL7ResultRangeAnalyzer.h in Headers */,
 				56A585A51CB287A4007B8F3E /* HL7Analyzer.h in Headers */,
 				56E1928C1CD6D345009AD1B5 /* HL7EncounterActivityParser.h in Headers */,
 				5678C7CE1CE56D510023F2EC /* NSString+ObjectiveSugar.h in Headers */,
@@ -2658,6 +2671,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				560C15811CCDA5FC00C07482 /* Localizable.strings in Resources */,
+				56AC55641D94B1FF004DED7E /* ResultRanges.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2744,6 +2758,7 @@
 				56E1925A1CD6878C009AD1B5 /* HL7ProcedureActivityObservation.m in Sources */,
 				560C15731CCDA2D000C07482 /* HL7ResultAnalyzer.m in Sources */,
 				56A5847F1CB2183E007B8F3E /* HL7Telecom.m in Sources */,
+				56AC55621D9385A5004DED7E /* HL7ResultRangeAnalyzer.m in Sources */,
 				5670F2A21CD2D2AF001C5FCF /* HL7PatientInstructionsSectionParser.m in Sources */,
 				56A584871CB2183E007B8F3E /* HL7Time.m in Sources */,
 				56245BA51CC45D0100EBCC79 /* HL7InterpretationCode.m in Sources */,
@@ -2920,6 +2935,7 @@
 				56A585921CB21F16007B8F3E /* HL7IdentifierFromReaderTests.m in Sources */,
 				56A585961CB21F16007B8F3E /* HL7AddrTests.m in Sources */,
 				56245BCB1CC49D6200EBCC79 /* HL7VitalSignsSectionParserTests.m in Sources */,
+				56AC55681D94D538004DED7E /* HL7ResultRangeAnalyzerTests.m in Sources */,
 				56BC02DD1CFCAF140013C380 /* removeSpacesTests.m in Sources */,
 				56A585951CB21F16007B8F3E /* HL7GuardianParserTests.m in Sources */,
 				560FEE801CB492EB00131529 /* HL7OriginalTextTests.m in Sources */,

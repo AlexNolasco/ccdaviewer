@@ -32,17 +32,35 @@
 #import "HL7ResultSection.h"
 #import "HL7ResultObservation.h"
 #import "HL7ResultOrganizer.h"
+#import "HL7ResultRangeAnalyzer.h"
+#import "HL7ClinicalDocument.h"
+#import "HL7PatientRole.h"
+#import "HL7Patient.h"
+
+@interface  HL7ResultAnalyzer ()
+@property (nonatomic, strong) HL7ResultRangeAnalyzer * resultRangeAnalyzer;
+@end
 
 @implementation HL7ResultAnalyzer
+- (HL7ResultRangeAnalyzer *) resultRangeAnalyzer
+{
+    if (_resultRangeAnalyzer == nil) {
+        _resultRangeAnalyzer = [HL7ResultRangeAnalyzer new];
+    }
+    return _resultRangeAnalyzer;
+}
+
 - (NSString *_Nullable)templateId
 {
     return HL7TemplateResultsEntriesRequired;
 }
 
-- (HL7ResultSummaryEntry *_Nullable)createSummaryEntryFromElement:(HL7ResultObservation *)observation
+- (HL7ResultSummaryEntry *_Nullable)createSummaryEntryFromElement:(HL7ResultObservation *)observation genderCode:(HL7AdministrativeGenderCode) genderCode
 {
     if (![observation isEmpty]) {
-        return [[HL7ResultSummaryEntry alloc] initWithObservation:observation];
+        HL7ResultSummaryEntry * summaryEntry =  [[HL7ResultSummaryEntry alloc] initWithObservation:observation];
+        summaryEntry.resultRange = [self.resultRangeAnalyzer resultRangeForSummaryEntry:observation forGender:genderCode];
+        return summaryEntry;
     }
     return nil;
 }
@@ -52,9 +70,11 @@
     HL7ResultSection *section = (HL7ResultSection *)[document getSectionByTemplateId:[self templateId]];
     HL7ResultSummary *summary = [[HL7ResultSummary alloc] initWithElement:section];
 
+    
     for (HL7ResultEntry *entry in [section entries]) {
         for (HL7ResultObservation *observation in [[entry organizer] observations]) {
-            HL7ResultSummaryEntry *summaryEntry = [self createSummaryEntryFromElement:observation];
+            // gender must have been analyzed prior to this section
+            HL7ResultSummaryEntry *summaryEntry = [self createSummaryEntryFromElement:observation genderCode:document.clinicalDocument.patientRole.patient.gender];
             if (summaryEntry != nil) {
                 [[summary entries] addObject:summaryEntry];
             }

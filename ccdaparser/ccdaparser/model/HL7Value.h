@@ -33,6 +33,7 @@
 @property (nullable, nonatomic, copy) NSString *text;
 @property (nullable, nonatomic, strong) HL7PhysicalQuantityInterval *low;
 @property (nullable, nonatomic, strong) HL7PhysicalQuantityInterval *high;
+@property (nullable, nonatomic, readonly) NSNumber *valueAsDecimalNumber;
 - (HL7XSIType)xsiType;
 - (BOOL)physicalUnitsAreEqual;
 @end

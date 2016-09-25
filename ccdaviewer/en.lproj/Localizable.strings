@@ -72,6 +72,8 @@
 "PatientViewController.Entry" = "1 entry";
 "PatientViewController.NoEntries" = "No entries";
 
+"ResultRange.Abnormal" = "ABNORMAL";
+
 "%d days ago" = "%d days ago";
 "%d hours ago" = "%d hours ago";
 "%d minutes ago" = "%d minutes ago";
