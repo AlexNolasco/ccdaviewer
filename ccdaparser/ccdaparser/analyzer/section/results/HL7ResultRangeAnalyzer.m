@@ -78,7 +78,8 @@ const static NSString* kHL7ResultRangeAnalyzerMaximum = @"max";
         return HL7ResultRangeUnknown;
     }
     
-    NSDictionary * ranges = [codeInfo objectForKey:kHL7ResultRangeAnalyzerRanges];
+    NSDictionary * ranges = [[codeInfo objectForKey:kHL7ResultRangeAnalyzerUnits] objectForKey:resultValue.unit];
+    
     if (ranges == nil) { // no ranges found, bad info file
         return HL7ResultRangeUnknown;
     }
@@ -96,10 +97,6 @@ const static NSString* kHL7ResultRangeAnalyzerMaximum = @"max";
         return HL7ResultRangeUnknown;
     }
     
-    // See if the units match
-    if (![resultValue.unit isEqualToString:[codeInfo objectForKey:kHL7ResultRangeAnalyzerUnits] ]) {
-        return HL7ResultRangeUnknown;
-    }
     
     NSNumber * minimum = [genderRange objectForKey:kHL7ResultRangeAnalyzerMinimum];
     NSNumber * maximum = [genderRange objectForKey:kHL7ResultRangeAnalyzerMaximum];

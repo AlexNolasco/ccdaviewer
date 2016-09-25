@@ -130,4 +130,212 @@
     HL7ResultRange range = [analyzer resultRangeForSummaryEntry:observation forGender:HL7AdministrativeGenderCodeFemale];
     XCTAssertEqual(range, HL7ResultRangeUnknown);
 }
+
+- (void)testLoinc6690_2Normal
+{
+    HL7ResultRangeAnalyzer * analyzer = [HL7ResultRangeAnalyzer new];
+    HL7ResultObservation * observation = [HL7ResultObservation new];
+    observation.code = [HL7Code new];
+    observation.code.code = @"6690-2";
+    observation.value = [HL7Value new];
+    observation.value.value = @"5.8";
+    observation.value.unit = @"10*9/L";
+    HL7ResultRange range = [analyzer resultRangeForSummaryEntry:observation forGender:HL7AdministrativeGenderCodeFemale];
+    XCTAssertEqual(range, HL7ResultRangeNormal);
+}
+
+- (void)testLoinc6690_2UnknownUnit
+{
+    HL7ResultRangeAnalyzer * analyzer = [HL7ResultRangeAnalyzer new];
+    HL7ResultObservation * observation = [HL7ResultObservation new];
+    observation.code = [HL7Code new];
+    observation.code.code = @"6690-2";
+    observation.value = [HL7Value new];
+    observation.value.value = @"5.8";
+    observation.value.unit = @"cm";
+    HL7ResultRange range = [analyzer resultRangeForSummaryEntry:observation forGender:HL7AdministrativeGenderCodeFemale];
+    XCTAssertEqual(range, HL7ResultRangeUnknown);
+}
+
+- (void)testLoinc6690_2BelowNormal
+{
+    HL7ResultRangeAnalyzer * analyzer = [HL7ResultRangeAnalyzer new];
+    HL7ResultObservation * observation = [HL7ResultObservation new];
+    observation.code = [HL7Code new];
+    observation.code.code = @"6690-2";
+    observation.value = [HL7Value new];
+    observation.value.value = @"4.0";
+    observation.value.unit = @"THOUS/MCL";
+    HL7ResultRange range = [analyzer resultRangeForSummaryEntry:observation forGender:HL7AdministrativeGenderCodeFemale];
+    XCTAssertEqual(range, HL7ResultRangeBelowNormal);
+}
+
+- (void)testLoinc6690_2AboveNormal
+{
+    HL7ResultRangeAnalyzer * analyzer = [HL7ResultRangeAnalyzer new];
+    HL7ResultObservation * observation = [HL7ResultObservation new];
+    observation.code = [HL7Code new];
+    observation.code.code = @"6690-2";
+    observation.value = [HL7Value new];
+    observation.value.value = @"11.1";
+    observation.value.unit = @"X_10-3/uL";
+    HL7ResultRange range = [analyzer resultRangeForSummaryEntry:observation forGender:HL7AdministrativeGenderCodeFemale];
+    XCTAssertEqual(range, HL7ResultRangeAboveNormal);
+}
+
+- (void)testLoinc789_8Normal
+{
+    HL7ResultRangeAnalyzer * analyzer = [HL7ResultRangeAnalyzer new];
+    HL7ResultObservation * observation = [HL7ResultObservation new];
+    observation.code = [HL7Code new];
+    observation.code.code = @"789-8";
+    observation.value = [HL7Value new];
+    observation.value.value = @"5.8";
+    observation.value.unit = @"MILL/MCL";
+    HL7ResultRange range = [analyzer resultRangeForSummaryEntry:observation forGender:HL7AdministrativeGenderCodeFemale];
+    XCTAssertEqual(range, HL7ResultRangeNormal);
+}
+
+- (void)testLoinc789_8BelowNormal
+{
+    HL7ResultRangeAnalyzer * analyzer = [HL7ResultRangeAnalyzer new];
+    HL7ResultObservation * observation = [HL7ResultObservation new];
+    observation.code = [HL7Code new];
+    observation.code.code = @"789-8";
+    observation.value = [HL7Value new];
+    observation.value.value = @"2.8";
+    observation.value.unit = @"MILL/MCL";
+    HL7ResultRange range = [analyzer resultRangeForSummaryEntry:observation forGender:HL7AdministrativeGenderCodeFemale];
+    XCTAssertEqual(range, HL7ResultRangeBelowNormal);
+}
+
+- (void)testLoinc789_8AboveNormal
+{
+    HL7ResultRangeAnalyzer * analyzer = [HL7ResultRangeAnalyzer new];
+    HL7ResultObservation * observation = [HL7ResultObservation new];
+    observation.code = [HL7Code new];
+    observation.code.code = @"789-8";
+    observation.value = [HL7Value new];
+    observation.value.value = @"6.8";
+    observation.value.unit = @"MILL/MCL";
+    HL7ResultRange range = [analyzer resultRangeForSummaryEntry:observation forGender:HL7AdministrativeGenderCodeFemale];
+    XCTAssertEqual(range, HL7ResultRangeAboveNormal);
+}
+
+- (void)testLoinc4544_3NormalMale
+{
+    HL7ResultRangeAnalyzer * analyzer = [HL7ResultRangeAnalyzer new];
+    HL7ResultObservation * observation = [HL7ResultObservation new];
+    observation.code = [HL7Code new];
+    observation.code.code = @"4544-3";
+    observation.value = [HL7Value new];
+    observation.value.value = @"45";
+    observation.value.unit = @"%";
+    HL7ResultRange range = [analyzer resultRangeForSummaryEntry:observation forGender:HL7AdministrativeGenderCodeMale];
+    XCTAssertEqual(range, HL7ResultRangeNormal);
+}
+
+- (void)testLoinc4544_3BelowNormalMale
+{
+    HL7ResultRangeAnalyzer * analyzer = [HL7ResultRangeAnalyzer new];
+    HL7ResultObservation * observation = [HL7ResultObservation new];
+    observation.code = [HL7Code new];
+    observation.code.code = @"4544-3";
+    observation.value = [HL7Value new];
+    observation.value.value = @"43";
+    observation.value.unit = @"%";
+    HL7ResultRange range = [analyzer resultRangeForSummaryEntry:observation forGender:HL7AdministrativeGenderCodeMale];
+    XCTAssertEqual(range, HL7ResultRangeBelowNormal);
+}
+
+- (void)testLoinc4544_3NormalFemale
+{
+    HL7ResultRangeAnalyzer * analyzer = [HL7ResultRangeAnalyzer new];
+    HL7ResultObservation * observation = [HL7ResultObservation new];
+    observation.code = [HL7Code new];
+    observation.code.code = @"4544-3";
+    observation.value = [HL7Value new];
+    observation.value.value = @"37";
+    observation.value.unit = @"%";
+    HL7ResultRange range = [analyzer resultRangeForSummaryEntry:observation forGender:HL7AdministrativeGenderCodeFemale];
+    XCTAssertEqual(range, HL7ResultRangeNormal);
+}
+
+- (void)testLoinc4544_3BelowNormalFemale
+{
+    HL7ResultRangeAnalyzer * analyzer = [HL7ResultRangeAnalyzer new];
+    HL7ResultObservation * observation = [HL7ResultObservation new];
+    observation.code = [HL7Code new];
+    observation.code.code = @"4544-3";
+    observation.value = [HL7Value new];
+    observation.value.value = @"36";
+    observation.value.unit = @"%";
+    HL7ResultRange range = [analyzer resultRangeForSummaryEntry:observation forGender:HL7AdministrativeGenderCodeFemale];
+    XCTAssertEqual(range, HL7ResultRangeBelowNormal);
+}
+
+- (void)testLoinc30313_1NormalMale
+{
+    HL7ResultRangeAnalyzer * analyzer = [HL7ResultRangeAnalyzer new];
+    HL7ResultObservation * observation = [HL7ResultObservation new];
+    observation.code = [HL7Code new];
+    observation.code.code = @"30313-1";
+    observation.value = [HL7Value new];
+    observation.value.value = @"13";
+    observation.value.unit = @"g/dL";
+    HL7ResultRange range = [analyzer resultRangeForSummaryEntry:observation forGender:HL7AdministrativeGenderCodeMale];
+    XCTAssertEqual(range, HL7ResultRangeNormal);
+}
+
+- (void)testLoinc30313_1NormalFemale
+{
+    HL7ResultRangeAnalyzer * analyzer = [HL7ResultRangeAnalyzer new];
+    HL7ResultObservation * observation = [HL7ResultObservation new];
+    observation.code = [HL7Code new];
+    observation.code.code = @"30313-1";
+    observation.value = [HL7Value new];
+    observation.value.value = @"12";
+    observation.value.unit = @"g/dL";
+    HL7ResultRange range = [analyzer resultRangeForSummaryEntry:observation forGender:HL7AdministrativeGenderCodeFemale];
+    XCTAssertEqual(range, HL7ResultRangeNormal);
+}
+
+- (void)testLoinc2093_3NormalMale
+{
+    HL7ResultRangeAnalyzer * analyzer = [HL7ResultRangeAnalyzer new];
+    HL7ResultObservation * observation = [HL7ResultObservation new];
+    observation.code = [HL7Code new];
+    observation.code.code = @"2093-3";
+    observation.value = [HL7Value new];
+    observation.value.value = @"190";
+    observation.value.unit = @"mg/dL";
+    HL7ResultRange range = [analyzer resultRangeForSummaryEntry:observation forGender:HL7AdministrativeGenderCodeMale];
+    XCTAssertEqual(range, HL7ResultRangeNormal);
+}
+
+- (void)testLoinc2093_3AboveNormalMale
+{
+    HL7ResultRangeAnalyzer * analyzer = [HL7ResultRangeAnalyzer new];
+    HL7ResultObservation * observation = [HL7ResultObservation new];
+    observation.code = [HL7Code new];
+    observation.code.code = @"2093-3";
+    observation.value = [HL7Value new];
+    observation.value.value = @"201";
+    observation.value.unit = @"mg/dL";
+    HL7ResultRange range = [analyzer resultRangeForSummaryEntry:observation forGender:HL7AdministrativeGenderCodeMale];
+    XCTAssertEqual(range, HL7ResultRangeAboveNormal);
+}
+
+- (void)testLoinc2093_3NormalFemale
+{
+    HL7ResultRangeAnalyzer * analyzer = [HL7ResultRangeAnalyzer new];
+    HL7ResultObservation * observation = [HL7ResultObservation new];
+    observation.code = [HL7Code new];
+    observation.code.code = @"2093-3";
+    observation.value = [HL7Value new];
+    observation.value.value = @"190";
+    observation.value.unit = @"mg/dL";
+    HL7ResultRange range = [analyzer resultRangeForSummaryEntry:observation forGender:HL7AdministrativeGenderCodeFemale];
+    XCTAssertEqual(range, HL7ResultRangeNormal);
+}
 @end
