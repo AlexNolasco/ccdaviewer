@@ -28,7 +28,7 @@
 
 - (BOOL)hasValueAndUnit
 {
-    if ([[self value] length] && [[self unit] length]) {
+    if ([self.value length] && [self.unit length]) {
         return YES;
     }
     return NO;

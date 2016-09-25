@@ -38,10 +38,10 @@
 
 - (NSString *_Nullable)observationRangeAsString
 {
-    HL7Value *value = [[self observationRange] value];
-    if (value != nil && [[value low] hasValueAndUnit] && [[value high] hasValueAndUnit] && [value physicalUnitsAreEqual]) {
-        NSString *result = [NSString stringWithFormat:@"%@ - %@ (%@)", [[value low] value], [[value high] value], [[value low] unit]];
-        return [result copy];
+    HL7Value *value = self.observationRange.value;
+    
+    if (value != nil && [value.low hasValueAndUnit] && [value.high hasValueAndUnit] && [value physicalUnitsAreEqual]) {
+        return [NSString stringWithFormat:@"%@ - %@ (%@)", value.low.value, value.high.value, value.low.unit];
     }
     return nil;
 }

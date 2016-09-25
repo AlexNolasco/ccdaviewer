@@ -64,7 +64,7 @@
     } else if ([node isStartOfElementWithName:HL7ElementOrganizer]) {
         HL7ResultOrganizer *organizer = [HL7ResultOrganizer new];
         [context setElement:organizer];
-        [[[HL7ResultOrganizerParser alloc] init] parse:context error:error];
+        [[HL7ResultOrganizerParser new] parse:context error:error];
         [((HL7ResultEntry *)entry) setOrganizer:organizer];
     }
 }

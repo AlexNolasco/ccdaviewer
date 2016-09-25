@@ -28,6 +28,7 @@
 
 @interface HL7ResultReferenceRange : HL7Element
 @property (nullable, nonatomic, strong) HL7ResultObservationRange *observationRange;
+
 - (instancetype _Nonnull)initWithValue:(HL7Value *_Nonnull)value;
 - (NSString *_Nullable)observationRangeAsString;
 @end

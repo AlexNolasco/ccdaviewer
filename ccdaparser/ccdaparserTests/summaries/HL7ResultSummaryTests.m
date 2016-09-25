@@ -73,15 +73,20 @@
 
     // assert
     XCTAssertNotNil(summary);
-    XCTAssertTrue([[summary title] isEqualToString:@"RESULTS"]);
-    XCTAssertEqual([[summary allEntries] count], 6);
+    XCTAssertTrue([summary.title isEqualToString:@"RESULTS"]);
+    XCTAssertEqual([summary.allEntries count], 6);
     summaryEntry = [summary allEntries][0];
-    XCTAssertTrue([[summaryEntry narrative] isEqualToString:@"Hemoglobin"]);
-    XCTAssertTrue([[summaryEntry value] isEqualToString:@"13.2"]);
-    XCTAssertTrue([[summaryEntry units] isEqualToString:@"g/dL"]);
-    XCTAssertTrue([[summaryEntry range] isEqualToString:@"12.0 - 15.5 (g/dL)"]);
-    XCTAssertTrue([[summaryEntry interpretation] isEqualToString:@"Normal"]);
-    XCTAssertTrue([[summaryEntry date] isEqualToISO8601String:@"200803190830-0800"]);
+    XCTAssertTrue([summaryEntry.narrative isEqualToString:@"Hemoglobin"]);
+    XCTAssertTrue([summaryEntry.value isEqualToString:@"13.2"]);
+    XCTAssertTrue([summaryEntry.units isEqualToString:@"g/dL"]);
+    XCTAssertTrue([summaryEntry.range isEqualToString:@"12.0 - 15.5 (g/dL)"]);
+    XCTAssertTrue([summaryEntry.interpretation isEqualToString:@"Normal"]);
+    XCTAssertTrue([summaryEntry.date isEqualToISO8601String:@"200803190830-0800"]);
+    XCTAssertNotNil(summaryEntry.code);
+    XCTAssertTrue([summaryEntry.code.code isEqualToString:@"718-7"]);
+    XCTAssertTrue([summaryEntry.code.displayName isEqualToString:@"Hemoglobin"]);
+    XCTAssertTrue([summaryEntry.code.codeSystem isEqualToString:@"2.16.840.1.113883.6.1"]);
+    XCTAssertTrue([summaryEntry.code.codeSystemName isEqualToString:@"LOINC"]);
 }
 
 @end

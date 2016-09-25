@@ -23,6 +23,8 @@
 
 
 #import "HL7SummaryEntry.h"
+#import "HL7Enums.h"
+@class HL7CodeSummary;
 
 @interface HL7ResultSummaryEntry : HL7SummaryEntry <NSCopying, NSCoding>
 - (NSString *_Nullable)value;
@@ -30,4 +32,6 @@
 - (NSString *_Nullable)range;
 - (NSDate *_Nullable)date;
 - (NSString *_Nullable)interpretation;
+- (HL7CodeSummary *_Nullable)code;
+- (HL7ResultRange)resultRange;
 @end

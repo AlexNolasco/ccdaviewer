@@ -24,6 +24,7 @@
 #import "ViewerResultsCell.h"
 #import "NSDate+Formatting.h"
 
+
 @interface ViewerResultsCell ()
 @property (weak, nonatomic) IBOutlet UILabel *codeValueLabel;
 @property (weak, nonatomic) IBOutlet UILabel *resultValueLabel;
@@ -52,6 +53,29 @@
     // not applicable
 }
 
+- (NSString *) resultRangeAsString: (HL7ResultRange) resultRange
+{
+    if (resultRange == HL7ResultRangeBelowNormal || resultRange == HL7ResultRangeAboveNormal) {
+        return NSLocalizedString(@"ResultRange.Abnormal", nil);
+    }
+    else {
+        return @"";
+    }
+}
+
+- (NSAttributedString *) resultTextFromEntry:(HL7ResultSummaryEntry *)result
+{
+    NSString * resultRangString = [self resultRangeAsString: result.resultRange];
+    NSString * resultString = [NSString stringWithFormat:@"%@ %@",[self getValueFromResultEntry:result], resultRangString];
+    NSMutableAttributedString * attributedString = [[NSMutableAttributedString alloc] initWithString:resultString];
+    
+    if ([resultRangString length]) {
+        [attributedString addAttribute:NSBackgroundColorAttributeName value:[UIColor yellowColor] range:[resultString rangeOfString:resultRangString]];
+        [attributedString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:8.0f] range:[resultString rangeOfString:resultRangString]];
+    }
+    return [attributedString copy];
+}
+
 - (void)fillUsingSummaryEntry:(HL7SummaryEntry *)entry rowIndex:(NSUInteger)row
 {
     if (![entry isKindOfClass:[HL7ResultSummaryEntry class]]) {
@@ -60,7 +84,7 @@
     HL7ResultSummaryEntry *result = (HL7ResultSummaryEntry *)entry;
 
     self.codeValueLabel.text = result.narrative;
-    self.resultValueLabel.text = [self getValueFromResultEntry:result];
+    self.resultValueLabel.attributedText = [self resultTextFromEntry:result];
 
     if ([[result range] length]) {
         self.resultRangeLabel.text = result.range;

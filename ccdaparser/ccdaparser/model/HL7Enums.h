@@ -274,6 +274,48 @@ typedef NS_ENUM(NSInteger, HL7ProblemSeverityCode) {
     HL7ProblemSeverityCodeFatal = 6
 };
 
-typedef NS_ENUM(NSInteger, HL7ConfidentialityCode) { HL7ConfidentialityCodeUnknown = 0, HL7ConfidentialityCodeLow = 1, HL7ConfidentialityCodeModerate = 2, HL7ConfidentialityCodeNormal = 3, HL7ConfidentialityCodeRestricted = 4, HL7ConfidentialityCodeUnrestricted = 5, HL7ConfidentialityCodeVeryRestricted = 6, HL7ConfidentialityCodeBusiness = 7, HL7ConfidentialityCodeClinician = 8, HL7ConfidentialityCodeIndividual = 9 };
+typedef NS_ENUM(NSInteger, HL7ConfidentialityCode) {
+    // Unknown
+    HL7ConfidentialityCodeUnknown = 0,
+    // Low
+    HL7ConfidentialityCodeLow = 1,
+    // Moderate
+    HL7ConfidentialityCodeModerate = 2,
+    // Normal
+    HL7ConfidentialityCodeNormal = 3,
+    // Restricted
+    HL7ConfidentialityCodeRestricted = 4,
+    // Unrestricted
+    HL7ConfidentialityCodeUnrestricted = 5,
+    // Very restricted
+    HL7ConfidentialityCodeVeryRestricted = 6,
+    // Business
+    HL7ConfidentialityCodeBusiness = 7,
+    // Clinician
+    HL7ConfidentialityCodeClinician = 8,
+    // Individual
+    HL7ConfidentialityCodeIndividual = 9
+};
+
+// Used to category a result
+typedef NS_ENUM(NSInteger, HL7ResultCategory) {
+    // Unknown
+    HL7ResultCategoryUnknown = 0,
+    // Chemestry or Metabolic Panel
+    HL7ResultCategoryChemistry = 1,
+    // Lipid Panel or Lipid Profile
+    HL7ResultCategoryLipid = 2,
+};
+
+typedef NS_ENUM(NSInteger, HL7ResultRange) {
+    // Unkown
+    HL7ResultRangeUnknown = 0,
+    // Normal
+    HL7ResultRangeNormal = 1,
+    // Below
+    HL7ResultRangeBelowNormal = 2,
+    // Above
+    HL7ResultRangeAboveNormal = 3
+};
 @interface HL7Enumerations : NSObject
 @end
