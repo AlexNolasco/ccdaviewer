@@ -99,14 +99,6 @@
     return [UIColor redColor];
 }
 
-- (void)addVerticalLineWithColor:(UIColor *)color
-{
-    UIView *verticalLine = [[UIView alloc] initWithFrame:CGRectMake(5.0f, 0.f, 2.0f, self.contentView.bounds.size.height)];
-    verticalLine.backgroundColor = color;
-    verticalLine.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin;
-    [self.contentView addSubview:verticalLine];
-}
-
 - (NSString *)reactionsFromEntry:(HL7SummaryEntry *)entry
 {
     HL7AllergySummaryEntry *allergySummaryEntry = (HL7AllergySummaryEntry *)entry;
@@ -161,7 +153,5 @@
     } else {
         self.dateRecordedLabel.text = NSLocalizedString(@"SummaryAllergy.DateOfOnsetUnknown", nil);
     }
-
-    [self addVerticalLineWithColor:[self getServerityBarColorFromCode:[allergySummaryEntry problemSeverityCode]]];
 }
 @end
