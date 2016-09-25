@@ -1,5 +1,7 @@
 # C-CDA Viewer for iOS
 
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://raw.githubusercontent.com/alexandern/ccdaviewer/master/LICENSE)
+
 C-CDA viewer is an iOS application for viewing C-CDAs on the iPhone or iPad developed as part of the C-CDA Rendering Tool Challenge - HL7.
 ---
 
