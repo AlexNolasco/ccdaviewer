@@ -2,6 +2,24 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>About</key>
+	<string>Prototype for storing result ranges. </string>
+	<key>787-2</key>
+	<dict>
+		<key>units</key>
+		<dict>
+			<key>FL</key>
+			<dict>
+				<key>both</key>
+				<dict>
+					<key>min</key>
+					<integer>80</integer>
+					<key>max</key>
+					<integer>100</integer>
+				</dict>
+			</dict>
+		</dict>
+	</dict>
 	<key>2093-3</key>
 	<dict>
 		<key>units</key>
